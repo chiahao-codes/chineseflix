@@ -38,3 +38,13 @@ header {
   font-weight: 600;
   font-style: normal;
 }
+
+#top-heading {
+  position: relative;
+  width: 100%;
+  top: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+}
