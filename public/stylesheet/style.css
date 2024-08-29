@@ -9,4 +9,18 @@
 body {
   width: 100%;
   overflow-x: hidden;
+  position: relative;
+}
+
+:root {
+  --white: #ffff;
+}
+
+main {
+  position: relative;
+  width: 100%;
+  overflow-x: hidden;
+  margin: 0;
+  background-color: var(--white);
+  filter: brightness(110%);
 }
