@@ -10,6 +10,10 @@ app.use(express.static("assets"));
 app.use(express.json());
 app.use(cors({ origin: "*", credentials: true }));
 
+app.get("/", (req, res, next) => {
+  res.render("home");
+});
+
 app.listen(PORT, () => {
   console.log(`app listening on Port: ${PORT}`);
 });
