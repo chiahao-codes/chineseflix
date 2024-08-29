@@ -1,0 +1,20 @@
+{
+  "dependencies": {
+    "cors": "^2.8.5",
+    "ejs": "^3.1.10",
+    "express": "^4.19.2",
+    "nodemon": "^3.1.4"
+  },
+  "name": "chineseflix.com",
+  "version": "1.0.0",
+  "description": "A curated selection of movies streaming online with Chinese subtitles available.",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "test": "",
+    "serve": "node ./server.js",
+    "start": "nodemon ./server.js"
+  },
+  "author": "Chiahao Chou",
+  "license": "ISC"
+}
