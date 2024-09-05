@@ -6,67 +6,132 @@
   padding: 0;
 }
 
-body {
-  width: 100%;
-  overflow-x: hidden;
-  position: relative;
-}
-
 :root {
   --white: #ffff;
 }
 
-main {
-  position: relative;
+body {
   width: 100%;
-  height: max-content;
   overflow-x: hidden;
-  margin: 0;
-  padding-bottom: 10%;
-  background-color: var(--white);
-  filter: brightness(110%);
-}
-
-header {
-  width: 100%;
   position: relative;
-  padding: 2% 0 2% 0;
-  display: flex;
-  justify-content: center;
+  display: none;
 }
 
-#app-name {
-  font-family: "Reenie Beanie", cursive;
-  font-weight: 600;
-  font-style: normal;
-  font-size: 4vw;
-}
+@media screen and (min-width: 320px) {
+  body {
+    display: block;
+  }
+  main {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    row-gap: 30px;
+    width: 100%;
+    height: max-content;
+    overflow-x: hidden;
+    margin: 0;
+    background-color: var(--white);
+    filter: brightness(110%);
+  }
 
-#top-heading {
-  position: relative;
-  width: 100%;
-  height: fit-content;
-  top: 20px;
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-  align-items: center;
-}
+  header {
+    width: 100%;
+    position: relative;
+    top: 0;
+    padding: 2% 0 2% 0;
+    display: flex;
+    justify-content: center;
+  }
 
-#top-h1 {
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-  align-items: center;
-  width: 100%;
-  height: fit-content;
-  min-height: fit-content;
-}
+  #app-name {
+    font-family: "Reenie Beanie", cursive;
+    font-weight: 600;
+    font-style: normal;
+    font-size: 4vw;
+  }
 
-#top-h1 > span {
-  white-space: normal;
-  font-family: "Noto Serif SC", sans-serif, "LXGW WenKai TC", cursive;
-  font-weight: 600;
-  font-style: normal;
-  font-size: 8vw;
+  #about-link-container {
+    position: absolute;
+    display: flex;
+    right: 7px;
+    height: fit-content;
+    width: fit-content;
+    padding: 1px;
+    justify-content: center;
+    column-gap: 9px;
+    font-family: "Noto Serif SC";
+  }
+
+  #about-link-container > a {
+    text-decoration: none;
+    font-size: 2vw;
+    font-weight: 600;
+    color: black;
+  }
+
+  #about-link-container > a:hover {
+    text-decoration: underline;
+    cursor: pointer;
+  }
+
+  #top-12-heading {
+    position: relative;
+    width: 100%;
+    height: fit-content;
+    top: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+  }
+
+  #top-12-h1 {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    width: 100%;
+    height: fit-content;
+    min-height: fit-content;
+  }
+
+  #top-12-h1 > span {
+    white-space: normal;
+    font-family: "Noto Serif SC", sans-serif, "LXGW WenKai TC", cursive;
+    font-weight: 600;
+    font-style: normal;
+    font-size: 8vw;
+  }
+
+  #reviews-container {
+    position: relative;
+    top: 25px;
+    height: fit-content;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    row-gap: 20px;
+  }
+
+  .movie-review-parent {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    width: 100%;
+    height: fit-content;
+  }
+
+  footer {
+    position: relative;
+    bottom: 0;
+    width: 100%;
+    height: fit-content;
+    overflow: hidden;
+    font-family: "Noto Sans SC";
+  }
 }
