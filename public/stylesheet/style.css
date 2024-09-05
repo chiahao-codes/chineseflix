@@ -27,9 +27,8 @@ body {
     flex-direction: column;
     justify-content: flex-start;
     align-items: center;
-    row-gap: 30px;
+    row-gap: 50px;
     width: 100%;
-    height: max-content;
     overflow-x: hidden;
     margin: 0;
     background-color: var(--white);
@@ -39,7 +38,6 @@ body {
   header {
     width: 100%;
     position: relative;
-    top: 0;
     padding: 2% 0 2% 0;
     display: flex;
     justify-content: center;
@@ -49,24 +47,24 @@ body {
     font-family: "Reenie Beanie", cursive;
     font-weight: 600;
     font-style: normal;
-    font-size: 4vw;
+    font-size: 5vw;
   }
 
   #about-link-container {
     position: absolute;
     display: flex;
-    right: 7px;
+    right: 10px;
     height: fit-content;
     width: fit-content;
     padding: 1px;
     justify-content: center;
-    column-gap: 9px;
+    column-gap: 13px;
     font-family: "Noto Serif SC";
   }
 
   #about-link-container > a {
     text-decoration: none;
-    font-size: 2vw;
+    font-size: 3.5vw;
     font-weight: 600;
     color: black;
   }
@@ -80,7 +78,6 @@ body {
     position: relative;
     width: 100%;
     height: fit-content;
-    top: 20px;
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
@@ -100,16 +97,16 @@ body {
   #top-12-h1 > span {
     white-space: normal;
     font-family: "Noto Serif SC", sans-serif, "LXGW WenKai TC", cursive;
-    font-weight: 600;
+    font-weight: 700;
     font-style: normal;
-    font-size: 8vw;
+    font-size: 10vw;
   }
 
   #reviews-container {
     position: relative;
-    top: 25px;
+    padding-top: 45px;
     height: fit-content;
-    width: 100%;
+    width: 80%;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -120,17 +117,62 @@ body {
   .movie-review-parent {
     position: relative;
     display: flex;
-    justify-content: center;
+    justify-content: flex-start;
     flex-direction: column;
+    align-items: center;
+    row-gap: 40px;
     width: 100%;
     height: fit-content;
+  }
+  .img-parent {
+    position: relative;
+    width: 100%;
+    max-width: 500px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .movie-still {
+    min-width: 100%;
+    max-width: 100%;
+    height: fit-content;
+    max-height: 75%;
+  }
+
+  .cast-crew-container {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    row-gap: 10px;
+    width: 100%;
+  }
+
+  .cast-crew-info,
+  .rating-runtime {
+    width: 80%;
+  }
+
+  .streaming-link {
+    text-decoration: none;
+    color: black;
+    font-weight: 800;
+    box-shadow: 0px 25px 75px -4px rgba(0, 0, 0, 0.45);
+  }
+
+  .streaming-link:hover {
+    color: red;
+    text-decoration: underline;
   }
 
   footer {
     position: relative;
     bottom: 0;
     width: 100%;
-    height: fit-content;
+    border: 1px solid black;
+    height: 50px;
     overflow: hidden;
     font-family: "Noto Sans SC";
   }
