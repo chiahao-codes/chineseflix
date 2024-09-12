@@ -6,11 +6,9 @@
 </head>
 
 <body>
-    <main>
+    <main id="home-main">
         <header>
-            <h3 id="app-name">ChineseFlix</h3>
-            <div id="about-link-container"><a id="about-link" href="" target="_self">关于我们</a><a id="login-link" href=""
-                    target="_self">注册</a></div>
+            <%- include('./partials/heading.ejs') %>
         </header>
         <div id="top-12-heading">
             <h1 id="top-12-h1">
@@ -49,8 +47,13 @@
 
             </article>
         </section>
-        <footer></footer>
+        <footer>
+            <%- include('./partials/footer.ejs') %>
+        </footer>
     </main>
+    <script>
+        const DOMAIN = '<%=DOMAIN%>'
+    </script>
 </body>
 
 </html>
