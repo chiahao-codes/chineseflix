@@ -23,6 +23,14 @@ app.get("/login", (req, res, next) => {
   res.render("login");
 });
 
+app.get("/contact", (req, res, next) => {
+  res.render("contact");
+});
+
+app.get("/account", (req, res, next) => {
+  res.render("account");
+});
+
 app.listen(PORT, () => {
   console.log(`app listening on Port: ${PORT}`);
 });
