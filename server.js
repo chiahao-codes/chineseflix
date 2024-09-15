@@ -27,6 +27,14 @@ app.get("/contact", (req, res, next) => {
   res.render("contact");
 });
 
+app.get("/privacy", (req, res, next) => {
+  res.render("privacy");
+});
+
+app.get("/terms", (req, res, next) => {
+  res.render("terms");
+});
+
 app.get("/account", (req, res, next) => {
   res.render("account");
 });

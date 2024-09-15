@@ -64,7 +64,7 @@ body {
   #app-name {
     font-family: "Reenie Beanie", cursive;
     font-weight: 600;
-    font-size: 4.5vw;
+    font-size: 17px;
     font-style: normal;
     text-decoration: none;
     color: black;
@@ -79,13 +79,13 @@ body {
     padding: 1px;
     justify-content: center;
     align-items: center;
-    column-gap: 16px;
+    column-gap: 14px;
     font-family: "Noto Serif SC";
   }
 
   #about-link-container > a {
     text-decoration: none;
-    font-size: 2.5vw;
+    font-size: 10px;
     font-weight: 600;
     color: black;
   }
@@ -120,7 +120,7 @@ body {
     font-family: "Noto Serif SC", sans-serif, "LXGW WenKai TC", cursive;
     font-weight: 700;
     font-style: normal;
-    font-size: 10vw;
+    font-size: 33px;
   }
 
   #reviews-container {
@@ -144,6 +144,7 @@ body {
     row-gap: 40px;
     width: 100%;
     height: fit-content;
+    font-family: var(--Noto), sans-serif;
   }
   .img-parent {
     position: relative;
@@ -267,11 +268,113 @@ body {
 
   footer {
     position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    row-gap: 8px;
+    align-items: center;
     bottom: 0;
     width: 100%;
     border-top: 1px solid black;
-    height: 50px;
+    height: fit-content;
+    max-height: 400px;
     overflow: hidden;
-    font-family: "Noto Sans SC";
+    padding: 10px;
+  }
+
+  #footer-section {
+    width: 100%;
+    position: relative;
+    row-gap: 7px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .footer-link {
+    font-family: var(--Noto) sans-serif;
+    font-size: 10px;
+    font-weight: 600;
+    text-decoration: none;
+    color: black;
+  }
+  .footer-link:hover {
+    cursor: pointer;
+    text-decoration: underline;
+  }
+
+  #footer-link-section {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    column-gap: 10px;
+  }
+
+  #copyright {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    padding: 3px;
+  }
+
+  #copyright > h6 {
+    font-family: var(--Noto) sans-serif;
+    font-weight: 450;
+    font-size: 9px;
+  }
+}
+
+@media screen and (min-width: 430px) {
+  #top-12-h1 > span {
+    font-size: 40px;
+  }
+}
+
+@media screen and (min-width: 500px) {
+  #app-name {
+    font-size: 20px;
+  }
+
+  #about-link-container > a,
+  .footer-link {
+    font-size: 13px;
+  }
+
+  #copyright > h6 {
+    font-size: 11px;
+  }
+}
+
+@media screen and (min-width: 510px) {
+  #top-12-h1 > span {
+    font-size: 50px;
+  }
+}
+
+@media screen and (min-width: 675px) {
+  #app-name {
+    font-size: 27px;
+  }
+
+  #about-link-container > a,
+  .footer-link {
+    font-size: 15px;
+  }
+
+  #copyright > h6 {
+    font-size: 13px;
+  }
+  #top-12-h1 > span {
+    font-size: 57px;
+  }
+}
+
+@media screen and (min-width: 1300px) {
+  #top-12-h1 > span {
+    font-size: 70px;
   }
 }
