@@ -6,10 +6,28 @@
 </head>
 
 <body>
-    <main>
+    <main id="contact-main">
         <header>
             <%- include('./partials/heading.ejs') %>
         </header>
+        <section id="contact_container">
+            <h1 id="contact_header" class="section_h1">联系</h1>
+            <form id="contact-form" action="https://api.web3forms.com/submit" method="POST">
+
+                <input type="hidden" name="access_key" value="0e253c78-ef00-4238-8cd3-90873e67eb3c">
+
+                <input type="text" name="name" placeholder="姓名" required>
+                <input type="email" name="email" placeholder="电子邮件" required>
+                <textarea name="message" placeholder="留言" required></textarea>
+                <input type="hidden" name="redirect" value="https://web3forms.com/success">
+                <button id="contactButton" type="submit">
+                    <div class="alt-send-button">
+                        <span class="send-text">寄送</span>
+                        <img alt="paper-plane-icon" class="paper-plane" src="/paper-plane-20.png"></img>
+                    </div>
+                </button>
+            </form>
+        </section>
         <footer>
             <%- include('./partials/footer.ejs') %>
         </footer>

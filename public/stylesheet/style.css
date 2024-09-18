@@ -56,24 +56,24 @@ body {
   header {
     width: 100%;
     position: relative;
-    padding: 2% 0 2% 0;
+    padding: 2% 3%;
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
+    align-items: center;
   }
 
   #app-name {
     font-family: "Reenie Beanie", cursive;
     font-weight: 600;
-    font-size: 17px;
+    font-size: 19px;
     font-style: normal;
     text-decoration: none;
     color: black;
   }
 
   #about-link-container {
-    position: absolute;
+    position: relative;
     display: flex;
-    right: 12px;
     height: fit-content;
     width: fit-content;
     padding: 1px;
@@ -153,6 +153,7 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
+    box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.7);
   }
 
   .movie-still {
@@ -228,6 +229,7 @@ body {
   #about-video {
     width: 88%;
     max-width: 530px;
+    box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.35);
   }
 
   #about-us-heading {
@@ -266,6 +268,213 @@ body {
     border-radius: 2%;
   }
 
+  /*Contact Page*/
+  #contact-main {
+    justify-content: space-between;
+    row-gap: 50px;
+  }
+
+  #contact_container {
+    position: relative;
+    width: 100%;
+    min-width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    row-gap: 20px;
+    align-items: center;
+    background-color: inherit;
+    overflow-x: hidden;
+  }
+
+  #contact_container h1 {
+    font-family: var(--Noto), sans-serif;
+    width: 100%;
+    height: fit-content;
+    text-align: center;
+    color: black;
+  }
+
+  #contact_container > form {
+    position: relative;
+    width: 260px;
+    max-width: 260px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    row-gap: 25px;
+    align-items: center;
+    border: 2px solid black;
+    border-radius: 3px;
+    color: black;
+    padding: 11px 0;
+    margin: 0 auto;
+    box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.5);
+  }
+
+  #contact_container > form > input,
+  #contact_container > form > textarea {
+    width: 85%;
+    color: black;
+    background-color: whitesmoke;
+    font-family: var(--Noto), sans-serif;
+  }
+
+  #contact_container > form > textarea {
+    height: 225px;
+    min-height: 225px;
+  }
+
+  #contact_container > form > input::placeholder {
+    color: black;
+    font-weight: 850;
+    font-family: var(--Noto), sans-serif;
+    font-size: small;
+    background-color: whitesmoke;
+  }
+
+  #contact_container > form > textarea::placeholder {
+    color: black;
+    font-weight: 850;
+    font-family: var(--Noto), sans-serif;
+    font-size: small;
+    background-color: whitesmoke;
+  }
+
+  #contact_container > form > button {
+    width: 90px;
+    max-width: 90px;
+    height: 45px;
+    color: black;
+    background-color: whitesmoke;
+    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.35);
+    font-family: var(--Noto), sans-serif;
+    font-size: small;
+    text-align: center;
+    overflow-wrap: normal;
+    overflow: hidden;
+    opacity: 0.85;
+    transition: all 0.2s ease-in-out;
+    position: relative;
+    border-radius: 10px;
+    border-color: black;
+  }
+
+  #contact_container > form > button > .alt-send-button {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    transition: all 0.2s ease-in-out;
+  }
+
+  #contact_container > form > button > .alt-send-button > .send-text {
+    position: relative;
+    display: block;
+    margin-top: 10%;
+    font-size: medium;
+    font-weight: 800;
+    filter: brightness(120%);
+    -webkit-filter: brightness(120%);
+  }
+
+  #contact_container > form > button > div > img {
+    width: 40%;
+    height: 40%;
+    position: relative;
+    margin-top: 30%;
+  }
+
+  #contact_container > form > button:hover {
+    opacity: 1;
+    cursor: pointer;
+    filter: brightness(110%);
+    -webkit-filter: brightness(110%);
+  }
+
+  #contact_container > form > button > .alt-send-button:hover {
+    transform: translate3d(0px, -108%, 0px);
+    filter: brightness(110%);
+    -webkit-filter: brightness(110%);
+  }
+
+  #contact_container > form > button:active {
+    box-shadow: 0px 1px 10px rgba(0, 0, 0, 0.35);
+    transform: scale(0.95);
+  }
+
+  /*Privacy page */
+  #privacy-main {
+    justify-content: space-between;
+    row-gap: 55px;
+  }
+
+  #privacy-section {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-start;
+    width: 85%;
+    max-width: 500px;
+    row-gap: 30px;
+  }
+
+  #privacy-text-parent {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    height: fit-content;
+    justify-content: space-between;
+    row-gap: 25px;
+  }
+
+  .privacy-div {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    row-gap: 15px;
+  }
+  .privacy-div > p {
+    line-height: 1.6;
+  }
+
+  /*Terms Page*/
+  #terms-main {
+    justify-content: space-between;
+    row-gap: 55px;
+  }
+
+  #terms-section {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-start;
+    width: 85%;
+    max-width: 500px;
+    row-gap: 30px;
+  }
+
+  #terms-text-parent {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    height: fit-content;
+    justify-content: space-between;
+    row-gap: 25px;
+  }
+
+  .terms-div {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    row-gap: 15px;
+  }
+  .terms-div > p {
+    line-height: 1.6;
+  }
+
+  /*Footer*/
   footer {
     position: relative;
     display: flex;
@@ -336,7 +545,7 @@ body {
 
 @media screen and (min-width: 500px) {
   #app-name {
-    font-size: 20px;
+    font-size: 22px;
   }
 
   #about-link-container > a,
@@ -357,7 +566,7 @@ body {
 
 @media screen and (min-width: 675px) {
   #app-name {
-    font-size: 27px;
+    font-size: 29px;
   }
 
   #about-link-container > a,
@@ -373,7 +582,24 @@ body {
   }
 }
 
+@media screen and (min-width: 800px) {
+  #contact_container > form {
+    width: 450px;
+  }
+}
 @media screen and (min-width: 1300px) {
+  #app-name {
+    font-size: 33px;
+  }
+  #about-link-container > a,
+  .footer-link {
+    font-size: 17px;
+  }
+
+  #copyright > h6 {
+    font-size: 14px;
+  }
+
   #top-12-h1 > span {
     font-size: 70px;
   }
