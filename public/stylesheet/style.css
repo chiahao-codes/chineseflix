@@ -40,7 +40,7 @@ body {
 
   #home-main {
     justify-content: flex-start;
-    row-gap: 50px;
+    row-gap: 75px;
   }
 
   #about-main {
@@ -120,19 +120,19 @@ body {
     font-family: "Noto Serif SC", sans-serif, "LXGW WenKai TC", cursive;
     font-weight: 700;
     font-style: normal;
-    font-size: 33px;
+    font-size: 36px;
   }
 
   #reviews-container {
     position: relative;
-    padding-top: 45px;
+
     height: fit-content;
     width: 80%;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    row-gap: 20px;
+    row-gap: 50px;
   }
 
   .movie-review-parent {
@@ -178,13 +178,18 @@ body {
     flex-direction: column;
     justify-content: flex-start;
     align-items: flex-start;
-    row-gap: 10px;
+    row-gap: 15px;
     width: 100%;
     max-width: 500px;
   }
 
   .cast-crew-info,
   .rating-runtime {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-start;
     width: 80%;
   }
 
@@ -298,7 +303,7 @@ body {
   #contact_container > form {
     position: relative;
     width: 260px;
-    max-width: 260px;
+
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
@@ -315,6 +320,7 @@ body {
   #contact_container > form > input,
   #contact_container > form > textarea {
     width: 85%;
+    max-width: 85%;
     color: black;
     background-color: whitesmoke;
     font-family: var(--Noto), sans-serif;
