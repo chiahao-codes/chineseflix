@@ -7,10 +7,20 @@
 
 <body>
     <main id="home-main">
-        <header>
+        <header id="header">
             <%- include('./partials/heading.ejs') %>
         </header>
-        <div id="top-12-heading">
+        <nav id="mobile-nav-links-parent" class="mobile_navigation_links">
+            <div id="mobile-nav-links-wrapper" class="mobile_display_flex_column">
+                <a id="mobile-home-link" class="mobile-link" href="http://localhost:8080/"
+                    target="_self"><span>家</span></a>
+                <a id="mobile-about-link" class="mobile-link" href="http://localhost:8080/about"
+                    target="_self"><span>关于我们</span></a>
+                <a id="mobile-contact-link" class="mobile-link" href="http://localhost:8080/contact"
+                    target="_self"><span>联系我们</span></a>
+            </div>
+        </nav>
+        <div id="top-12-heading" class="margin-top-add">
             <h1 id="top-12-h1">
                 <span id="twelve-of">12部</span>
                 <span id="the-best">最佳电影</span>
@@ -43,7 +53,7 @@
                 <h4 class="review">
                     The Good Nurse 是一部引人入胜的医疗惊悚片，在Netflix上吸引了众多观众，得益于其紧张的叙事和Jessica Chastain与Eddie Redmayne的精彩表演。由Tobias
                     Lindholm执导，这部电影基于真实故事，讲述了护士Amy Loughren (Chastain饰) 揭露同事Charles Cullen (Redmayne饰)
-                    黑暗秘密的故事。影片紧张的氛围和令人难忘的配乐增强了令人毛骨悚然的叙事，使其成为真实犯罪剧迷的必看之作。Chastain对Amy的演绎既富有同情心又充满力量，而Redmayne对Cullen的表演则令人毛骨悚然，吸引观众进入故事的阴暗现实。
+                    黑暗秘密的故事。影片紧张的氛围和令人难忘的配乐增强了令人毛骨悚然的叙事，使其成为真实犯罪剧迷的必看之作。Chastain对Amy的演绎既富有同情心又充满力量，而Redmayne对Cullen的表演则令人毛骨悚然，吸引观众进入故事的阴暗现实。<br><br>
 
                     为了角色的真实性，Chastain和Redmayne都付出了极大的努力。Chastain与真实的Amy
                     Loughren相处，以了解她的经历并为角色增添深度。另一方面，Redmayne仔细研究了Cullen的举止和行为，以准确描绘他的阴险本性。此外，这部电影基于Charles
@@ -76,7 +86,8 @@
                     Norton 饰演的鲁莽朋友
                     Lester “Worm” Murphy 主演。故事讲述了 Mike 在输掉全部积蓄给俄罗斯黑帮 Teddy KGB (John Malkovich 饰) 后，试图摆脱赌博生活。然而，当 Worm
                     出狱并将 Mike
-                    拖回扑克世界以帮助偿还危险债务时，Mike 发现自己在承诺和游戏的诱惑之间左右为难。为了准备角色，Damon 和 Norton 深入了解了扑克世界，Damon 甚至参加了1998年的世界扑克系列赛。
+                    拖回扑克世界以帮助偿还危险债务时，Mike 发现自己在承诺和游戏的诱惑之间左右为难。为了准备角色，Damon 和 Norton 深入了解了扑克世界，Damon
+                    甚至参加了1998年的世界扑克系列赛。<br><br>
 
                     影片的氛围真实而沉浸，扑克场景精心制作，反映了游戏的高赌注和巨大压力。Damon 的表演引人注目，捕捉到了 Mike 的内心挣扎和对扑克的热情，而 Norton
                     则为角色带来了魅力和不可预测性。总的来说，Rounders
@@ -107,7 +118,7 @@
                 <h4 class="review">
                     Rebel Ridge 是一部引人入胜的惊悚片，由Jeremy Saulnier执导，他因执导Blue Ruin和Green Room而闻名。影片由Aaron
                     Pierre主演，饰演前海军陆战队员Terry
-                    Richmond，他在路易斯安那州一个小镇上卷入了一场腐败和暴力的网络。当Terry试图保释他的堂兄时，被腐败的警察没收了他的资金，他必须在正义的道路上艰难前行。影片紧张的氛围和精心制作的动作场景让观众紧张不已，使其成为该类型中的佼佼者。
+                    Richmond，他在路易斯安那州一个小镇上卷入了一场腐败和暴力的网络。当Terry试图保释他的堂兄时，被腐败的警察没收了他的资金，他必须在正义的道路上艰难前行。影片紧张的氛围和精心制作的动作场景让观众紧张不已，使其成为该类型中的佼佼者。<br><br>
 
                     Jeremy Saulnier不仅执导了Rebel Ridge，还担任了影片的剪辑工作。他以创造紧张、氛围浓厚的惊悚片而闻名。他的前作如Blue Ruin和Green
                     Room，已确立了他在该类型中的大师地位。在Rebel
@@ -130,29 +141,38 @@
                         <h5 class="writer">作家: James Vanderbilt, James Graysmith</h5>
                     </div>
                     <div class="rating-runtime">
-                        <h5 class="runtime">分钟: 131</h5>
-                        <h5 class="rated">等级: TV-MA</h5>
+                        <h5 class="runtime">分钟: 157</h5>
+                        <h5 class="rated">等级: R</h5>
                     </div>
                 </div>
-                <div class="link-parent"><a class="streaming-link" href="" target="_blank">可在: Netflix</a></div>
+                <div class="link-parent"><a class="streaming-link" href="" target="_blank">可在: YouTube</a></div>
                 <h4 class="review">
-                    Rebel Ridge 是一部引人入胜的惊悚片，由Jeremy Saulnier执导，他因执导Blue Ruin和Green Room而闻名。影片由Aaron
-                    Pierre主演，饰演前海军陆战队员Terry
-                    Richmond，他在路易斯安那州一个小镇上卷入了一场腐败和暴力的网络。当Terry试图保释他的堂兄时，被腐败的警察没收了他的资金，他必须在正义的道路上艰难前行。影片紧张的氛围和精心制作的动作场景让观众紧张不已，使其成为该类型中的佼佼者。
+                    Zodiac (2007)，由David Fincher执导，是一部扣人心弦的惊悚片，讲述了真实的Zodiac Killer的故事，他在20世纪60年代末和70年代初恐吓了旧金山湾区。影片由Jake
+                    Gyllenhaal饰演的漫画家Robert Graysmith转变为业余侦探，Robert Downey Jr.饰演的记者Paul Avery，以及Mark Ruffalo饰演的探员David
+                    Toschi。<br><br>
 
-                    Jeremy Saulnier不仅执导了Rebel Ridge，还担任了影片的剪辑工作。他以创造紧张、氛围浓厚的惊悚片而闻名。他的前作如Blue Ruin和Green
-                    Room，已确立了他在该类型中的大师地位。在Rebel
-                    Ridge中，Saulnier继续探索生存和正义的主题，将他标志性的现实主义和悬疑风格带入影片。他对故事讲述和角色发展的细致处理，确保了Rebel Ridge既引人入胜又发人深省。</h4>
+                    Fincher对细节的精心把控和导演手法创造了紧张而沉浸的氛围，捕捉到了案件相关人员的偏执和痴迷。影片的叙事由角色们对真相的不懈追求驱动，往往付出了巨大的个人代价。改编自Robert
+                    Graysmith非小说类书籍的剧本既引人入胜又令人不安，反映了围绕未解案件的挫折和模糊性。
+
+                    Zodiac因其剧本、导演和表演获得了评论界的好评。它因其历史准确性和处理复杂调查的方式而受到赞扬。尽管获得了积极的评价，影片并未获得任何主要奖项，但它获得了包括土星奖和评论家选择电影奖在内的多个提名。<br><br>
+
+                    总的来说，Zodiac作为一部将真实犯罪与心理剧结合的杰作脱颖而出，是该类型片爱好者必看的影片。Fincher保持悬念并提供发人深省的叙事的能力确保了Zodiac在他的电影作品中占据重要地位。
+                </h4>
 
             </article>
         </section>
+        <div id="social-links-container">
+            <div id="social-links-parent">
+                <a id="whatsapp" href="whatsapp.png" target="_blank"></a><a id="line" href="line.png"
+                    target="_blank"></a><a id="facebook" href="facebook.png" target="_blank"></a>
+            </div>
+
+        </div>
         <footer>
             <%- include('./partials/footer.ejs') %>
         </footer>
     </main>
-    <script>
-        const DOMAIN = '<%=DOMAIN%>'
-    </script>
+    <%- include('./partials/events.ejs') %>
 </body>
 
 </html>

@@ -10,7 +10,17 @@
         <header>
             <%- include('./partials/heading.ejs') %>
         </header>
-        <section id="privacy-section">
+        <nav id="mobile-nav-links-parent" class="mobile_navigation_links">
+            <div id="mobile-nav-links-wrapper" class="mobile_display_flex_column">
+                <a id="mobile-home-link" class="mobile-link" href="http://localhost:8080/"
+                    target="_self"><span>家</span></a>
+                <a id="mobile-about-link" class="mobile-link" href="http://localhost:8080/about"
+                    target="_self"><span>关于我们</span></a>
+                <a id="mobile-contact-link" class="mobile-link" href="http://localhost:8080/contact"
+                    target="_self"><span>联系我们</span></a>
+            </div>
+        </nav>
+        <section id="privacy-section" class="margin-top-add">
 
             <h1>隐私政策</h1>
 
@@ -142,6 +152,7 @@
             <%- include('./partials/footer.ejs') %>
         </footer>
     </main>
+    <script src="script.js"></script>
 </body>
 
 </html>
