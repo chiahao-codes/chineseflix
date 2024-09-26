@@ -18,7 +18,7 @@ body {
   display: none;
 }
 
-@media screen and (min-width: 320px) {
+@media screen and (min-width: 270px) {
   body {
     display: block;
     height: 100vh;
@@ -709,6 +709,7 @@ body {
 
   #copyright {
     position: relative;
+
     display: flex;
     justify-content: center;
     flex-direction: column;
@@ -719,7 +720,7 @@ body {
   #copyright > h6 {
     font-family: var(--Noto) sans-serif;
     font-weight: 450;
-    font-size: 9px;
+    font-size: 8.5px;
   }
 }
 
@@ -746,7 +747,7 @@ body {
   }
 
   #copyright > h6 {
-    font-size: 11px;
+    font-size: 9px;
   }
 }
 
@@ -767,7 +768,7 @@ body {
   }
 
   #copyright > h6 {
-    font-size: 13px;
+    font-size: 11px;
   }
   #top-12-h1 > span {
     font-size: 57px;
@@ -807,7 +808,7 @@ body {
   }
 
   #copyright > h6 {
-    font-size: 14px;
+    font-size: 12px;
   }
 
   #top-12-h1 > span {
