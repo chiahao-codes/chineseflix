@@ -688,9 +688,9 @@ body {
   }
 
   .footer-link {
-    font-family: var(--Noto) sans-serif;
+    font-family: var(--Noto), sans-serif;
     font-size: 10px;
-
+    font-weight: 600;
     text-decoration: none;
     color: black;
   }
