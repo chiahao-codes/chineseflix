@@ -166,7 +166,7 @@ body {
   #app-name {
     position: relative;
     display: block;
-    font-family: "Reenie Beanie", cursive;
+    font-family: "Bebas Neue", "Reenie Beanie", system-ui;
     font-weight: 600;
     font-size: 19px;
     font-style: normal;
