@@ -258,6 +258,7 @@ body {
     position: relative;
     width: 100%;
     max-width: 500px;
+    height: 300px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -267,8 +268,7 @@ body {
   .movie-still {
     min-width: 100%;
     max-width: 100%;
-    height: fit-content;
-    max-height: 75%;
+    height: 100%;
   }
 
   .title-parent {
