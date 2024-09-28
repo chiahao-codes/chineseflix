@@ -258,7 +258,7 @@ body {
 
     width: 100%;
     max-width: 500px;
-    height: 27%;
+    height: 29%;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -361,7 +361,6 @@ body {
 
   #about-text {
     line-height: 1.6;
-    font-weight: 550;
     font-family: var(--Noto) sans-serif;
   }
 
