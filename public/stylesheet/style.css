@@ -233,7 +233,6 @@ body {
 
   #reviews-container {
     position: relative;
-
     height: fit-content;
     width: 80%;
     display: flex;
@@ -257,7 +256,7 @@ body {
   .img-parent {
     position: relative;
     width: 100%;
-    max-width: 500px;
+    width: 500px;
     height: 300px;
     display: flex;
     justify-content: center;
