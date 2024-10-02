@@ -652,6 +652,13 @@ body {
     width: 90%;
     max-width: 800px;
   }
+
+  #blog-h1-parent {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    width: 100%;
+  }
   #blog-corner-h1 {
     position: relative;
     left: 0;
