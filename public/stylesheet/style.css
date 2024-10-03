@@ -32,7 +32,6 @@ body {
     align-items: center;
     width: 100%;
     min-height: 100%;
-
     margin: 0;
     background-color: var(--white);
     filter: brightness(110%);
@@ -49,6 +48,11 @@ body {
   }
 
   #account-main {
+    justify-content: space-between;
+    row-gap: 55px;
+  }
+
+  #subtitles-main {
     justify-content: space-between;
     row-gap: 55px;
   }
@@ -675,6 +679,60 @@ body {
     line-height: 1.6;
     font-family: var(--Noto), sans-serif;
     width: 100%;
+  }
+
+  /*Subtitle Guide Page*/
+  #subtitle-section {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-start;
+    width: 90%;
+    max-width: 500px;
+    height: max-content;
+    row-gap: 60px;
+    padding: 5%;
+  }
+
+  #subtitle-section > h1 {
+    text-decoration: underline;
+  }
+
+  #subtitle-parent {
+    position: relative;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-start;
+    row-gap: 80px;
+  }
+  .subtitle-platform {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-start;
+    width: 85%;
+    row-gap: 30px;
+  }
+
+  .list-parent {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-start;
+    row-gap: 15px;
+  }
+
+  #gear-icon {
+    width: 20px;
+  }
+
+  #speech-icon {
+    width: 20px;
   }
 
   /*Footer*/
