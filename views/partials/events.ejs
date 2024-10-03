@@ -1,6 +1,7 @@
 <script>
     const hamburgerMenuWrapper = document.getElementById("menuIconWrapper");
     const mobileDropMenu = document.getElementById("mobile-nav-links-parent");
+    const wechat = document.getElementById('wechat');
 
     function setHamburgerInLocalStorage(setting) {
         localStorage.setItem("hamburger", setting);
@@ -87,5 +88,12 @@
         localStorage.setItem("hamburger", "closed");
         windowScrollHamburgerClose();
     });
+    /**
+        wechat.addEventListener('click', function () {
+            var text = encodeURIComponent('以下是本月上映的 12 部带中文字幕的最佳电影 https://chineseflix.com/');
+            var wechatUrl = 'weixin://dl/moments?text=' + text;
+            window.location.href = wechatUrl;
+        });
+        */
 
 </script>

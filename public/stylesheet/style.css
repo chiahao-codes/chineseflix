@@ -607,18 +607,17 @@ body {
     row-gap: 9px;
   }
 
-  #social-links-parent {
+  .social-links-children {
     position: relative;
+    width: fit-content;
     display: flex;
-
     justify-content: space-between;
     align-items: center;
     column-gap: 6px;
   }
 
   .social-links-tag {
-    width: max-content;
-    height: max-content;
+    width: fit-content;
     text-decoration: none;
   }
 
@@ -627,14 +626,13 @@ body {
   }
 
   .social-links-tag > image {
-    width: 40px;
-    filter: brightness(110%), contrast(120%);
+    width: 30px;
     box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.55);
   }
 
-  #social-links-container > p {
+  #social-links-container > h5 {
     font-family: var(--Noto), sans-serif;
-    font-weight: 600;
+    width: fit-content;
   }
 
   /*Blog section*/
