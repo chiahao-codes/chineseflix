@@ -251,7 +251,7 @@ body {
     justify-content: flex-start;
     flex-direction: column;
     align-items: center;
-    row-gap: 40px;
+    row-gap: 50px;
     width: 100%;
     max-width: 500px;
     height: fit-content;
@@ -307,11 +307,10 @@ body {
   .link-parent {
     position: relative;
     display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    justify-content: space-between;
-    row-gap: 12px;
-    width: 100%;
+    align-items: center;
+    justify-content: flex-start;
+    column-gap: 8px;
+    width: fit-content;
   }
 
   .streaming-link {
@@ -707,7 +706,7 @@ body {
 
   .footer-link {
     font-family: var(--Noto), sans-serif;
-    font-size: 10px;
+    font-size: 11px;
     font-weight: 600;
     text-decoration: none;
     color: black;
@@ -717,7 +716,7 @@ body {
     text-decoration: underline;
   }
 
-  #footer-link-section {
+  .footer-link-section {
     position: relative;
     display: flex;
     justify-content: space-between;
@@ -727,7 +726,6 @@ body {
 
   #copyright {
     position: relative;
-
     display: flex;
     justify-content: center;
     flex-direction: column;
@@ -738,7 +736,7 @@ body {
   #copyright > h6 {
     font-family: var(--Noto) sans-serif;
     font-weight: 450;
-    font-size: 8.5px;
+    font-size: 10px;
   }
 }
 

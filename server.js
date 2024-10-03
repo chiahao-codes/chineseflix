@@ -31,6 +31,10 @@ app.get("/privacy", (req, res, next) => {
   res.render("privacy");
 });
 
+app.get("/subtitles", (reg, res) => {
+  res.render("subtitles");
+});
+
 app.get("/terms", (req, res, next) => {
   res.render("terms");
 });
