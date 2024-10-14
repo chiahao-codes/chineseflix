@@ -18,7 +18,7 @@ async function run() {
     // Connect the client to the server	(optional starting in v4.7)
     await client.connect();
     // Send a ping to confirm a successful connection
-    await client.db("CHINESEFLIX").command({ ping: 1 });
+    await client.db("admin").command({ ping: 1 });
     console.log(
       "Pinged your deployment. You successfully connected to MongoDB!"
     );
@@ -70,6 +70,7 @@ app.get("/terms", (req, res, next) => {
 app.get("/account", (req, res, next) => {
   res.render("account");
 });
+
 run().catch(console.dir);
 app.listen(PORT, () => {
   console.log(`app listening on Port: ${PORT}`);
