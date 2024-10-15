@@ -1,6 +1,8 @@
 import express from "express";
 import cors from "cors";
 import { MongoClient, ServerApiVersion } from "mongodb";
+import authRoutes from "./routes/auth.js";
+import pageRoutes from "./routes/pages.js";
 
 const mongoUser = encodeURIComponent("chiahao1");
 const mongoPW = encodeURIComponent("xZBiOUuUGJg2GT0I");
@@ -27,7 +29,7 @@ async function run() {
     await client.close();
   }
 }
-run().catch(console.dir);
+
 const app = express();
 
 let PORT = process.env.PORT || 8080;
@@ -38,39 +40,13 @@ app.use(express.static("public"));
 app.use(express.static("assets"));
 app.use(express.json());
 app.use(cors({ origin: "*", credentials: true }));
+run().catch(console.dir);
 
-app.get("/", (req, res, next) => {
-  res.render("home", { DOMAIN });
-});
-
-app.get("/about", (req, res, next) => {
-  res.render("about");
-});
-
-app.get("/login", (req, res, next) => {
-  res.render("login");
-});
-
-app.get("/contact", (req, res, next) => {
-  res.render("contact");
-});
-
-app.get("/privacy", (req, res, next) => {
-  res.render("privacy");
-});
-
-app.get("/subtitles", (reg, res) => {
-  res.render("subtitles");
-});
-
-app.get("/terms", (req, res, next) => {
-  res.render("terms");
-});
-
-app.get("/account", (req, res, next) => {
-  res.render("account");
-});
+app.use("/auth", authRoutes);
+app.use("/", pageRoutes);
 
 app.listen(PORT, () => {
   console.log(`app listening on Port: ${PORT}`);
 });
+
+export { client };
