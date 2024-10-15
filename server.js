@@ -27,7 +27,7 @@ async function run() {
     await client.close();
   }
 }
-
+run().catch(console.dir);
 const app = express();
 
 let PORT = process.env.PORT || 8080;
@@ -71,7 +71,6 @@ app.get("/account", (req, res, next) => {
   res.render("account");
 });
 
-run().catch(console.dir);
 app.listen(PORT, () => {
   console.log(`app listening on Port: ${PORT}`);
 });
