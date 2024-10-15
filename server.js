@@ -33,13 +33,13 @@ async function run() {
 const app = express();
 
 let PORT = process.env.PORT || 8080;
-const DOMAIN = process.env.DOMAIN;
 
-app.set("view engine", "ejs");
 app.use(express.static("public"));
 app.use(express.static("assets"));
 app.use(express.json());
 app.use(cors({ origin: "*", credentials: true }));
+app.set("view engine", "ejs");
+
 run().catch(console.dir);
 
 app.use("/auth", authRoutes);
