@@ -3,9 +3,9 @@ import bcrypt from "bcryptjs";
 import jwt from "jsonwebtoken";
 import { client } from "../server.js";
 import dotenv from "dotenv";
-import sendWelcomeEmail from "./welcomeEmail.js";
+import sendWelcomeEmail from "./emails/welcomeEmail.js";
 
-//define routes to store/access user info in mongodb;
+//define routes for signup/login;
 //generate token for user login usage
 
 const router = express.Router();
@@ -43,9 +43,14 @@ router.post("/signup", async (req, res) => {
 // Login Route
 router.post("/login", async (req, res) => {
   try {
-    const { email, password } = req.body;
+    const { email, username, password } = req.body;
     const db = client.db("current_user");
-    const user = await db.collection("user_info").findOne({ email });
+    let login = email || username;
+    const user = await db
+      .collection("user_info")
+      .findOne({ login })
+      .catch((e) => console.log(e));
+
     if (!user) {
       return res.status(400).send({ error: "Invalid email or password" });
     }
@@ -53,7 +58,9 @@ router.post("/login", async (req, res) => {
     if (!isMatch) {
       return res.status(400).send({ error: "Invalid email or password" });
     }
-    //generate token for existing user's id in mongo;
+
+    //generate token for existing user session;
+    //token is stored on frontend while user is logged in.
     const token = jwt.sign({ _id: user._id }, process.env.JWT_SECRET);
     res.send({
       token,

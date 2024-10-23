@@ -3,6 +3,7 @@ import authenticateToken from "../middleware/authenticateToken.js";
 import { client } from "../server.js";
 
 const router = express.Router();
+//Frontend purposes:
 //grab account info for Accounts page.
 
 router.get("/account", authenticateToken, async (req, res) => {

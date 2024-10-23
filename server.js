@@ -1,7 +1,8 @@
 import express from "express";
 import cors from "cors";
 import { MongoClient, ServerApiVersion } from "mongodb";
-import userInfoEmailRoutes from "./routes/userInfoEmail.js";
+import sendPasswordResetToken from "./routes/sendPasswordResetToken";
+import resetPassword from "./routes/resetPassword.js";
 import accountInfoRoutes from "./routes/accountInfo.js";
 import authRoutes from "./routes/auth.js";
 import pageRoutes from "./routes/pages.js";
@@ -43,7 +44,8 @@ connectToDatabase().catch(console.dir);
 
 app.use("/auth", authRoutes);
 app.use("/", pageRoutes);
-app.use("/protected", userInfoEmailRoutes);
+app.use("/password-token", sendPasswordResetToken);
+app.use("/reset-password" / resetPassword);
 app.use("/account", accountInfoRoutes);
 
 const PORT = process.env.PORT || 8080;
