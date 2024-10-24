@@ -1,7 +1,7 @@
 import express from "express";
 import cors from "cors";
 import { MongoClient, ServerApiVersion } from "mongodb";
-import sendPasswordResetToken from "./routes/sendPasswordResetToken";
+import sendPasswordResetToken from "./routes/sendPasswordResetToken.js";
 import resetPassword from "./routes/resetPassword.js";
 import accountInfoRoutes from "./routes/accountInfo.js";
 import authRoutes from "./routes/auth.js";
@@ -42,12 +42,13 @@ app.set("view engine", "ejs");
 
 connectToDatabase().catch(console.dir);
 
-app.use("/auth", authRoutes);
 app.use("/", pageRoutes);
+/*
+app.use("/auth", authRoutes);
 app.use("/password-token", sendPasswordResetToken);
-app.use("/reset-password" / resetPassword);
+app.use("/reset-password", resetPassword);
 app.use("/account", accountInfoRoutes);
-
+*/
 const PORT = process.env.PORT || 8080;
 app.listen(PORT, () => {
   console.log(`app listening on Port: ${PORT}`);
