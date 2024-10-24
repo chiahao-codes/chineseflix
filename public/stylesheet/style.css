@@ -442,6 +442,10 @@ body {
     box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.5);
   }
 
+  #contact_container > form > input {
+    height: max-content;
+  }
+
   #contact_container > form > input,
   #contact_container > form > textarea {
     width: 85%;
