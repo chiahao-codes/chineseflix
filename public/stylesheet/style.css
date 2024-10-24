@@ -689,9 +689,9 @@ body {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    align-items: flex-start;
+    align-items: center;
     width: 90%;
-    max-width: 500px;
+    max-width: 900px;
     height: max-content;
     row-gap: 60px;
     padding: 7%;
@@ -707,7 +707,7 @@ body {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    align-items: flex-start;
+    align-items: center;
     row-gap: 80px;
   }
   .subtitle-platform {
@@ -715,13 +715,15 @@ body {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    align-items: flex-start;
-    width: 85%;
+    align-items: center;
+    width: 100%;
     row-gap: 30px;
   }
 
   .list-parent {
     position: relative;
+    width: 100%;
+    max-width: 400px;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
