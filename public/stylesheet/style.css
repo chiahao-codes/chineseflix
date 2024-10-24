@@ -459,18 +459,20 @@ body {
 
   #contact_container > form > input::placeholder {
     color: black;
-    font-weight: 850;
+    font-weight: 900;
     font-family: var(--Noto), sans-serif;
-    font-size: small;
+    font-size: large;
     background-color: whitesmoke;
+    letter-spacing: 1.5px;
   }
 
   #contact_container > form > textarea::placeholder {
     color: black;
-    font-weight: 850;
+    font-weight: 900;
     font-family: var(--Noto), sans-serif;
-    font-size: small;
+    font-size: large;
     background-color: whitesmoke;
+    letter-spacing: 1.5px;
   }
 
   #contact_container > form > button {
@@ -872,6 +874,13 @@ body {
   }
   #contact_container > form {
     width: 450px;
+  }
+
+  #contact_container > form > input::placeholder {
+    font-size: larger;
+  }
+  #contact_container > form > textarea::placeholder {
+    font-size: larger;
   }
 }
 
