@@ -429,7 +429,6 @@ body {
   #contact_container > form {
     position: relative;
     width: 260px;
-
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
