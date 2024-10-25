@@ -3,16 +3,19 @@ import express from "express";
 
 const router = express.Router();
 
-router.post("/reset-password/:token", async (req, res) => {
+router.post("/password/:token", async (req, res) => {
   const { token } = req.params;
   const { newPassword } = req.body;
   const db = client.db("your_database_name");
 
   try {
-    const user = await db.collection("current_users").findOne({
-      resetPasswordToken: token,
-      resetPasswordExpires: { $gt: Date.now() },
-    });
+    const user = await db
+      .collection("current_users")
+      .findOne({
+        resetPasswordToken: token,
+        resetPasswordExpires: { $gt: Date.now() },
+      })
+      .catch((e) => console.log(e));
 
     if (!user) return res.status(400).send("Invalid or expired token");
 
@@ -32,6 +35,7 @@ router.post("/reset-password/:token", async (req, res) => {
 
     res.send("Password successfully reset");
   } catch (e) {
+    console.log(e);
     res.status(500).send("Server error");
   }
 });

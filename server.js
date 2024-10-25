@@ -28,7 +28,6 @@ async function connectToDatabase() {
     await client.connect();
     console.log("You successfully connected to MongoDB!");
   } catch (e) {
-    // Ensures that the client will close when you finish/error
     console.error("Failed to connect to MongoDB", e);
   }
 }
@@ -43,12 +42,18 @@ app.set("view engine", "ejs");
 connectToDatabase().catch(console.dir);
 
 app.use("/", pageRoutes);
+
 /*
+Endpoints working so far. Need to setup custom email and test sending emails (tokens, welcome)
+Don't commit these yet.
+Production environment only:
+
 app.use("/auth", authRoutes);
 app.use("/password-token", sendPasswordResetToken);
-app.use("/reset-password", resetPassword);
+app.use("/reset", resetPassword);
 app.use("/account", accountInfoRoutes);
 */
+
 const PORT = process.env.PORT || 8080;
 app.listen(PORT, () => {
   console.log(`app listening on Port: ${PORT}`);
@@ -57,14 +62,14 @@ app.listen(PORT, () => {
 // Graceful shutdown of server
 process.on("SIGINT", async () => {
   console.log("SIGINT signal received: closing MongoDB client");
-  await client.close();
+  await client.close().catch((e) => console.log(e));
   console.log("MongoDB client closed");
   process.exit(0);
 });
 
 process.on("SIGTERM", async () => {
   console.log("SIGTERM signal received: closing MongoDB client");
-  await client.close();
+  await client.close().catch((e) => console.log(e));
   console.log("MongoDB client closed");
   process.exit(0);
 });

@@ -6,7 +6,7 @@ const router = express.Router();
 //Frontend purposes:
 //grab account info for Accounts page.
 
-router.get("/account", authenticateToken, async (req, res) => {
+router.get("/info", authenticateToken, async (req, res) => {
   try {
     const db = client.db("current_users");
     const user = await db
@@ -20,6 +20,7 @@ router.get("/account", authenticateToken, async (req, res) => {
     // Send user info to the frontend
     res.send({ username: user.username, email: user.email });
   } catch (error) {
+    console.log(error);
     res.status(500).send({ error: "Failed to retrieve user data" });
   }
 });

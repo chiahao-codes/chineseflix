@@ -32,6 +32,7 @@ router.post("/token-gen", async (req, res) => {
 
     res.send("Password reset link sent");
   } catch (e) {
+    console.log(e);
     res.status(500).send("Server error");
   }
 });

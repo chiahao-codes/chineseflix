@@ -42,21 +42,21 @@ router.post("/signup", async (req, res) => {
 
 // Login Route
 router.post("/login", async (req, res) => {
+  const { email, username, password } = req.body;
+  const db = client.db("current_users");
+
   try {
-    const { email, username, password } = req.body;
-    const db = client.db("current_user");
-    let login = email || username;
     const user = await db
       .collection("user_info")
-      .findOne({ login })
+      .findOne({ email })
       .catch((e) => console.log(e));
 
     if (!user) {
-      return res.status(400).send({ error: "Invalid email or password" });
+      return res.status(400).send({ error: "Invalid email", email });
     }
     const isMatch = await bcrypt.compare(password, user.password);
     if (!isMatch) {
-      return res.status(400).send({ error: "Invalid email or password" });
+      return res.status(400).send({ error: "Invalid password" });
     }
 
     //generate token for existing user session;
