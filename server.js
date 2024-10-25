@@ -48,11 +48,12 @@ Endpoints working so far. Need to setup custom email and test sending emails (to
 Don't commit these yet.
 Production environment only:
 
+
+*/
 app.use("/auth", authRoutes);
 app.use("/password-token", sendPasswordResetToken);
 app.use("/reset", resetPassword);
 app.use("/account", accountInfoRoutes);
-*/
 
 const PORT = process.env.PORT || 8080;
 app.listen(PORT, () => {
