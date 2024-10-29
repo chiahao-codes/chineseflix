@@ -45,10 +45,6 @@ app.use("/", pageRoutes);
 
 /*
 Endpoints working so far. Need to setup custom email and test sending emails (tokens, welcome)
-Don't commit these yet.
-Production environment only:
-
-
 */
 app.use("/auth", authRoutes);
 app.use("/password-token", sendPasswordResetToken);

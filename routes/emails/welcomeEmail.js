@@ -2,18 +2,34 @@ import nodemailer from "nodemailer";
 import dotenv from "dotenv";
 
 dotenv.config();
+const myUserEmail = process.env.USER_EMAIL;
+const myPasscode = process.env.USER_PASS;
 
 const transporter = nodemailer.createTransport({
-  service: "gmail", // or your email service
+  host: "smtp.mail.me.com",
+  port: 587,
+  secure: false,
+  debug: true,
+  logger: true,
   auth: {
-    user: process.env.EMAIL_USER,
-    pass: process.env.EMAIL_PASS,
+    user: myUserEmail,
+    pass: myPasscode,
   },
 });
+/**
+ * transporter.verify((err, success) => {
+  if (err) {
+    console.log(err);
+    return;
+  }
+  console.log(success);
+  return;
+});
+ */
 
 const sendWelcomeEmail = (userEmail) => {
   const mailOptions = {
-    from: process.env.EMAIL_USER,
+    from: "support@chineseflix.com",
     to: userEmail,
     subject: "欢迎来到 CHINESEFLIX!",
     text: "感谢您的注册！我们很高兴有您加入我们.",

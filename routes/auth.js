@@ -22,7 +22,9 @@ router.post("/signup", async (req, res) => {
       .collection("user_info")
       .findOne({ $or: [{ email }, { username }] });
 
-    if (existingUser) {
+    console.log(existingUser);
+
+    if (existingUser !== null) {
       return res.status(400).send({ error: "User already exists" });
     }
 
