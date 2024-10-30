@@ -847,6 +847,7 @@ body {
 
   #update-status-container > video {
     width: 100%;
+    box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.35);
   }
   #update-heading-container {
     position: relative;
