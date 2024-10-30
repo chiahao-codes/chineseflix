@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <%- include('./partials/header.ejs') %>
+</head>
+
+<body>
+    <main id="update-main">
+        <header>
+            <%- include('./partials/heading.ejs') %>
+        </header>
+        <nav id="mobile-nav-links-parent" class="mobile_navigation_links">
+            <div id="mobile-nav-links-wrapper" class="mobile_display_flex_column">
+                <a id="mobile-home-link" class="mobile-link" href="http://localhost:8080/"
+                    target="_self"><span>家</span></a>
+                <a id="mobile-about-link" class="mobile-link" href="http://localhost:8080/about"
+                    target="_self"><span>关于我们</span></a>
+                <a id="mobile-contact-link" class="mobile-link" href="http://localhost:8080/contact"
+                    target="_self"><span>联系我们</span></a>
+                <a id="mobile-subtitle-help-link" class="mobile-link" href="https://chineseflix.com/subtitles"
+                    target="_self">
+                    <span>字幕指南</span>
+                </a>
+            </div>
+        </nav>
+        <section id="update-status-container">
+
+            <video autoplay muted playsinline loop>
+                <source src="Many_Film_Reels.mp4" type="video/mp4">
+                您的浏览器不支持视频标签。
+            </video>
+            <div id="update-heading-container">
+                <div id="update-heading-parent">
+                    <h1>新电影列表正在更新。</h1>
+                    <h2 class="check-back-text">请稍后再回来查看！</h2>
+                </div>
+
+            </div>
+        </section>
+        <footer>
+            <%- include('./partials/footer.ejs') %>
+        </footer>
+    </main>
+    <%- include('./partials/events.ejs') %>
+</body>
+
+</html>

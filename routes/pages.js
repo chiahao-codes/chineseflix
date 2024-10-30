@@ -2,7 +2,8 @@ import express from "express";
 const router = express.Router();
 
 router.get("/", (req, res, next) => {
-  res.render("home");
+  res.render("updating");
+  // res.render("home");
 });
 
 router.get("/about", (req, res, next) => {
