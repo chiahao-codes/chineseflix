@@ -2,8 +2,8 @@ import express from "express";
 const router = express.Router();
 
 router.get("/", (req, res, next) => {
-  res.render("updating");
-  // res.render("home");
+  //res.render("updating");
+  res.render("home");
 });
 
 router.get("/about", (req, res, next) => {
@@ -26,7 +26,7 @@ router.get("/privacy", (req, res, next) => {
   res.render("privacy");
 });
 
-router.get("/subtitles", (reg, res) => {
+router.get("/subtitles", (req, res) => {
   res.render("subtitles");
 });
 

@@ -344,7 +344,7 @@ body {
   }
   .review {
     width: 100%;
-
+    word-spacing: 1.5px;
     line-height: 1.6;
   }
 
