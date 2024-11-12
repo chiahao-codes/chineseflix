@@ -1,16 +1,15 @@
 import nodemailer from "nodemailer";
+import { GoogleAuth } from "google-auth-library";
 import dotenv from "dotenv";
 
 dotenv.config();
-const myUserEmail = process.env.USER_EMAIL;
-const myPasscode = process.env.USER_PASS;
+const myUserEmail = process.env.DOMAIN_EMAIL;
+const myPasscode = process.env.DOMAIN_PW;
 
 const transporter = nodemailer.createTransport({
-  host: "smtp.mail.me.com",
-  port: 587,
-  secure: false,
-  debug: true,
-  logger: true,
+  host: "smtp.gmail.com",
+  port: 465,
+  secure: true,
   auth: {
     user: myUserEmail,
     pass: myPasscode,

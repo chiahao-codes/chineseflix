@@ -1,3 +1,0 @@
-UNIX:
-username:chiahao1
-pw:Junglecorgi8
