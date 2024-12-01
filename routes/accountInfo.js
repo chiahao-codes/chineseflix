@@ -1,6 +1,6 @@
 import express from "express";
 import authenticateToken from "../middleware/authenticateToken.js";
-import { client } from "../server.js";
+import { mongoClient } from "./mongo.js";
 
 const router = express.Router();
 //Frontend purposes:
@@ -8,7 +8,7 @@ const router = express.Router();
 
 router.get("/info", authenticateToken, async (req, res) => {
   try {
-    const db = client.db("current_users");
+    const db = mongoClient.db("current_users");
     const user = await db
       .collection("user_info")
       .findOne({ _id: req.user._id });

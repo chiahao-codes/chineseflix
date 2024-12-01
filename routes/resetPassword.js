@@ -1,4 +1,4 @@
-import { client } from "../server.js";
+import { mongoClient } from "./mongo.js";
 import express from "express";
 
 const router = express.Router();
@@ -6,7 +6,7 @@ const router = express.Router();
 router.post("/password/:token", async (req, res) => {
   const { token } = req.params;
   const { newPassword } = req.body;
-  const db = client.db("your_database_name");
+  const db = mongoClient.db("your_database_name");
 
   try {
     const user = await db

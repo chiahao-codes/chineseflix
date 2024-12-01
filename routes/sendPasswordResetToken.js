@@ -1,12 +1,12 @@
 import crypto from "crypto";
 import sendPasswordEmail from "./emails/passwordResetEmail.js";
-import { client } from "../server.js";
+import { mongoClient } from "./mongo.js";
 import express from "express";
 const router = express.Router();
 
 router.post("/token-gen", async (req, res) => {
   const { email } = req.body;
-  const db = client.db("current_users");
+  const db = mongoClient.db("current_users");
 
   try {
     const user = await db.collection("user_info").findOne({ email });
