@@ -864,7 +864,10 @@ body {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    align-items: center;
+    align-items: flex-start;
+  }
+  .check-back-text {
+    letter-spacing: 2px;
   }
   /*Footer*/
   footer {
