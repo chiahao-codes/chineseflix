@@ -869,6 +869,35 @@ body {
   .check-back-text {
     letter-spacing: 2px;
   }
+
+  /*Confirmation page*/
+  #confirmation-section {
+    position: relative;
+    width: 80%;
+    max-width: 500px;
+    height: 600px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+  }
+
+  #welcome-img {
+    position: relative;
+    width: 100%;
+    box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.35);
+  }
+
+  #welcome-message-h {
+    position: relative;
+    width: 300px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    row-gap: 5px;
+  }
+
   /*Footer*/
   footer {
     position: relative;
