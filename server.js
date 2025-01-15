@@ -4,7 +4,7 @@ import sendPasswordResetToken from "./routes/sendPasswordResetToken.js";
 import { connectToDatabase, closeDatabaseConnection } from "./routes/mongo.js";
 import resetPassword from "./routes/resetPassword.js";
 import accountInfoRoutes from "./routes/accountInfo.js";
-import authRoutes from "./routes/auth.js";
+import { router } from "./routes/welcome.js";
 import pageRoutes from "./routes/pages.js";
 import dotenv from "dotenv";
 
@@ -25,7 +25,7 @@ app.use("/", pageRoutes);
 /*
 Endpoints working so far. Need to setup custom email and test sending emails (tokens, welcome)
 */
-app.use("/auth", authRoutes);
+app.use("/user", router);
 app.use("/password-token", sendPasswordResetToken);
 app.use("/reset", resetPassword);
 app.use("/account", accountInfoRoutes);

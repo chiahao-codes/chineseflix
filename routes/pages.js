@@ -10,10 +10,6 @@ router.get("/about", (req, res, next) => {
   res.render("about");
 });
 
-router.get("/confirmed", (req, res, next) => {
-  res.render("confirmed");
-});
-
 router.get("/account", (req, res, next) => {
   res.render("account");
 });

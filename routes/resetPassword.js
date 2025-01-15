@@ -6,7 +6,7 @@ const router = express.Router();
 router.post("/password/:token", async (req, res) => {
   const { token } = req.params;
   const { newPassword } = req.body;
-  const db = mongoClient.db("your_database_name");
+  const db = mongoClient.db("current_users");
 
   try {
     const user = await db
