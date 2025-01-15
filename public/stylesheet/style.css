@@ -154,7 +154,6 @@ body {
     justify-content: center;
     align-items: center;
     color: black;
-
     font-family: var(--Noto), sans-serif;
     font-weight: 700;
     font-size: 25px;
@@ -164,8 +163,13 @@ body {
 
   #mobile-home-link,
   #mobile-about-link,
+  #mobile-login-link,
   #mobile-contact-link {
     border-bottom: 1px solid black;
+  }
+
+  .mobile-link:hover {
+    text-decoration: underline;
   }
 
   #app-name {
