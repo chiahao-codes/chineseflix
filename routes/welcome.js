@@ -84,6 +84,7 @@ router.post("/login", async (req, res) => {
         email: user.email,
         // Add any other user info you want to send
       },
+      token,
     });
   } catch (error) {
     console.error(error);
