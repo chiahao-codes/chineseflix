@@ -10,16 +10,22 @@ router.get("/about", (req, res, next) => {
   res.render("about");
 });
 
-router.get("/account", (req, res, next) => {
-  res.render("account");
+router.get("/contact", (req, res, next) => {
+  res.render("contact");
 });
 
+//login/signup page
 router.get("/login", (req, res, next) => {
   res.render("login");
 });
 
-router.get("/contact", (req, res, next) => {
-  res.render("contact");
+router.get("/confirmed", (req, res, next) => {
+  res.render("confirmed");
+});
+
+//Account Profile
+router.get("/account", (req, res, next) => {
+  res.render("account");
 });
 
 router.get("/privacy", (req, res, next) => {

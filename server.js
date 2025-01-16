@@ -3,8 +3,7 @@ import cors from "cors";
 import sendPasswordResetToken from "./routes/sendPasswordResetToken.js";
 import { connectToDatabase, closeDatabaseConnection } from "./routes/mongo.js";
 import resetPassword from "./routes/resetPassword.js";
-import accountInfoRoutes from "./routes/accountInfo.js";
-import { router } from "./routes/welcome.js";
+import { router } from "./routes/user.js";
 import pageRoutes from "./routes/pages.js";
 import dotenv from "dotenv";
 
@@ -19,16 +18,15 @@ app.use(express.json());
 app.use(cors({ origin: "*", credentials: true }));
 app.set("view engine", "ejs");
 
+// Middleware to parse URL-encoded data (for form submissions)
+app.use(express.urlencoded({ extended: true }));
+
 connectToDatabase().catch(console.dir);
 
 app.use("/", pageRoutes);
-/*
-Endpoints working so far. Need to setup custom email and test sending emails (tokens, welcome)
-*/
 app.use("/user", router);
 app.use("/password-token", sendPasswordResetToken);
 app.use("/reset", resetPassword);
-app.use("/account", accountInfoRoutes);
 
 const server = app.listen(PORT, () =>
   console.log(`listening on port: ${PORT}`)

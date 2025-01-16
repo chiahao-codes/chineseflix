@@ -10,48 +10,6 @@
         <header>
             <%- include('./partials/heading.ejs') %>
         </header>
-<<<<<<< HEAD
-        <nav id="mobile-nav-links-parent" class="mobile_navigation_links">
-            <div id="mobile-nav-links-wrapper" class="mobile_display_flex_column">
-                <a id="mobile-home-link" class="mobile-link" href="http://localhost:8080/"
-                    target="_self"><span>家</span></a>
-                <a id="mobile-about-link" class="mobile-link" href="http://localhost:8080/about"
-                    target="_self"><span>关于我们</span></a>
-                <a id="mobile-contact-link" class="mobile-link" href="http://localhost:8080/contact"
-                    target="_self"><span>联系我们</span></a>
-                <a id="mobile-subtitle-help-link" class="mobile-link" href="https://chineseflix.com/subtitles"
-                    target="_self">
-                    <span>字幕指南</span>
-                </a>
-            </div>
-        </nav>
-        <section id="login-signup-section">
-            <div class="login-signup-form-container">
-                <h2>登录</h2>
-                <form id="login-form">
-
-                    <div id="login-input-container">
-                        <input type="email" id="login-email" placeholder="电子邮件" required>
-                        <input type="password" id="login-password" placeholder="密码" required>
-                    </div>
-
-                    <button type="submit">登录</button>
-                    <p>沒有帳戶？ <a href="#" id="show-signup">报名</a></p>
-                </form>
-                <form id="signup-form" style="display:none;">
-                    <h2>报名</h2>
-                    <input type="text" id="signup-username" placeholder="Username" required>
-                    <input type="email" id="signup-email" placeholder="Email" required>
-                    <input type="password" id="signup-password" placeholder="Password" required>
-                    <button type="submit">Sign Up</button>
-                    <p>Already have an account? <a href="#" id="show-login">Login</a></p>
-                </form>
-            </div>
-        </section>
-        <footer>
-            <%- include('./partials/footer.ejs') %>
-        </footer>
-=======
         <%- include('./partials/mobile-nav.ejs') %>
             <section id="login-signup-section">
                 <div id="login-img-parent">
@@ -104,9 +62,7 @@
                 <%- include('./partials/footer.ejs') %>
             </footer>
             <%- include('./partials/events.ejs') %>
->>>>>>> 560bc68 (commit dev)
     </main>
-    <%- include('./partials/events.ejs') %>
 </body>
 
 </html>
