@@ -85,6 +85,17 @@ router.post("/login", async (req, res) => {
   const { email, password } = req.body;
   //validate email and password
 
+  // Validate required fields
+  if (!email || !password) {
+    return res.render("login", { error: "所有字段都是必填的。" });
+  }
+
+  // Validate email format
+  const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+  if (!emailRegex.test(email)) {
+    return res.render("login", { error: "电子邮件格式无效。" });
+  }
+
   const db = mongoClient.db("current_users");
 
   try {
