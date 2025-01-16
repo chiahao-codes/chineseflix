@@ -10,30 +10,17 @@
         <header>
             <%- include('./partials/heading.ejs') %>
         </header>
-        <nav id="mobile-nav-links-parent" class="mobile_navigation_links">
-            <div id="mobile-nav-links-wrapper" class="mobile_display_flex_column">
-                <a id="mobile-home-link" class="mobile-link" href="http://localhost:8080/"
-                    target="_self"><span>家</span></a>
-                <a id="mobile-about-link" class="mobile-link" href="http://localhost:8080/about"
-                    target="_self"><span>关于我们</span></a>
-                <a id="mobile-contact-link" class="mobile-link" href="http://localhost:8080/contact"
-                    target="_self"><span>联系我们</span></a>
-                <a id="mobile-subtitle-help-link" class="mobile-link" href="https://chineseflix.com/subtitles"
-                    target="_self">
-                    <span>字幕指南</span>
-                </a>
-            </div>
-        </nav>
-        <section id="confirmation-section">
-            <img id="welcome-img" src="zeng2.jpg">
-            <div id="welcome-message-h">
-                <h2>成功！</h2>
-                <h1>欢迎来到社区，<%= name %>!</h1>
-            </div>
-        </section>
-        <footer>
-            <%- include('./partials/footer.ejs') %>
-        </footer>
+        <%- include('./partials/mobile-nav.ejs') %>
+            <section id="confirmation-section">
+                <img id="welcome-img" src="zeng2.jpg">
+                <div id="welcome-message-h">
+                    <h2>成功！</h2>
+                    <h1>欢迎来到社区，<%= name %>!</h1>
+                </div>
+            </section>
+            <footer>
+                <%- include('./partials/footer.ejs') %>
+            </footer>
     </main>
     <%- include('./partials/events.ejs') %>
 </body>

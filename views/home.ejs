@@ -10,639 +10,628 @@
         <header id="header">
             <%- include('./partials/heading.ejs') %>
         </header>
-        <nav id="mobile-nav-links-parent" class="mobile_navigation_links">
-            <div id="mobile-nav-links-wrapper" class="mobile_display_flex_column">
-                <a id="mobile-home-link" class="mobile-link" href="https://chineseflix.com/"
-                    target="_self"><span>家</span></a>
-                <a id="mobile-about-link" class="mobile-link" href="https://chineseflix.com/about"
-                    target="_self"><span>关于我们</span></a>
-                <a id="mobile-login-link" class="mobile-link" href="http://localhost:8080/login"
-                    target="_self"><span>登录</span></a>
-                <a id="mobile-account-link" class="mobile-link" href="https://chineseflix.com/account" target="_self"
-                    style="display: none;"><span>帐户</span></a>
-                <a id="mobile-contact-link" class="mobile-link" href="https://chineseflix.com/contact"
-                    target="_self"><span>联系我们</span></a>
-                <a id="mobile-subtitle-help-link" class="mobile-link" href="https://chineseflix.com/subtitles"
-                    target="_self">
-                    <span>字幕指南</span>
-                </a>
+        <%- include('./partials/mobile-nav.ejs') %>
+            <div id="top-12-heading-parent">
+                <h1 id="top-12-h1">
+                    <span>本月</span>
+                    <span>必看的</span>
+                    <span>12部电影!</span>
+                    <span>（全部有中文字幕）</span>
+                </h1>
             </div>
-        </nav>
-        <div id="top-12-heading-parent">
-            <h1 id="top-12-h1">
-                <span>本月</span>
-                <span>必看的</span>
-                <span>12部电影!</span>
-                <span>（全部有中文字幕）</span>
-            </h1>
-        </div>
-        <section id="reviews-container">
-            <article id="movie-1" class="movie-review-parent">
-                <div class="img-parent">
-                    <img class="movie-still" src="/match-point.jpg">
-                </div>
-                <div class="title-parent">
-                    <h3 class="movie-title">Match Point</h3>
-                    <h5 class="year">(2005)</h5>
-                    <h6 class="studio">DreamWorks</h6>
-                </div>
-                <div class="cast-crew-container">
-                    <div class="cast-crew-info">
-                        <h5 class="starring">主演: Jonathan Rhys Meyers, Scarlett Johansson, Emily Mortimer</h5>
-                        <h5 class="director">导演: Woody Allen</h5>
-                        <h5 class="writer">作家: Woody Allen</h5>
+            <section id="reviews-container">
+                <article id="movie-1" class="movie-review-parent">
+                    <div class="img-parent">
+                        <img class="movie-still" src="/match-point.jpg">
                     </div>
-                    <div class="rating-runtime">
-                        <h5 class="runtime">分钟: 124</h5>
-                        <h5 class="rated">等级: R</h5>
+                    <div class="title-parent">
+                        <h3 class="movie-title">Match Point</h3>
+                        <h5 class="year">(2005)</h5>
+                        <h6 class="studio">DreamWorks</h6>
                     </div>
-                </div>
-                <div class="link-parent">
-                    <a class="streaming-link" href="https://youtu.be/jXHMGdHOF94?si=9DNpFYyHGVi2ayXO"
-                        target="_blank">可在:
-                        YouTube</a>
-                    <code>|</code>
-                    <a class="streaming-link" href="https://chineseflix.com/subtitles" target="_self">字幕指南</a>
-                </div>
-                <div class="review-parent">
-                    <h3 class="article-title">命运的游戏</h3>
-                    <h4 class="review">
-                        伍迪·艾伦执导的《赛点》是一部引人入胜的心理惊悚片，探讨了运气、野心和道德的主题。影片讲述了前网球选手克里斯·威尔顿（乔纳森·莱斯·梅耶斯饰）通过与一个富有家庭的婚姻上升到社会顶层的故事。当他与未婚妻的未来小姨子诺拉·赖斯（斯嘉丽·约翰逊饰）发生婚外情时，克里斯的生活走向了危险的转折点。影片深入探讨了他的双重生活的冷酷后果。
-                        <br><br>
-                        灵感源自俄国小说家陀思妥耶夫斯基的作品，特别是《罪与罚》。艾伦在影片中细致入微地探讨了人性的黑暗面。影片对罪恶、内疚和命运的深入探讨，使《赛点》成为艾伦最具道德复杂性的电影之一。
-                        <br><br>
-                        伍迪·艾伦在选择乔纳森·莱斯·梅耶斯和斯嘉丽·约翰逊方面起到了关键作用。艾伦寻找能够为角色注入深度和细腻的演员。莱斯·梅耶斯因其能够表现克里斯的魅力和内心挣扎而被选中，而约翰逊则因她对诺拉诱人而脆弱的诠释而获选。艾伦对他们表演的信任得到了回报，两位演员都成功地塑造了令人难忘的角色。
-                        <br><br>
-                        《赛点》在伦敦取景拍摄，这是艾伦少有的脱离纽约背景的电影之一。城市优雅而冷峻的氛围完美地契合了影片的主题。对于演员来说，在皇家歌剧院和泰晤士河等标志性地点拍摄增加了影片的真实性和宏伟感。伦敦的实地拍摄经验丰富了影片的美学，并为故事的戏剧张力提供了适宜的背景。
-                        <br><br>
-                        《赛点》获得了评论界的高度评价，因其剧本、导演和表演而广受赞誉。影片对道德模糊性的探讨和希区柯克式的悬念元素尤为受到称赞。该片在票房上也取得了成功，全球票房超过8500万美元，这是艾伦电影的一个重要成就。
-                        <br><br>
-                        这部电影获得了众多奖项，包括奥斯卡最佳原创剧本提名。它还获得了四项金球奖提名，包括最佳影片和斯嘉丽·约翰逊的最佳女演员提名。此外，《赛点》在戛纳电影节上受到了表彰，并赢得了多个影评人组织的奖项。
-
-                        总的来说，《赛点》展示了伍迪·艾伦作为电影制作者的多面性。其扣人心弦的叙事、一流的表演以及对命运和道德的细致探讨，使其成为不容错过的佳作。影片的成功和评论界的好评进一步巩固了其在艾伦辉煌职业生涯中的重要地位。
-                    </h4>
-                </div>
-            </article>
-            <article id="movie-2" class="movie-review-parent">
-                <div class="img-parent">
-                    <img class="movie-still" src="/darkest-hour.jpg">
-                </div>
-                <div class="title-parent">
-                    <h3 class="movie-title">Darkest Hour</h3>
-                    <h5 class="year">(2017)</h5>
-                    <h6 class="studio">Focus Features</h6>
-                </div>
-                <div class="cast-crew-container">
-                    <div class="cast-crew-info">
-                        <h5 class="starring">主演: Gary Oldman, Lily James, Ben Mendelsohn, Kristen Scott Thomas</h5>
-                        <h5 class="director">导演: Joe Wright</h5>
-                        <h5 class="writer">作家: Anthony McCarten</h5>
+                    <div class="cast-crew-container">
+                        <div class="cast-crew-info">
+                            <h5 class="starring">主演: Jonathan Rhys Meyers, Scarlett Johansson, Emily Mortimer</h5>
+                            <h5 class="director">导演: Woody Allen</h5>
+                            <h5 class="writer">作家: Woody Allen</h5>
+                        </div>
+                        <div class="rating-runtime">
+                            <h5 class="runtime">分钟: 124</h5>
+                            <h5 class="rated">等级: R</h5>
+                        </div>
                     </div>
-                    <div class="rating-runtime">
-                        <h5 class="runtime">分钟: 125</h5>
-                        <h5 class="rated">等级: PG-13</h5>
+                    <div class="link-parent">
+                        <a class="streaming-link" href="https://youtu.be/jXHMGdHOF94?si=9DNpFYyHGVi2ayXO"
+                            target="_blank">可在:
+                            YouTube</a>
+                        <code>|</code>
+                        <a class="streaming-link" href="https://chineseflix.com/subtitles" target="_self">字幕指南</a>
                     </div>
-                </div>
-                <div class="link-parent"><a class="streaming-link"
-                        href="https://youtu.be/GP0jou_MTQU?si=k4CeViWDRPADa_fv" target="_blank">可在:
-                        YouTube</a><code>|</code>
-                    <a class="streaming-link" href="https://chineseflix.com/subtitles" target="_self">字幕指南</a>
-                </div>
-                <div class="review-parent">
-                    <h3 class="article-title">危急时刻的卓越领导力再现</h3>
-                    <h4 class="review">
-                        《至暗时刻》生动地再现了温斯顿·丘吉尔在二战期间担任首相初期的动荡时刻。面对纳粹入侵的威胁和内部的政治压力，丘吉尔必须决定是与希特勒谈判和平条约，还是为国家的自由而战。影片精彩地捕捉了丘吉尔的内心斗争以及他决策的巨大风险，提供了一个关于坚韧和领导力的扣人心弦的叙述。
-                        <br><br>
-                        由乔·赖特执导，影片灵感来自丘吉尔在1940年5月上任的历史事件。基于丘吉尔的真实经历，《至暗时刻》生动地展示了英国历史上最关键的时刻之一。由安东尼·麦卡滕编剧的剧本深入探讨了这位传奇人物背后的故事，提供了对他个人和政治斗争的亲密一瞥。
-                        <br><br>
-                        加里·奥德曼对温斯顿·丘吉尔的转变堪称惊人。为了实现这一目标，奥德曼每天要花费数小时的化妆时间，穿戴上完美再现丘吉尔体型的假体套装。除了身体上的转变，奥德曼还沉浸在丘吉尔的演讲、著作和举止中，呈现出一个既真实又强大的表演。他对捕捉丘吉尔精髓的奉献精神在每一个场景中都显而易见，使他的表演深刻动人且可信。
-                        <br>
-                        克里斯汀·斯科特·托马斯饰演的克莱门汀·丘吉尔和本·门德尔松饰演的乔治六世也表现出色，为他们的角色注入了深度和细腻。他们与奥德曼的银幕化学反应丰富了影片的情感景观，突显了这一历史时期的个人动态。
-                        <br><br>
-                        《至暗时刻》因其导演、剧本，特别是加里·奥德曼的出色表演而广受赞誉。奥德曼凭借饰演丘吉尔获得了奥斯卡最佳男主角奖，确立了他作为一代最优秀演员之一的地位。影片还因其化妆和发型设计获得了奥斯卡最佳化妆与发型奖，这证明了在将奥德曼转变为这位标志性英国领导人的过程中所做的惊人工作。此外，《至暗时刻》还获得了最佳影片、最佳摄影、最佳艺术指导和最佳服装设计的提名，进一步突显了其在评论界的成功。
-                        <br><br>
-                        《至暗时刻》是一部历史剧的杰作，以强度和人性化地再现了历史上的关键时刻。加里·奥德曼的表演是影片的核心，由出色的演员阵容和精湛的制作工艺支持。对于任何对历史、领导力和人类决心复杂性感兴趣的人来说，这都是必看的影片。
-                    </h4>
-                </div>
-            </article>
-            <article id="movie-3" class="movie-review-parent">
-                <div class="img-parent">
-                    <img class="movie-still" src="/crimson-tide.jpg">
-                </div>
-                <div class="title-parent">
-                    <h3 class="movie-title">Crimson Tide</h3>
-                    <h5 class="year">(1995)</h5>
-                    <h6 class="studio">Hollywood Pictures</h6>
-                </div>
-                <div class="cast-crew-container">
-                    <div class="cast-crew-info">
-                        <h5 class="starring">主演: Denzel Washington, Gene Hackman</h5>
-                        <h5 class="director">导演: Tony Scott</h5>
-                        <h5 class="writer">作家: Michael Schiffer, Richard P. Henrick</h5>
+                    <div class="review-parent">
+                        <h3 class="article-title">命运的游戏</h3>
+                        <h4 class="review">
+                            伍迪·艾伦执导的《赛点》是一部引人入胜的心理惊悚片，探讨了运气、野心和道德的主题。影片讲述了前网球选手克里斯·威尔顿（乔纳森·莱斯·梅耶斯饰）通过与一个富有家庭的婚姻上升到社会顶层的故事。当他与未婚妻的未来小姨子诺拉·赖斯（斯嘉丽·约翰逊饰）发生婚外情时，克里斯的生活走向了危险的转折点。影片深入探讨了他的双重生活的冷酷后果。
+                            <br><br>
+                            灵感源自俄国小说家陀思妥耶夫斯基的作品，特别是《罪与罚》。艾伦在影片中细致入微地探讨了人性的黑暗面。影片对罪恶、内疚和命运的深入探讨，使《赛点》成为艾伦最具道德复杂性的电影之一。
+                            <br><br>
+                            伍迪·艾伦在选择乔纳森·莱斯·梅耶斯和斯嘉丽·约翰逊方面起到了关键作用。艾伦寻找能够为角色注入深度和细腻的演员。莱斯·梅耶斯因其能够表现克里斯的魅力和内心挣扎而被选中，而约翰逊则因她对诺拉诱人而脆弱的诠释而获选。艾伦对他们表演的信任得到了回报，两位演员都成功地塑造了令人难忘的角色。
+                            <br><br>
+                            《赛点》在伦敦取景拍摄，这是艾伦少有的脱离纽约背景的电影之一。城市优雅而冷峻的氛围完美地契合了影片的主题。对于演员来说，在皇家歌剧院和泰晤士河等标志性地点拍摄增加了影片的真实性和宏伟感。伦敦的实地拍摄经验丰富了影片的美学，并为故事的戏剧张力提供了适宜的背景。
+                            <br><br>
+                            《赛点》获得了评论界的高度评价，因其剧本、导演和表演而广受赞誉。影片对道德模糊性的探讨和希区柯克式的悬念元素尤为受到称赞。该片在票房上也取得了成功，全球票房超过8500万美元，这是艾伦电影的一个重要成就。
+                            <br><br>
+                            这部电影获得了众多奖项，包括奥斯卡最佳原创剧本提名。它还获得了四项金球奖提名，包括最佳影片和斯嘉丽·约翰逊的最佳女演员提名。此外，《赛点》在戛纳电影节上受到了表彰，并赢得了多个影评人组织的奖项。
+
+                            总的来说，《赛点》展示了伍迪·艾伦作为电影制作者的多面性。其扣人心弦的叙事、一流的表演以及对命运和道德的细致探讨，使其成为不容错过的佳作。影片的成功和评论界的好评进一步巩固了其在艾伦辉煌职业生涯中的重要地位。
+                        </h4>
                     </div>
-                    <div class="rating-runtime">
-                        <h5 class="runtime">分钟: 116</h5>
-                        <h5 class="rated">等级: R</h5>
+                </article>
+                <article id="movie-2" class="movie-review-parent">
+                    <div class="img-parent">
+                        <img class="movie-still" src="/darkest-hour.jpg">
                     </div>
-                </div>
-                <div class="link-parent"><a class="streaming-link"
-                        href="https://youtu.be/CDGOJn4vdwM?si=wz1jB6gZOnDpg7_F" target="_blank">可在: YouTube</a>
-                    <code>|</code>
-                    <a class="streaming-link" href="https://chineseflix.com/subtitles" target="_self">字幕指南</a>
-                </div>
-                <div class="review-parent">
-                    <h3 class="article-title">高海上的紧张局势</h3>
-                    <h4 class="review">
-                        《红潮风暴》是一部令人紧张的惊悚片，故事发生在国际危机时期的美国核潜艇上。影片讲述了副指挥官罗恩·亨特（丹泽尔·华盛顿饰）和舰长弗兰克·拉姆西（吉恩·哈克曼饰）之间因命令模糊而发生的紧张冲突。当权力斗争升级，核战争的威胁迫在眉睫时，影片创造了一个高风险的环境，使观众紧张不已。
-
-                        <br><br>
-
-                        由托尼·斯科特执导的《红潮风暴》从冷战期间的现实紧张局势和军队指挥链复杂性中汲取灵感。由迈克尔·席弗编写的剧本，加上昆汀·塔伦蒂诺的未署名贡献，深入探讨了身处重大权力和责任位置的人所面临的道德和伦理困境。影片的叙事探索了职责、领导力以及在前所未有的情况下正义与错误之间的细微界限。
-
-                        <br><br>
-
-                        丹泽尔·华盛顿和吉恩·哈克曼都奉献了出色的表演，这支撑了影片紧张的氛围。华盛顿以其细致入微的准备而闻名，他研究了海军程序和潜艇值勤的心理压力，使他的亨特中校角色更具真实性。哈克曼则通过其丰富的表演经验，塑造了一个由信念驱动、坚韧不拔的舰长拉姆西。他们在银幕上的动态电力十足，展示了意志之战，既引人入胜又发人深省。
-
-                        <br><br>
-
-                        《红潮风暴》因其紧凑的导演、尖锐的剧本和突出的表演而获得了好评。虽然影片未能在主要奖项中获得大胜，但因其技术成就而获得了声音和剪辑方面的提名。故事中显而易见的紧张感和道德复杂性使其在类型片中脱颖而出，而华盛顿和哈克曼的表演也被称为他们职业生涯中的一些最佳表现。
-
-                        <br><br>
-
-                        《红潮风暴》是一部执行得非常出色的惊悚片，结合了高风险戏剧和深刻的伦理问题。丹泽尔·华盛顿和吉恩·哈克曼的精彩表演，加上托尼·斯科特的导演，创造了一次令人难忘的电影体验。对于军事题材剧情片爱好者以及对领导压力下心理复杂性感兴趣的观众来说，这是一部必看的影片。
-                    </h4>
-                </div>
-            </article>
-            <article id="movie-4" class="movie-review-parent">
-                <div class="img-parent">
-                    <img class="movie-still" src="/the-holiday.jpg">
-                </div>
-                <div class="title-parent">
-                    <h3 class="movie-title">The Holiday</h3>
-                    <h5 class="year">(2006)</h5>
-                    <h6 class="studio">Columbia Pictures</h6>
-                </div>
-                <div class="cast-crew-container">
-                    <div class="cast-crew-info">
-                        <h5 class="starring">主演: Kate Winslet, Cameron Diaz, Jude Law, Jack Black</h5>
-                        <h5 class="director">导演: Nancy Meyers</h5>
-                        <h5 class="writer">作家: Nancy Meyers</h5>
+                    <div class="title-parent">
+                        <h3 class="movie-title">Darkest Hour</h3>
+                        <h5 class="year">(2017)</h5>
+                        <h6 class="studio">Focus Features</h6>
                     </div>
-                    <div class="rating-runtime">
-                        <h5 class="runtime">分钟: 136</h5>
-                        <h5 class="rated">等级: PG-13</h5>
+                    <div class="cast-crew-container">
+                        <div class="cast-crew-info">
+                            <h5 class="starring">主演: Gary Oldman, Lily James, Ben Mendelsohn, Kristen Scott Thomas</h5>
+                            <h5 class="director">导演: Joe Wright</h5>
+                            <h5 class="writer">作家: Anthony McCarten</h5>
+                        </div>
+                        <div class="rating-runtime">
+                            <h5 class="runtime">分钟: 125</h5>
+                            <h5 class="rated">等级: PG-13</h5>
+                        </div>
                     </div>
-                </div>
-                <div class="link-parent"><a class="streaming-link"
-                        href="https://www.amazon.com/gp/video/detail/B009NW9QE2/ref=atv_dp_share_cu_r"
-                        target="_blank">可在: Amazon</a> <code>|</code>
-                    <a class="streaming-link" href="https://chineseflix.com/subtitles" target="_self">字幕指南</a>
-                </div>
-                <div class="review-parent">
-                    <h3 class="article-title">一部令人愉快的浪漫喜剧逃避之旅</h3>
-                    <h4 class="review">
-                        《恋爱假期》是一部迷人的浪漫喜剧，讲述了两个在关系问题中挣扎的女性——艾瑞斯（凯特·温丝莱特饰）和阿曼达（卡梅隆·迪亚兹饰）。为了逃避烦恼，她们在假期期间交换了住所——阿曼达前往一个英国乡村小屋，而艾瑞斯则来到洛杉矶的豪宅。通过这次交换，两个女性展开了自我发现和新恋情的旅程，经历了温馨和幽默的邂逅。
-
-                        <br><br>
-
-                        由南希·迈耶斯执导，《恋爱假期》灵感来自人们对新开始的普遍渴望以及偶遇的奇妙。迈耶斯以制作令人愉悦的影片而著称，她编织了一个引人共鸣的故事，讲述了任何曾想脱离常规、寻找新视角的人。剧本也是由迈耶斯编写的，将来自不同世界的两个女性的故事交织在一起，揭示了有时走出舒适区是找到真正需要的最佳方式。
-
-                        <br><br>
-
-                        凯特·温丝莱特和卡梅隆·迪亚兹在各自的角色中表现出色，赋予角色温暖和亲和力。温丝莱特饰演的艾瑞斯，表现出温柔和真诚，捕捉到了一个学会重拾自我价值的女性的本质。另一方面，迪亚兹则以活泼的表演塑造了阿曼达，在幽默与脆弱时刻之间取得了平衡。与裘德·洛和杰克·布莱克的合作化学反应，为影片增添了深度和魅力。裘德·洛饰演的格雷厄姆（艾瑞斯的兄弟）散发出自信魅力，而布莱克饰演的迈尔斯（阿曼达的新朋友）则展示了他作为演员的多才多艺。
-
-                        <br><br>
-
-                        《恋爱假期》受到观众的热烈欢迎，并因其温馨的故事情节和引人入胜的表演而受到赞誉。尽管没有获得主要奖项，但它仍然是一部备受喜爱的假期影片，以其愉悦感和演员之间的令人愉快的互动而闻名。影片的如画场景和令人难忘的对白使其成为浪漫喜剧类型中的经典之作。
-
-                        <br><br>
-
-                        《恋爱假期》是一部令人愉快的逃避之旅，提供了浪漫、幽默和节日喜庆的完美结合。南希·迈耶斯的导演，加上凯特·温丝莱特和卡梅隆·迪亚兹的出色表演，创造了一部既有娱乐性又情感共鸣的影片。无论你是在寻找一个舒适的电影之夜，还是只是需要一剂温馨的乐趣，《恋爱假期》都一定会满足你的期待。
-                    </h4>
-                </div>
-            </article>
-            <article id="movie-5" class="movie-review-parent">
-                <div class="img-parent">
-                    <img class="movie-still" src="/prometheus.jpg">
-                </div>
-                <div class="title-parent">
-                    <h3 class="movie-title">Prometheus</h3>
-                    <h5 class="year">(2012)</h5>
-                    <h6 class="studio">Twentieth Century Fox</h6>
-                </div>
-                <div class="cast-crew-container">
-                    <div class="cast-crew-info">
-                        <h5 class="starring">主演: Noomi Rapace, Charlize Theron, Michael Fassbender</h5>
-                        <h5 class="director">导演: Ridley Scott</h5>
-                        <h5 class="writer">作家: Jon Spaihts, Damon Lindelof, Dan O'Bannon</h5>
+                    <div class="link-parent"><a class="streaming-link"
+                            href="https://youtu.be/GP0jou_MTQU?si=k4CeViWDRPADa_fv" target="_blank">可在:
+                            YouTube</a><code>|</code>
+                        <a class="streaming-link" href="https://chineseflix.com/subtitles" target="_self">字幕指南</a>
                     </div>
-                    <div class="rating-runtime">
-                        <h5 class="runtime">分钟: 124</h5>
-                        <h5 class="rated">等级: R</h5>
+                    <div class="review-parent">
+                        <h3 class="article-title">危急时刻的卓越领导力再现</h3>
+                        <h4 class="review">
+                            《至暗时刻》生动地再现了温斯顿·丘吉尔在二战期间担任首相初期的动荡时刻。面对纳粹入侵的威胁和内部的政治压力，丘吉尔必须决定是与希特勒谈判和平条约，还是为国家的自由而战。影片精彩地捕捉了丘吉尔的内心斗争以及他决策的巨大风险，提供了一个关于坚韧和领导力的扣人心弦的叙述。
+                            <br><br>
+                            由乔·赖特执导，影片灵感来自丘吉尔在1940年5月上任的历史事件。基于丘吉尔的真实经历，《至暗时刻》生动地展示了英国历史上最关键的时刻之一。由安东尼·麦卡滕编剧的剧本深入探讨了这位传奇人物背后的故事，提供了对他个人和政治斗争的亲密一瞥。
+                            <br><br>
+                            加里·奥德曼对温斯顿·丘吉尔的转变堪称惊人。为了实现这一目标，奥德曼每天要花费数小时的化妆时间，穿戴上完美再现丘吉尔体型的假体套装。除了身体上的转变，奥德曼还沉浸在丘吉尔的演讲、著作和举止中，呈现出一个既真实又强大的表演。他对捕捉丘吉尔精髓的奉献精神在每一个场景中都显而易见，使他的表演深刻动人且可信。
+                            <br>
+                            克里斯汀·斯科特·托马斯饰演的克莱门汀·丘吉尔和本·门德尔松饰演的乔治六世也表现出色，为他们的角色注入了深度和细腻。他们与奥德曼的银幕化学反应丰富了影片的情感景观，突显了这一历史时期的个人动态。
+                            <br><br>
+                            《至暗时刻》因其导演、剧本，特别是加里·奥德曼的出色表演而广受赞誉。奥德曼凭借饰演丘吉尔获得了奥斯卡最佳男主角奖，确立了他作为一代最优秀演员之一的地位。影片还因其化妆和发型设计获得了奥斯卡最佳化妆与发型奖，这证明了在将奥德曼转变为这位标志性英国领导人的过程中所做的惊人工作。此外，《至暗时刻》还获得了最佳影片、最佳摄影、最佳艺术指导和最佳服装设计的提名，进一步突显了其在评论界的成功。
+                            <br><br>
+                            《至暗时刻》是一部历史剧的杰作，以强度和人性化地再现了历史上的关键时刻。加里·奥德曼的表演是影片的核心，由出色的演员阵容和精湛的制作工艺支持。对于任何对历史、领导力和人类决心复杂性感兴趣的人来说，这都是必看的影片。
+                        </h4>
                     </div>
-                </div>
-                <div class="link-parent"><a class="streaming-link"
-                        href="https://youtu.be/nB-I8i6y6II?si=OPCI8npRuG_pH6eY" target="_blank">可在: YouTube</a>
-                    <code>|</code>
-                    <a class="streaming-link" href="https://chineseflix.com/subtitles" target="_self">字幕指南</a>
-                </div>
-                <div class="review-parent">
-                    <h3 class="article-title">震撼人心的科幻惊悚片</h3>
-                    <h4 class="review">
-                        《普罗米修斯》是一部由雷德利·斯科特执导的科幻惊悚片，讲述了一群探索者在未来前往外星球寻找人类起源的故事。影片主角伊丽莎白·肖博士（努米·拉帕斯饰）和戴维（迈克尔·法斯宾德饰）在一艘名为普罗米修斯的飞船上展开冒险，面对未知的威胁和生存的挑战。
-
-                        <br><br>
-
-                        雷德利·斯科特从《异形》系列中汲取灵感，创造了一部探索生命起源和人类生存意义的影片。乔恩·斯派茨和戴蒙·林德洛夫的剧本融合了哲学和恐怖元素，使《普罗米修斯》不仅仅是一部科幻片，更是一场关于探索和信仰的旅程。影片的视觉效果和设定设计也堪称一绝，营造出一个既美丽又充满威胁的外星世界。
-
-                        <br><br>
-
-                        演员们为角色投入了极大的准备工作，努米·拉帕斯在影片中展现了强大的毅力和生存本能，而迈克尔·法斯宾德则以其冰冷的演技完美诠释了人工智能机器人戴维。查理兹·塞隆和伊德里斯·艾尔巴等配角也在影片中有出色表现，为故事增添了复杂性和深度。
-
-                        <br><br>
-
-                        《普罗米修斯》因其视觉效果和独特的故事情节而受到广泛赞誉，尤其是在特效和摄影方面取得了巨大的成功。尽管在叙事上存在一些争议，但影片依然被视为一部具有重要意义的科幻作品，对未来的电影制作有着深远的影响。
-
-                        <br><br>
-
-                        《普罗米修斯》是一部令人震撼的电影，结合了哲学思考和惊悚元素。雷德利·斯科特的导演技巧，加上演员们的出色表演和精美的视觉效果，使这部影片成为科幻电影中的经典之作。对于喜欢探索生命起源和人类命运主题的观众来说，《普罗米修斯》无疑是一部不可错过的电影体验。
-                    </h4>
-                </div>
-            </article>
-            <article id="movie-6" class="movie-review-parent">
-                <div class="img-parent">
-                    <img class="movie-still" src="/die-hard-with.jpg">
-                </div>
-                <div class="title-parent">
-                    <h3 class="movie-title">Die Hard With A Vengeance</h3>
-                    <h5 class="year">(1995)</h5>
-                    <h6 class="studio">Twentieth Century Fox</h6>
-                </div>
-                <div class="cast-crew-container">
-                    <div class="cast-crew-info">
-                        <h5 class="starring">主演: Bruce Willis, Samuel L. Jackson, Jeremy Irons</h5>
-                        <h5 class="director">导演: John McTiernan</h5>
-                        <h5 class="writer">作家: Jonathan Hensleigh, Roderick Thorp</h5>
+                </article>
+                <article id="movie-3" class="movie-review-parent">
+                    <div class="img-parent">
+                        <img class="movie-still" src="/crimson-tide.jpg">
                     </div>
-                    <div class="rating-runtime">
-                        <h5 class="runtime">分钟: 128</h5>
-                        <h5 class="rated">等级: R</h5>
+                    <div class="title-parent">
+                        <h3 class="movie-title">Crimson Tide</h3>
+                        <h5 class="year">(1995)</h5>
+                        <h6 class="studio">Hollywood Pictures</h6>
                     </div>
-                </div>
-                <div class="link-parent"><a class="streaming-link"
-                        href="https://youtu.be/ccWonHdjHGs?si=lXiGOSkfgRvrPrH0" target="_blank">可在:
-                        YouTube</a><code>|</code>
-                    <a class="streaming-link" href="https://chineseflix.com/subtitles" target="_self">字幕指南</a>
-                </div>
-                <div class="review-parent">
-                    <h3 class="article-title">无休止的动作冒险</h3>
-                    <h4 class="review">
-                        《虎胆龙威3》是经典《虎胆龙威》系列的第三部爆炸性影片。这次，电影带我们穿越纽约市的大街小巷，展开一场高强度的冒险，侦探约翰·麦克莱恩（布鲁斯·威利斯饰）与不太可能成为伙伴的宙斯·卡弗（塞缪尔·杰克逊饰）联手，阻止恐怖主义主谋西蒙（杰瑞米·艾恩斯饰）实施一系列致命袭击。
-
-                        <br><br>
-
-                        由执导了原版《虎胆龙威》的约翰·麦克蒂尔南执导，这部电影是一部动作惊悚片的经典之作。由乔纳森·汉斯雷编写的剧本，以其巧妙的情节转折、紧张的动作场面和犀利的对话让观众始终坐在座椅的边缘。威利斯和杰克逊之间的化学反应为系列增添了新鲜的动态，通过他们不太可能的合作伙伴关系带来了幽默和紧张感，因为他们争分夺秒地挫败西蒙的计划。
-
-                        <br><br>
-
-                        布鲁斯·威利斯再次饰演坚韧且足智多谋的约翰·麦克莱恩，表现出既有魅力又粗犷的表演。塞缪尔·杰克逊饰演的宙斯·卡弗，为影片注入了活力和机智，成为麦克莱恩的完美对手。杰瑞米·艾恩斯饰演的反派西蒙，冷酷而复杂，使他成为该系列中最令人难忘的对手之一。
-
-                        <br><br>
-
-                        《虎胆龙威3》因其动作场面的紧张刺激和引人入胜的故事情节而受到好评。影片因其快节奏的导演、出色的表演以及主演之间明显的化学反应而备受赞誉。虽然它可能没有赢得主要奖项，但它仍然是动作类型中的经典之作，也是《虎胆龙威》系列中的突出作品。
-
-                        <br><br>
-
-                        《虎胆龙威3》是一场不间断的刺激冒险，结合了紧张的动作、犀利的对话和出色的表演。无论你是该系列的长期粉丝还是新观众，这部电影都带来了令人兴奋的电影体验，让你从头到尾紧张不已。对于动作片爱好者和任何欣赏精心制作的惊悚片的人来说，这都是一部必看的电影。
-                    </h4>
-                </div>
-            </article>
-            <article id="movie-7" class="movie-review-parent">
-                <div class="img-parent">
-                    <img class="movie-still" src="/carry-on.jpg">
-                </div>
-                <div class="title-parent">
-                    <h3 class="movie-title">Carry On</h3>
-                    <h5 class="year">(2024)</h5>
-                    <h6 class="studio">Netflix</h6>
-                </div>
-                <div class="cast-crew-container">
-                    <div class="cast-crew-info">
-                        <h5 class="starring">主演: Taron Egerton, Jason Bateman</h5>
-                        <h5 class="director">导演: Jaume Collet-Serra</h5>
-                        <h5 class="writer">作家: T.J. Fixman</h5>
+                    <div class="cast-crew-container">
+                        <div class="cast-crew-info">
+                            <h5 class="starring">主演: Denzel Washington, Gene Hackman</h5>
+                            <h5 class="director">导演: Tony Scott</h5>
+                            <h5 class="writer">作家: Michael Schiffer, Richard P. Henrick</h5>
+                        </div>
+                        <div class="rating-runtime">
+                            <h5 class="runtime">分钟: 116</h5>
+                            <h5 class="rated">等级: R</h5>
+                        </div>
                     </div>
-                    <div class="rating-runtime">
-                        <h5 class="runtime">分钟: 119</h5>
-                        <h5 class="rated">等级: PG-13</h5>
+                    <div class="link-parent"><a class="streaming-link"
+                            href="https://youtu.be/CDGOJn4vdwM?si=wz1jB6gZOnDpg7_F" target="_blank">可在: YouTube</a>
+                        <code>|</code>
+                        <a class="streaming-link" href="https://chineseflix.com/subtitles" target="_self">字幕指南</a>
                     </div>
-                </div>
-                <div class="link-parent"><a class="streaming-link"
-                        href="https://www.netflix.com/title/81476963?source=35" target="_blank">可在: Netflix</a>
-                    <code>|</code>
-                    <a class="streaming-link" href="https://chineseflix.com/subtitles" target="_self">字幕指南</a>
-                </div>
-                <div class="review-parent">
-                    <h3 class="article-title">无休止的惊悚</h3>
-                    <h4 class="review">
-                        《Carry-On》是一部在Netflix上映的高强度惊悚片，从头到尾都让你坐立不安。由佐米·希尔拉执导，影片主演是塔伦·埃格顿，他饰演TSA（美国运输安全管理局）特工伊桑·科佩克，他在平安夜卷入了一场致命的恐怖袭击阴谋。杰森·贝特曼饰演神秘且阴险的旅行者，他以黑道手段迫使伊桑让一个危险包裹通过安检。
+                    <div class="review-parent">
+                        <h3 class="article-title">高海上的紧张局势</h3>
+                        <h4 class="review">
+                            《红潮风暴》是一部令人紧张的惊悚片，故事发生在国际危机时期的美国核潜艇上。影片讲述了副指挥官罗恩·亨特（丹泽尔·华盛顿饰）和舰长弗兰克·拉姆西（吉恩·哈克曼饰）之间因命令模糊而发生的紧张冲突。当权力斗争升级，核战争的威胁迫在眉睫时，影片创造了一个高风险的环境，使观众紧张不已。
 
-                        <br><br>
+                            <br><br>
 
-                        电影一开头就震撼人心，伊桑得知自己即将成为父亲，立即陷入生死攸关的境地。紧张感迅速增加，贝特曼的角色通过耳机向伊桑独白他的恶毒计划。虽然对话有时显得有些做作，但演员的表现和不断升级的紧张局势让观众保持兴趣。
+                            由托尼·斯科特执导的《红潮风暴》从冷战期间的现实紧张局势和军队指挥链复杂性中汲取灵感。由迈克尔·席弗编写的剧本，加上昆汀·塔伦蒂诺的未署名贡献，深入探讨了身处重大权力和责任位置的人所面临的道德和伦理困境。影片的叙事探索了职责、领导力以及在前所未有的情况下正义与错误之间的细微界限。
 
-                        <br><br>
+                            <br><br>
 
-                        埃格顿表现出色，生动地展现了伊桑的脆弱和决心。以喜剧角色闻名的贝特曼，这次以冷酷的反派形象令人惊讶。苏菲亚·卡森饰演伊桑的女友诺拉，为故事增添了情感深度，尽管她的角色略显不发达。
+                            丹泽尔·华盛顿和吉恩·哈克曼都奉献了出色的表演，这支撑了影片紧张的氛围。华盛顿以其细致入微的准备而闻名，他研究了海军程序和潜艇值勤的心理压力，使他的亨特中校角色更具真实性。哈克曼则通过其丰富的表演经验，塑造了一个由信念驱动、坚韧不拔的舰长拉姆西。他们在银幕上的动态电力十足，展示了意志之战，既引人入胜又发人深省。
 
-                        <br><br>
+                            <br><br>
 
-                        影片的节奏在后半段有所改善，动作场面更多，解释性内容更少。高潮部分尤其令人激动，一场精心设计的追车戏增加了兴奋感。尽管存在一些逻辑不一致和几处煽情的瞬间，《Carry-On》依然成功地提供了一个令人满意的结局。
+                            《红潮风暴》因其紧凑的导演、尖锐的剧本和突出的表演而获得了好评。虽然影片未能在主要奖项中获得大胜，但因其技术成就而获得了声音和剪辑方面的提名。故事中显而易见的紧张感和道德复杂性使其在类型片中脱颖而出，而华盛顿和哈克曼的表演也被称为他们职业生涯中的一些最佳表现。
 
-                        <br><br>
+                            <br><br>
 
-                        总的来说，《Carry-On》是一部有趣且娱乐性十足的惊悚片，向90年代的动作片如《虎胆龙威》和《生死时速》致敬。对于任何寻找紧张刺激和动作丰富的节日电影的人来说，这都是一个不错的选择。
-                </div>
-            </article>
-            <article id="movie-8" class="movie-review-parent">
-                <div class="img-parent">
-                    <img class="movie-still" src="/emilia-perez.jpg">
-                </div>
-                <div class="title-parent">
-                    <h3 class="movie-title">Emilia Perez</h3>
-                    <h5 class="year">(2024)</h5>
-                    <h6 class="studio">Netflix</h6>
-                </div>
-                <div class="cast-crew-container">
-                    <div class="cast-crew-info">
-                        <h5 class="starring">主演: Zoe Saldana, Karla Sofia Gascon, Selena Gomez</h5>
-                        <h5 class="director">导演: Jacques Audiard</h5>
-                        <h5 class="writer">作家: Jacques Audiard, Thomas Bidegain, Lea Mysius</h5>
+                            《红潮风暴》是一部执行得非常出色的惊悚片，结合了高风险戏剧和深刻的伦理问题。丹泽尔·华盛顿和吉恩·哈克曼的精彩表演，加上托尼·斯科特的导演，创造了一次令人难忘的电影体验。对于军事题材剧情片爱好者以及对领导压力下心理复杂性感兴趣的观众来说，这是一部必看的影片。
+                        </h4>
                     </div>
-                    <div class="rating-runtime">
-                        <h5 class="runtime">分钟: 132</h5>
-                        <h5 class="rated">等级: R</h5>
+                </article>
+                <article id="movie-4" class="movie-review-parent">
+                    <div class="img-parent">
+                        <img class="movie-still" src="/the-holiday.jpg">
                     </div>
-                </div>
-                <div class="link-parent"><a class="streaming-link"
-                        href="https://www.netflix.com/title/81901696?source=imdb" target="_blank">可在: Netflix</a>
-                    <code>|</code>
-                    <a class="streaming-link" href="https://chineseflix.com/subtitles" target="_self">字幕指南</a>
-                </div>
-                <div class="review-parent">
-                    <h3 class="article-title">救赎与身份的电影杰作</h3>
-                    <h4 class="review">
-                        《艾米莉亚·佩雷斯》是一部由雅克·欧迪亚执导的跨流派电影。故事讲述了由卡拉·索菲亚·加斯孔饰演的冷酷贩毒头目艾米莉亚，求助于由佐伊·索尔达娜饰演的被忽视的律师瑞塔，假装自己死亡以便真实地做自己。该影片将犯罪、戏剧和音乐剧元素融合在一起，创造出独特且引人入胜的叙事方式。
-                        <br><br>
-
-                        导演雅克·欧迪亚受墨西哥复杂的社会政治景观启发，以此作为音乐幻想剧的背景。影片取材自鲍里斯·拉宗的小说《Écoute》，但欧迪亚的愿景将其转变为一种超现实的梦幻剧。脱离实际地点的设定使影片能够以一种新颖且不受限制的方式探索救赎和自我保全的主题。
-                        <br><br>
-
-                        扮演艾米莉亚和男性反派马尼塔斯·德尔·蒙特的卡拉·索菲亚·加斯孔，为了饰演双重角色进行了大量准备。她的表演展示了她的令人印象深刻的演技，从扮演令人畏惧的贩毒头目到寻求赎罪的慈善家。加斯孔对角色旅程的奉献在她强有力的演绎中显而易见。
-                        <br><br>
-
-                        佐伊·索尔达娜为饰演瑞塔，深入角色的挣扎和愿望进行准备。她的表演赋予了瑞塔从被忽视的律师到艾米莉亚变革关键角色这一过程以深度。
-                        <br><br>
-
-                        《艾米莉亚·佩雷斯》是一部大胆且充满冒险的电影，打破了观众的期望，提供了一种独特的电影体验。其高调的戏剧效果和感人的时刻使之成为任何寻求真正原创作品的观众不可错过的影片。
-                    </h4>
-                </div>
-            </article>
-            <article id="movie-9" class="movie-review-parent">
-                <div class="img-parent">
-                    <img class="movie-still" src="/the-idea.jpg">
-                </div>
-                <div class="title-parent">
-                    <h3 class="movie-title">The Idea of You</h3>
-                    <h5 class="year">(2024)</h5>
-                    <h6 class="studio">Amazon Studios</h6>
-                </div>
-                <div class="cast-crew-container">
-                    <div class="cast-crew-info">
-                        <h5 class="starring">主演: Anne Hathaway, Nicholas Gilitzine, Ella Rubin</h5>
-                        <h5 class="director">导演: Michael Showalter</h5>
-                        <h5 class="writer">作家: Robinne Lee, Michael Showalter, Jennifer Westfeldt</h5>
+                    <div class="title-parent">
+                        <h3 class="movie-title">The Holiday</h3>
+                        <h5 class="year">(2006)</h5>
+                        <h6 class="studio">Columbia Pictures</h6>
                     </div>
-                    <div class="rating-runtime">
-                        <h5 class="runtime">分钟: 115</h5>
-                        <h5 class="rated">等级: R</h5>
+                    <div class="cast-crew-container">
+                        <div class="cast-crew-info">
+                            <h5 class="starring">主演: Kate Winslet, Cameron Diaz, Jude Law, Jack Black</h5>
+                            <h5 class="director">导演: Nancy Meyers</h5>
+                            <h5 class="writer">作家: Nancy Meyers</h5>
+                        </div>
+                        <div class="rating-runtime">
+                            <h5 class="runtime">分钟: 136</h5>
+                            <h5 class="rated">等级: PG-13</h5>
+                        </div>
                     </div>
-                </div>
-                <div class="link-parent"><a class="streaming-link"
-                        href="https://www.amazon.com/gp/video/detail/B0CV72X1BL/ref=atv_dp_share_cu_r"
-                        target="_blank">可在: Amazon</a>
-                    <code>|</code>
-                    <a class="streaming-link" href="https://chineseflix.com/subtitles" target="_self">字幕指南</a>
-                </div>
-                <div class="review-parent">
-                    <h3 class="article-title">一部感人至深且出人意料的浪漫喜剧》</h3>
-                    <h4 class="review">
-                        《你对我的想法》是一部现代浪漫喜剧，由迈克尔·肖沃特执导，改编自罗宾娜·李的受欢迎小说。电影的主角是索琳·马尔尚（安妮·海瑟薇饰），一位居住在洛杉矶的40岁单亲妈妈和艺术画廊老板，她意外地爱上了海斯·坎贝尔（尼古拉斯·加利辛饰），一位24岁的流行明星和男孩乐队“八月月亮”的成员。他们在科切拉音乐节的偶遇引发了一段旋风般的浪漫，挑战了年龄差异的规范和预期。<br><br>
-
-                        影片从现代关系的复杂性以及在意想不到的地方找到爱情的想法中汲取灵感。肖沃特和詹妮弗·韦斯特菲尔德的改编为浪漫喜剧类型带来了新鲜的视角，融合了华丽与接地气的时刻。<br><br>
-
-                        安妮·海瑟薇饰演的索琳表现出色，她从一位时尚的画廊老板到重新发现爱情的女人的角色转变中，展示了她的魅力和多才多艺。海瑟薇的演技光芒四射，使她成为一个令人愉快的浪漫喜剧主角。尼古拉斯·加利辛作为冉冉升起的明星海斯，带来了真挚且感人的表演，展示了他与海瑟薇的化学反应。<br><br>
-
-                        《你对我的想法》是一部充满魅力和感人至深的电影，它打破了传统浪漫喜剧的套路。海瑟薇和加利辛的银幕化学反应令人感同身受，每个他们之间的时刻都充满电力。影片完美地捕捉了跨越世代界限的关系中的高峰和低谷，为爱情和浪漫提供了一种清新的诠释。<br><br>
-
-                        尽管剧情可能有一些离奇的元素，但演员们真诚和真实的表演使它成为一部令人愉快的电影。尤其是海瑟薇，她以光彩夺目和细腻入微的表现盗走了观众的心。<br><br>
-
-                        总的来说，《你对我的想法》是浪漫喜剧迷和任何寻求具有现代扭转感的感人故事的观众必看的电影。
-                    </h4>
-                </div>
-            </article>
-            <article id="movie-10" class="movie-review-parent">
-                <div class="img-parent">
-                    <img class="movie-still" src="/rain-man.jpg">
-                </div>
-                <div class="title-parent">
-                    <h3 class="movie-title">Rain Man</h3>
-                    <h5 class="year">(1988)</h5>
-                    <h6 class="studio">United Artists</h6>
-                </div>
-                <div class="cast-crew-container">
-                    <div class="cast-crew-info">
-                        <h5 class="starring">主演: Tom Cruise, Dustin Hoffman, Valeria Golino</h5>
-                        <h5 class="director">导演: Barry Levinson</h5>
-                        <h5 class="writer">作家: Barry Morrow, Ron Bass</h5>
+                    <div class="link-parent"><a class="streaming-link"
+                            href="https://www.amazon.com/gp/video/detail/B009NW9QE2/ref=atv_dp_share_cu_r"
+                            target="_blank">可在: Amazon</a> <code>|</code>
+                        <a class="streaming-link" href="https://chineseflix.com/subtitles" target="_self">字幕指南</a>
                     </div>
-                    <div class="rating-runtime">
-                        <h5 class="runtime">分钟: 133</h5>
-                        <h5 class="rated">等级: R</h5>
+                    <div class="review-parent">
+                        <h3 class="article-title">一部令人愉快的浪漫喜剧逃避之旅</h3>
+                        <h4 class="review">
+                            《恋爱假期》是一部迷人的浪漫喜剧，讲述了两个在关系问题中挣扎的女性——艾瑞斯（凯特·温丝莱特饰）和阿曼达（卡梅隆·迪亚兹饰）。为了逃避烦恼，她们在假期期间交换了住所——阿曼达前往一个英国乡村小屋，而艾瑞斯则来到洛杉矶的豪宅。通过这次交换，两个女性展开了自我发现和新恋情的旅程，经历了温馨和幽默的邂逅。
+
+                            <br><br>
+
+                            由南希·迈耶斯执导，《恋爱假期》灵感来自人们对新开始的普遍渴望以及偶遇的奇妙。迈耶斯以制作令人愉悦的影片而著称，她编织了一个引人共鸣的故事，讲述了任何曾想脱离常规、寻找新视角的人。剧本也是由迈耶斯编写的，将来自不同世界的两个女性的故事交织在一起，揭示了有时走出舒适区是找到真正需要的最佳方式。
+
+                            <br><br>
+
+                            凯特·温丝莱特和卡梅隆·迪亚兹在各自的角色中表现出色，赋予角色温暖和亲和力。温丝莱特饰演的艾瑞斯，表现出温柔和真诚，捕捉到了一个学会重拾自我价值的女性的本质。另一方面，迪亚兹则以活泼的表演塑造了阿曼达，在幽默与脆弱时刻之间取得了平衡。与裘德·洛和杰克·布莱克的合作化学反应，为影片增添了深度和魅力。裘德·洛饰演的格雷厄姆（艾瑞斯的兄弟）散发出自信魅力，而布莱克饰演的迈尔斯（阿曼达的新朋友）则展示了他作为演员的多才多艺。
+
+                            <br><br>
+
+                            《恋爱假期》受到观众的热烈欢迎，并因其温馨的故事情节和引人入胜的表演而受到赞誉。尽管没有获得主要奖项，但它仍然是一部备受喜爱的假期影片，以其愉悦感和演员之间的令人愉快的互动而闻名。影片的如画场景和令人难忘的对白使其成为浪漫喜剧类型中的经典之作。
+
+                            <br><br>
+
+                            《恋爱假期》是一部令人愉快的逃避之旅，提供了浪漫、幽默和节日喜庆的完美结合。南希·迈耶斯的导演，加上凯特·温丝莱特和卡梅隆·迪亚兹的出色表演，创造了一部既有娱乐性又情感共鸣的影片。无论你是在寻找一个舒适的电影之夜，还是只是需要一剂温馨的乐趣，《恋爱假期》都一定会满足你的期待。
+                        </h4>
                     </div>
-                </div>
-                <div class="link-parent"><a class="streaming-link"
-                        href="https://www.amazon.com/gp/video/detail/B002CNK1MK/ref=atv_dp_share_cu_r"
-                        target="_blank">可在: Amazon</a>
-                    <code>|</code>
-                    <a class="streaming-link" href="https://chineseflix.com/subtitles" target="_self">字幕指南</a>
-                </div>
-                <div class="review-parent">
-                    <h3 class="article-title">兄弟情和自我发现的感人故事</h3>
-                    <h4 class="review">
-                        《雨人》是一部由巴里·莱文森执导的1988年剧情片，讲述了两个疏远的兄弟踏上自我发现和转变之旅的感人故事。影片由汤姆·克鲁斯饰演查理·巴比特，达斯汀·霍夫曼凭借其饰演自闭症学者兄弟雷蒙德·"雨人"·巴比特获得奥斯卡奖。<br><br>
-
-                        年轻且以自我为中心的汽车经销商查理·巴比特得知疏远的父亲去世，期待继承父亲的财富。然而，他发现300万美元的遗产已留给了他从未见过的兄弟雷蒙德，雷蒙德居住在一所精神病院。出于贪婪和好奇，查理将雷蒙德带出了精神病院，希望能控制这笔钱。在他们的跨国旅行中，查理开始理解并欣赏他兄弟的独特才能，他们之间的纽带变得更加深厚。
-                        <br><br>
-
-                        达斯汀·霍夫曼对雷蒙德的诠释堪称非凡。他对细节的细腻处理以及捕捉自闭症细微差别的能力，使雷蒙德成为一个非常真实和令人同情的角色。霍夫曼的表演为他赢得了奥斯卡最佳男演员奖，并且成为电影史上最难忘的角色之一。
-                        <br><br>
-
-                        汤姆·克鲁斯作为查理的表演令人信服，捕捉到了角色从一个自私的投机者到一个充满爱心和同情心的兄弟的转变。克鲁斯与霍夫曼之间的化学反应创造了一种可信且感人的关系，推动了影片的情感核心。
-                        <br><br>
-
-                        巴里·莱文森的导演手法低调但有力，使角色和故事在没有不必要装饰的情况下熠熠生辉。约翰·西尔的摄影有效地捕捉了美国公路旅行的广阔景观，增强了冒险和发现的感觉。
-                        <br><br>
-                        《雨人》是一部精心制作的电影，展示了其演员和导演的卓越才华。凭借感人的故事、强大的表演和发人深省的主题，它依然是任何寻求深刻而鼓舞人心电影体验的观众必看的经典之作。
-
-                    </h4>
-                </div>
-            </article>
-            <article id="movie-11" class="movie-review-parent">
-                <div class="img-parent">
-                    <img class="movie-still" src="/hitman.jpg">
-                </div>
-                <div class="title-parent">
-                    <h3 class="movie-title">Hit Man</h3>
-                    <h5 class="year">(2023)</h5>
-                    <h6 class="studio">Netflix Studios</h6>
-                </div>
-                <div class="cast-crew-container">
-                    <div class="cast-crew-info">
-                        <h5 class="starring">主演: Glenn Powell, Adria Arjona</h5>
-                        <h5 class="director">导演: Richard Linklater</h5>
-                        <h5 class="writer">作家: Richard Linklater, Glenn Powell, Austin Amelio </h5>
+                </article>
+                <article id="movie-5" class="movie-review-parent">
+                    <div class="img-parent">
+                        <img class="movie-still" src="/prometheus.jpg">
                     </div>
-                    <div class="rating-runtime">
-                        <h5 class="runtime">分钟: 115</h5>
-                        <h5 class="rated">等级: R</h5>
+                    <div class="title-parent">
+                        <h3 class="movie-title">Prometheus</h3>
+                        <h5 class="year">(2012)</h5>
+                        <h6 class="studio">Twentieth Century Fox</h6>
                     </div>
-                </div>
-                <div class="link-parent"><a class="streaming-link"
-                        href="https://www.netflix.com/title/81728840?source=imdb" target="_blank">可在: Netflix</a>
-                    <code>|</code>
-                    <a class="streaming-link" href="https://chineseflix.com/subtitles" target="_self">字幕指南</a>
-                </div>
-                <div class="review-parent">
-                    <h3 class="article-title">喜剧与悬疑的精彩结合</h3>
-                    <h4 class="review">
-                        Netflix
-                        上由理查德·林克莱特执导、格伦·鲍威尔主演的《杀手》是一部将喜剧、浪漫和黑色电影巧妙融合的精彩影片。鲍威尔不仅共同编写了剧本，还在片中饰演盖瑞·约翰逊，一位为新奥尔良警察局兼职扮演假杀手的温和教授。他为这个角色进行了严格的体能和战斗训练，以便令人信服地展现角色的双重生活。
-                        <br><br>
-
-                        林克莱特从 Skip Hollandsworth
-                        在《德州月刊》杂志上介绍的真实故事中汲取灵感，该故事讲述了一位协助警察局进行钓鱼执法的真实教授。这段引人入胜的真实故事为影片提供了完美的基础，使其能够在喜剧和悬疑之间无缝切换。
-                        <br><br>
-
-                        这部电影获得了评论家的一致好评。在烂番茄网站上，它的清新度评分高达95%，并因其独特的类型混合和鲍威尔充满魅力的表演而备受赞誉。观众的评价同样积极，许多人特别提到影片的幽默、主演之间的化学反应以及引人入胜的情节。
-                        <br><br>
-
-                        总的来说，《杀手》凭借其巧妙的剧本、出色的表演和引人入胜的故事，成为一部必看的佳作。
-                    </h4>
-                </div>
-            </article>
-            <article id="movie-12" class="movie-review-parent">
-                <div class="img-parent">
-                    <img class="movie-still" src="/limitless.jpg">
-                </div>
-                <div class="title-parent">
-                    <h3 class="movie-title">Limitless</h3>
-                    <h5 class="year">(2011)</h5>
-                    <h6 class="studio">Relativity</h6>
-                </div>
-                <div class="cast-crew-container">
-                    <div class="cast-crew-info">
-                        <h5 class="starring">主演: Bradley Cooper, Anna Friel, Robert DeNiro</h5>
-                        <h5 class="director">导演: Neil Burger</h5>
-                        <h5 class="writer">作家: Leslie Dixon, Alan Glynn</h5>
+                    <div class="cast-crew-container">
+                        <div class="cast-crew-info">
+                            <h5 class="starring">主演: Noomi Rapace, Charlize Theron, Michael Fassbender</h5>
+                            <h5 class="director">导演: Ridley Scott</h5>
+                            <h5 class="writer">作家: Jon Spaihts, Damon Lindelof, Dan O'Bannon</h5>
+                        </div>
+                        <div class="rating-runtime">
+                            <h5 class="runtime">分钟: 124</h5>
+                            <h5 class="rated">等级: R</h5>
+                        </div>
                     </div>
-                    <div class="rating-runtime">
-                        <h5 class="runtime">分钟: 105</h5>
-                        <h5 class="rated">等级: PG-13</h5>
+                    <div class="link-parent"><a class="streaming-link"
+                            href="https://youtu.be/nB-I8i6y6II?si=OPCI8npRuG_pH6eY" target="_blank">可在: YouTube</a>
+                        <code>|</code>
+                        <a class="streaming-link" href="https://chineseflix.com/subtitles" target="_self">字幕指南</a>
                     </div>
+                    <div class="review-parent">
+                        <h3 class="article-title">震撼人心的科幻惊悚片</h3>
+                        <h4 class="review">
+                            《普罗米修斯》是一部由雷德利·斯科特执导的科幻惊悚片，讲述了一群探索者在未来前往外星球寻找人类起源的故事。影片主角伊丽莎白·肖博士（努米·拉帕斯饰）和戴维（迈克尔·法斯宾德饰）在一艘名为普罗米修斯的飞船上展开冒险，面对未知的威胁和生存的挑战。
+
+                            <br><br>
+
+                            雷德利·斯科特从《异形》系列中汲取灵感，创造了一部探索生命起源和人类生存意义的影片。乔恩·斯派茨和戴蒙·林德洛夫的剧本融合了哲学和恐怖元素，使《普罗米修斯》不仅仅是一部科幻片，更是一场关于探索和信仰的旅程。影片的视觉效果和设定设计也堪称一绝，营造出一个既美丽又充满威胁的外星世界。
+
+                            <br><br>
+
+                            演员们为角色投入了极大的准备工作，努米·拉帕斯在影片中展现了强大的毅力和生存本能，而迈克尔·法斯宾德则以其冰冷的演技完美诠释了人工智能机器人戴维。查理兹·塞隆和伊德里斯·艾尔巴等配角也在影片中有出色表现，为故事增添了复杂性和深度。
+
+                            <br><br>
+
+                            《普罗米修斯》因其视觉效果和独特的故事情节而受到广泛赞誉，尤其是在特效和摄影方面取得了巨大的成功。尽管在叙事上存在一些争议，但影片依然被视为一部具有重要意义的科幻作品，对未来的电影制作有着深远的影响。
+
+                            <br><br>
+
+                            《普罗米修斯》是一部令人震撼的电影，结合了哲学思考和惊悚元素。雷德利·斯科特的导演技巧，加上演员们的出色表演和精美的视觉效果，使这部影片成为科幻电影中的经典之作。对于喜欢探索生命起源和人类命运主题的观众来说，《普罗米修斯》无疑是一部不可错过的电影体验。
+                        </h4>
+                    </div>
+                </article>
+                <article id="movie-6" class="movie-review-parent">
+                    <div class="img-parent">
+                        <img class="movie-still" src="/die-hard-with.jpg">
+                    </div>
+                    <div class="title-parent">
+                        <h3 class="movie-title">Die Hard With A Vengeance</h3>
+                        <h5 class="year">(1995)</h5>
+                        <h6 class="studio">Twentieth Century Fox</h6>
+                    </div>
+                    <div class="cast-crew-container">
+                        <div class="cast-crew-info">
+                            <h5 class="starring">主演: Bruce Willis, Samuel L. Jackson, Jeremy Irons</h5>
+                            <h5 class="director">导演: John McTiernan</h5>
+                            <h5 class="writer">作家: Jonathan Hensleigh, Roderick Thorp</h5>
+                        </div>
+                        <div class="rating-runtime">
+                            <h5 class="runtime">分钟: 128</h5>
+                            <h5 class="rated">等级: R</h5>
+                        </div>
+                    </div>
+                    <div class="link-parent"><a class="streaming-link"
+                            href="https://youtu.be/ccWonHdjHGs?si=lXiGOSkfgRvrPrH0" target="_blank">可在:
+                            YouTube</a><code>|</code>
+                        <a class="streaming-link" href="https://chineseflix.com/subtitles" target="_self">字幕指南</a>
+                    </div>
+                    <div class="review-parent">
+                        <h3 class="article-title">无休止的动作冒险</h3>
+                        <h4 class="review">
+                            《虎胆龙威3》是经典《虎胆龙威》系列的第三部爆炸性影片。这次，电影带我们穿越纽约市的大街小巷，展开一场高强度的冒险，侦探约翰·麦克莱恩（布鲁斯·威利斯饰）与不太可能成为伙伴的宙斯·卡弗（塞缪尔·杰克逊饰）联手，阻止恐怖主义主谋西蒙（杰瑞米·艾恩斯饰）实施一系列致命袭击。
+
+                            <br><br>
+
+                            由执导了原版《虎胆龙威》的约翰·麦克蒂尔南执导，这部电影是一部动作惊悚片的经典之作。由乔纳森·汉斯雷编写的剧本，以其巧妙的情节转折、紧张的动作场面和犀利的对话让观众始终坐在座椅的边缘。威利斯和杰克逊之间的化学反应为系列增添了新鲜的动态，通过他们不太可能的合作伙伴关系带来了幽默和紧张感，因为他们争分夺秒地挫败西蒙的计划。
+
+                            <br><br>
+
+                            布鲁斯·威利斯再次饰演坚韧且足智多谋的约翰·麦克莱恩，表现出既有魅力又粗犷的表演。塞缪尔·杰克逊饰演的宙斯·卡弗，为影片注入了活力和机智，成为麦克莱恩的完美对手。杰瑞米·艾恩斯饰演的反派西蒙，冷酷而复杂，使他成为该系列中最令人难忘的对手之一。
+
+                            <br><br>
+
+                            《虎胆龙威3》因其动作场面的紧张刺激和引人入胜的故事情节而受到好评。影片因其快节奏的导演、出色的表演以及主演之间明显的化学反应而备受赞誉。虽然它可能没有赢得主要奖项，但它仍然是动作类型中的经典之作，也是《虎胆龙威》系列中的突出作品。
+
+                            <br><br>
+
+                            《虎胆龙威3》是一场不间断的刺激冒险，结合了紧张的动作、犀利的对话和出色的表演。无论你是该系列的长期粉丝还是新观众，这部电影都带来了令人兴奋的电影体验，让你从头到尾紧张不已。对于动作片爱好者和任何欣赏精心制作的惊悚片的人来说，这都是一部必看的电影。
+                        </h4>
+                    </div>
+                </article>
+                <article id="movie-7" class="movie-review-parent">
+                    <div class="img-parent">
+                        <img class="movie-still" src="/carry-on.jpg">
+                    </div>
+                    <div class="title-parent">
+                        <h3 class="movie-title">Carry On</h3>
+                        <h5 class="year">(2024)</h5>
+                        <h6 class="studio">Netflix</h6>
+                    </div>
+                    <div class="cast-crew-container">
+                        <div class="cast-crew-info">
+                            <h5 class="starring">主演: Taron Egerton, Jason Bateman</h5>
+                            <h5 class="director">导演: Jaume Collet-Serra</h5>
+                            <h5 class="writer">作家: T.J. Fixman</h5>
+                        </div>
+                        <div class="rating-runtime">
+                            <h5 class="runtime">分钟: 119</h5>
+                            <h5 class="rated">等级: PG-13</h5>
+                        </div>
+                    </div>
+                    <div class="link-parent"><a class="streaming-link"
+                            href="https://www.netflix.com/title/81476963?source=35" target="_blank">可在: Netflix</a>
+                        <code>|</code>
+                        <a class="streaming-link" href="https://chineseflix.com/subtitles" target="_self">字幕指南</a>
+                    </div>
+                    <div class="review-parent">
+                        <h3 class="article-title">无休止的惊悚</h3>
+                        <h4 class="review">
+                            《Carry-On》是一部在Netflix上映的高强度惊悚片，从头到尾都让你坐立不安。由佐米·希尔拉执导，影片主演是塔伦·埃格顿，他饰演TSA（美国运输安全管理局）特工伊桑·科佩克，他在平安夜卷入了一场致命的恐怖袭击阴谋。杰森·贝特曼饰演神秘且阴险的旅行者，他以黑道手段迫使伊桑让一个危险包裹通过安检。
+
+                            <br><br>
+
+                            电影一开头就震撼人心，伊桑得知自己即将成为父亲，立即陷入生死攸关的境地。紧张感迅速增加，贝特曼的角色通过耳机向伊桑独白他的恶毒计划。虽然对话有时显得有些做作，但演员的表现和不断升级的紧张局势让观众保持兴趣。
+
+                            <br><br>
+
+                            埃格顿表现出色，生动地展现了伊桑的脆弱和决心。以喜剧角色闻名的贝特曼，这次以冷酷的反派形象令人惊讶。苏菲亚·卡森饰演伊桑的女友诺拉，为故事增添了情感深度，尽管她的角色略显不发达。
+
+                            <br><br>
+
+                            影片的节奏在后半段有所改善，动作场面更多，解释性内容更少。高潮部分尤其令人激动，一场精心设计的追车戏增加了兴奋感。尽管存在一些逻辑不一致和几处煽情的瞬间，《Carry-On》依然成功地提供了一个令人满意的结局。
+
+                            <br><br>
+
+                            总的来说，《Carry-On》是一部有趣且娱乐性十足的惊悚片，向90年代的动作片如《虎胆龙威》和《生死时速》致敬。对于任何寻找紧张刺激和动作丰富的节日电影的人来说，这都是一个不错的选择。
+                    </div>
+                </article>
+                <article id="movie-8" class="movie-review-parent">
+                    <div class="img-parent">
+                        <img class="movie-still" src="/emilia-perez.jpg">
+                    </div>
+                    <div class="title-parent">
+                        <h3 class="movie-title">Emilia Perez</h3>
+                        <h5 class="year">(2024)</h5>
+                        <h6 class="studio">Netflix</h6>
+                    </div>
+                    <div class="cast-crew-container">
+                        <div class="cast-crew-info">
+                            <h5 class="starring">主演: Zoe Saldana, Karla Sofia Gascon, Selena Gomez</h5>
+                            <h5 class="director">导演: Jacques Audiard</h5>
+                            <h5 class="writer">作家: Jacques Audiard, Thomas Bidegain, Lea Mysius</h5>
+                        </div>
+                        <div class="rating-runtime">
+                            <h5 class="runtime">分钟: 132</h5>
+                            <h5 class="rated">等级: R</h5>
+                        </div>
+                    </div>
+                    <div class="link-parent"><a class="streaming-link"
+                            href="https://www.netflix.com/title/81901696?source=imdb" target="_blank">可在: Netflix</a>
+                        <code>|</code>
+                        <a class="streaming-link" href="https://chineseflix.com/subtitles" target="_self">字幕指南</a>
+                    </div>
+                    <div class="review-parent">
+                        <h3 class="article-title">救赎与身份的电影杰作</h3>
+                        <h4 class="review">
+                            《艾米莉亚·佩雷斯》是一部由雅克·欧迪亚执导的跨流派电影。故事讲述了由卡拉·索菲亚·加斯孔饰演的冷酷贩毒头目艾米莉亚，求助于由佐伊·索尔达娜饰演的被忽视的律师瑞塔，假装自己死亡以便真实地做自己。该影片将犯罪、戏剧和音乐剧元素融合在一起，创造出独特且引人入胜的叙事方式。
+                            <br><br>
+
+                            导演雅克·欧迪亚受墨西哥复杂的社会政治景观启发，以此作为音乐幻想剧的背景。影片取材自鲍里斯·拉宗的小说《Écoute》，但欧迪亚的愿景将其转变为一种超现实的梦幻剧。脱离实际地点的设定使影片能够以一种新颖且不受限制的方式探索救赎和自我保全的主题。
+                            <br><br>
+
+                            扮演艾米莉亚和男性反派马尼塔斯·德尔·蒙特的卡拉·索菲亚·加斯孔，为了饰演双重角色进行了大量准备。她的表演展示了她的令人印象深刻的演技，从扮演令人畏惧的贩毒头目到寻求赎罪的慈善家。加斯孔对角色旅程的奉献在她强有力的演绎中显而易见。
+                            <br><br>
+
+                            佐伊·索尔达娜为饰演瑞塔，深入角色的挣扎和愿望进行准备。她的表演赋予了瑞塔从被忽视的律师到艾米莉亚变革关键角色这一过程以深度。
+                            <br><br>
+
+                            《艾米莉亚·佩雷斯》是一部大胆且充满冒险的电影，打破了观众的期望，提供了一种独特的电影体验。其高调的戏剧效果和感人的时刻使之成为任何寻求真正原创作品的观众不可错过的影片。
+                        </h4>
+                    </div>
+                </article>
+                <article id="movie-9" class="movie-review-parent">
+                    <div class="img-parent">
+                        <img class="movie-still" src="/the-idea.jpg">
+                    </div>
+                    <div class="title-parent">
+                        <h3 class="movie-title">The Idea of You</h3>
+                        <h5 class="year">(2024)</h5>
+                        <h6 class="studio">Amazon Studios</h6>
+                    </div>
+                    <div class="cast-crew-container">
+                        <div class="cast-crew-info">
+                            <h5 class="starring">主演: Anne Hathaway, Nicholas Gilitzine, Ella Rubin</h5>
+                            <h5 class="director">导演: Michael Showalter</h5>
+                            <h5 class="writer">作家: Robinne Lee, Michael Showalter, Jennifer Westfeldt</h5>
+                        </div>
+                        <div class="rating-runtime">
+                            <h5 class="runtime">分钟: 115</h5>
+                            <h5 class="rated">等级: R</h5>
+                        </div>
+                    </div>
+                    <div class="link-parent"><a class="streaming-link"
+                            href="https://www.amazon.com/gp/video/detail/B0CV72X1BL/ref=atv_dp_share_cu_r"
+                            target="_blank">可在: Amazon</a>
+                        <code>|</code>
+                        <a class="streaming-link" href="https://chineseflix.com/subtitles" target="_self">字幕指南</a>
+                    </div>
+                    <div class="review-parent">
+                        <h3 class="article-title">一部感人至深且出人意料的浪漫喜剧》</h3>
+                        <h4 class="review">
+                            《你对我的想法》是一部现代浪漫喜剧，由迈克尔·肖沃特执导，改编自罗宾娜·李的受欢迎小说。电影的主角是索琳·马尔尚（安妮·海瑟薇饰），一位居住在洛杉矶的40岁单亲妈妈和艺术画廊老板，她意外地爱上了海斯·坎贝尔（尼古拉斯·加利辛饰），一位24岁的流行明星和男孩乐队“八月月亮”的成员。他们在科切拉音乐节的偶遇引发了一段旋风般的浪漫，挑战了年龄差异的规范和预期。<br><br>
+
+                            影片从现代关系的复杂性以及在意想不到的地方找到爱情的想法中汲取灵感。肖沃特和詹妮弗·韦斯特菲尔德的改编为浪漫喜剧类型带来了新鲜的视角，融合了华丽与接地气的时刻。<br><br>
+
+                            安妮·海瑟薇饰演的索琳表现出色，她从一位时尚的画廊老板到重新发现爱情的女人的角色转变中，展示了她的魅力和多才多艺。海瑟薇的演技光芒四射，使她成为一个令人愉快的浪漫喜剧主角。尼古拉斯·加利辛作为冉冉升起的明星海斯，带来了真挚且感人的表演，展示了他与海瑟薇的化学反应。<br><br>
+
+                            《你对我的想法》是一部充满魅力和感人至深的电影，它打破了传统浪漫喜剧的套路。海瑟薇和加利辛的银幕化学反应令人感同身受，每个他们之间的时刻都充满电力。影片完美地捕捉了跨越世代界限的关系中的高峰和低谷，为爱情和浪漫提供了一种清新的诠释。<br><br>
+
+                            尽管剧情可能有一些离奇的元素，但演员们真诚和真实的表演使它成为一部令人愉快的电影。尤其是海瑟薇，她以光彩夺目和细腻入微的表现盗走了观众的心。<br><br>
+
+                            总的来说，《你对我的想法》是浪漫喜剧迷和任何寻求具有现代扭转感的感人故事的观众必看的电影。
+                        </h4>
+                    </div>
+                </article>
+                <article id="movie-10" class="movie-review-parent">
+                    <div class="img-parent">
+                        <img class="movie-still" src="/rain-man.jpg">
+                    </div>
+                    <div class="title-parent">
+                        <h3 class="movie-title">Rain Man</h3>
+                        <h5 class="year">(1988)</h5>
+                        <h6 class="studio">United Artists</h6>
+                    </div>
+                    <div class="cast-crew-container">
+                        <div class="cast-crew-info">
+                            <h5 class="starring">主演: Tom Cruise, Dustin Hoffman, Valeria Golino</h5>
+                            <h5 class="director">导演: Barry Levinson</h5>
+                            <h5 class="writer">作家: Barry Morrow, Ron Bass</h5>
+                        </div>
+                        <div class="rating-runtime">
+                            <h5 class="runtime">分钟: 133</h5>
+                            <h5 class="rated">等级: R</h5>
+                        </div>
+                    </div>
+                    <div class="link-parent"><a class="streaming-link"
+                            href="https://www.amazon.com/gp/video/detail/B002CNK1MK/ref=atv_dp_share_cu_r"
+                            target="_blank">可在: Amazon</a>
+                        <code>|</code>
+                        <a class="streaming-link" href="https://chineseflix.com/subtitles" target="_self">字幕指南</a>
+                    </div>
+                    <div class="review-parent">
+                        <h3 class="article-title">兄弟情和自我发现的感人故事</h3>
+                        <h4 class="review">
+                            《雨人》是一部由巴里·莱文森执导的1988年剧情片，讲述了两个疏远的兄弟踏上自我发现和转变之旅的感人故事。影片由汤姆·克鲁斯饰演查理·巴比特，达斯汀·霍夫曼凭借其饰演自闭症学者兄弟雷蒙德·"雨人"·巴比特获得奥斯卡奖。<br><br>
+
+                            年轻且以自我为中心的汽车经销商查理·巴比特得知疏远的父亲去世，期待继承父亲的财富。然而，他发现300万美元的遗产已留给了他从未见过的兄弟雷蒙德，雷蒙德居住在一所精神病院。出于贪婪和好奇，查理将雷蒙德带出了精神病院，希望能控制这笔钱。在他们的跨国旅行中，查理开始理解并欣赏他兄弟的独特才能，他们之间的纽带变得更加深厚。
+                            <br><br>
+
+                            达斯汀·霍夫曼对雷蒙德的诠释堪称非凡。他对细节的细腻处理以及捕捉自闭症细微差别的能力，使雷蒙德成为一个非常真实和令人同情的角色。霍夫曼的表演为他赢得了奥斯卡最佳男演员奖，并且成为电影史上最难忘的角色之一。
+                            <br><br>
+
+                            汤姆·克鲁斯作为查理的表演令人信服，捕捉到了角色从一个自私的投机者到一个充满爱心和同情心的兄弟的转变。克鲁斯与霍夫曼之间的化学反应创造了一种可信且感人的关系，推动了影片的情感核心。
+                            <br><br>
+
+                            巴里·莱文森的导演手法低调但有力，使角色和故事在没有不必要装饰的情况下熠熠生辉。约翰·西尔的摄影有效地捕捉了美国公路旅行的广阔景观，增强了冒险和发现的感觉。
+                            <br><br>
+                            《雨人》是一部精心制作的电影，展示了其演员和导演的卓越才华。凭借感人的故事、强大的表演和发人深省的主题，它依然是任何寻求深刻而鼓舞人心电影体验的观众必看的经典之作。
+
+                        </h4>
+                    </div>
+                </article>
+                <article id="movie-11" class="movie-review-parent">
+                    <div class="img-parent">
+                        <img class="movie-still" src="/hitman.jpg">
+                    </div>
+                    <div class="title-parent">
+                        <h3 class="movie-title">Hit Man</h3>
+                        <h5 class="year">(2023)</h5>
+                        <h6 class="studio">Netflix Studios</h6>
+                    </div>
+                    <div class="cast-crew-container">
+                        <div class="cast-crew-info">
+                            <h5 class="starring">主演: Glenn Powell, Adria Arjona</h5>
+                            <h5 class="director">导演: Richard Linklater</h5>
+                            <h5 class="writer">作家: Richard Linklater, Glenn Powell, Austin Amelio </h5>
+                        </div>
+                        <div class="rating-runtime">
+                            <h5 class="runtime">分钟: 115</h5>
+                            <h5 class="rated">等级: R</h5>
+                        </div>
+                    </div>
+                    <div class="link-parent"><a class="streaming-link"
+                            href="https://www.netflix.com/title/81728840?source=imdb" target="_blank">可在: Netflix</a>
+                        <code>|</code>
+                        <a class="streaming-link" href="https://chineseflix.com/subtitles" target="_self">字幕指南</a>
+                    </div>
+                    <div class="review-parent">
+                        <h3 class="article-title">喜剧与悬疑的精彩结合</h3>
+                        <h4 class="review">
+                            Netflix
+                            上由理查德·林克莱特执导、格伦·鲍威尔主演的《杀手》是一部将喜剧、浪漫和黑色电影巧妙融合的精彩影片。鲍威尔不仅共同编写了剧本，还在片中饰演盖瑞·约翰逊，一位为新奥尔良警察局兼职扮演假杀手的温和教授。他为这个角色进行了严格的体能和战斗训练，以便令人信服地展现角色的双重生活。
+                            <br><br>
+
+                            林克莱特从 Skip Hollandsworth
+                            在《德州月刊》杂志上介绍的真实故事中汲取灵感，该故事讲述了一位协助警察局进行钓鱼执法的真实教授。这段引人入胜的真实故事为影片提供了完美的基础，使其能够在喜剧和悬疑之间无缝切换。
+                            <br><br>
+
+                            这部电影获得了评论家的一致好评。在烂番茄网站上，它的清新度评分高达95%，并因其独特的类型混合和鲍威尔充满魅力的表演而备受赞誉。观众的评价同样积极，许多人特别提到影片的幽默、主演之间的化学反应以及引人入胜的情节。
+                            <br><br>
+
+                            总的来说，《杀手》凭借其巧妙的剧本、出色的表演和引人入胜的故事，成为一部必看的佳作。
+                        </h4>
+                    </div>
+                </article>
+                <article id="movie-12" class="movie-review-parent">
+                    <div class="img-parent">
+                        <img class="movie-still" src="/limitless.jpg">
+                    </div>
+                    <div class="title-parent">
+                        <h3 class="movie-title">Limitless</h3>
+                        <h5 class="year">(2011)</h5>
+                        <h6 class="studio">Relativity</h6>
+                    </div>
+                    <div class="cast-crew-container">
+                        <div class="cast-crew-info">
+                            <h5 class="starring">主演: Bradley Cooper, Anna Friel, Robert DeNiro</h5>
+                            <h5 class="director">导演: Neil Burger</h5>
+                            <h5 class="writer">作家: Leslie Dixon, Alan Glynn</h5>
+                        </div>
+                        <div class="rating-runtime">
+                            <h5 class="runtime">分钟: 105</h5>
+                            <h5 class="rated">等级: PG-13</h5>
+                        </div>
+                    </div>
+                    <div class="link-parent"><a class="streaming-link"
+                            href="https://youtu.be/6w3iElemSYI?si=dnahVR8lFJ56pKOv" target="_blank">可在: YouTube</a>
+                        <code>|</code>
+                        <a class="streaming-link" href="https://chineseflix.com/subtitles" target="_self">字幕指南</a>
+                    </div>
+                    <div class="review-parent">
+                        <h3 class="article-title">一场心智与权力的惊险之旅</h3>
+                        <h4 class="review">
+                            《永无止境》是一部由尼尔·伯格执导的引人入胜的心理惊悚片，改编自艾伦·格林的小说《黑暗领域》。影片由布莱德利·库珀主演，讲述了作家艾迪·莫拉（Bradley Cooper
+                            饰）在发现一种名为
+                            NZT-48
+                            的神秘药物后，人生发生了巨变，这种药物可以解锁人类大脑的全部潜能。<br><br>
+
+                            艾迪·莫拉的生活一团糟。他面临写作瓶颈，女友琳迪（艾比·考尼什饰）离开了他，他也即将被驱逐。一次偶然的机会，他遇到了前姐夫维农，维农向他介绍了
+                            NZT-48。服用这种药物后，艾迪的认知能力飞速提升，让他能以闪电般的速度处理信息，瞬间学会新技能，并能回忆起他生命中的每一个细节。很快，艾迪利用新获得的智慧积累了财富和成功，但这种药物的效果伴随着危险的副作用，并引起了强大对手的注意，包括一位由罗伯特·德尼罗饰演的无情金融家。
+                            <br><br>
+
+                            布莱德利·库珀作为艾迪·莫拉的表演非常出色。他成功地演绎了艾迪从一个落魄作家到拥有无限潜能的天才的转变，既引人入胜又令人信服。库珀的魅力和张力为他的角色增添了深度，使艾迪的旅程变得惊险而又贴近现实。
+                            <br><br>
+
+                            尼尔·伯格的导演手法敏锐且充满活力，使观众始终处于紧张状态。影片的视觉风格，包括快节奏的镜头和创意的摄像手法，有效地传达了艾迪在服用 NZT-48
+                            后的高度心智状态。摄影师乔·威廉姆斯的摄影为影片增添了紧张的氛围，通过鲜艳的色彩和引人注目的视觉效果反映了艾迪增强的感知能力。
+                            <br><br>
+
+                            《永无止境》是一部令人惊叹且发人深省的电影，展示了布莱德利·库珀的才华和尼尔·伯格的导演才能。凭借其引人入胜的前提、动感十足的视觉效果和强大的表演，它是心理惊悚片迷和对人类心智潜能感兴趣的观众必看的影片。
+                        </h4>
+                    </div>
+
+                </article>
+            </section>
+            <div id="social-links-container">
+                <h5>分享列表</h5>
+                <div id="social-links-child1" class="social-links-children">
+                    <a id="line" class="social-links-tag"
+                        href="https://social-plugins.line.me/lineit/share?url=chineseflix.com" target="_blank"
+                        rel="noopener noreferrer"><img src="/line-app.png" alt="line-app-icon"></a>
+                    <a id="whatsapp" class="social-links-tag"
+                        href="https://api.whatsapp.com/send?text=以下是本月上映的 12 部带中文字幕的最佳电影%20https://chineseflix.com"
+                        target="_blank" rel="noopener noreferrer"><img src="/whatsapp.jpg" alt="whatsapp-icon"></a>
+
+                    <a id="facebook" class="social-links-tag"
+                        href="https://www.facebook.com/sharer.php?u=chineseflix.com" target="_blank"
+                        rel="noopener noreferrer"><img src="/facebook.jpg" alt="facebook-icon"></a>
                 </div>
-                <div class="link-parent"><a class="streaming-link"
-                        href="https://youtu.be/6w3iElemSYI?si=dnahVR8lFJ56pKOv" target="_blank">可在: YouTube</a>
-                    <code>|</code>
-                    <a class="streaming-link" href="https://chineseflix.com/subtitles" target="_self">字幕指南</a>
-                </div>
-                <div class="review-parent">
-                    <h3 class="article-title">一场心智与权力的惊险之旅</h3>
-                    <h4 class="review">
-                        《永无止境》是一部由尼尔·伯格执导的引人入胜的心理惊悚片，改编自艾伦·格林的小说《黑暗领域》。影片由布莱德利·库珀主演，讲述了作家艾迪·莫拉（Bradley Cooper 饰）在发现一种名为
-                        NZT-48
-                        的神秘药物后，人生发生了巨变，这种药物可以解锁人类大脑的全部潜能。<br><br>
-
-                        艾迪·莫拉的生活一团糟。他面临写作瓶颈，女友琳迪（艾比·考尼什饰）离开了他，他也即将被驱逐。一次偶然的机会，他遇到了前姐夫维农，维农向他介绍了
-                        NZT-48。服用这种药物后，艾迪的认知能力飞速提升，让他能以闪电般的速度处理信息，瞬间学会新技能，并能回忆起他生命中的每一个细节。很快，艾迪利用新获得的智慧积累了财富和成功，但这种药物的效果伴随着危险的副作用，并引起了强大对手的注意，包括一位由罗伯特·德尼罗饰演的无情金融家。
-                        <br><br>
-
-                        布莱德利·库珀作为艾迪·莫拉的表演非常出色。他成功地演绎了艾迪从一个落魄作家到拥有无限潜能的天才的转变，既引人入胜又令人信服。库珀的魅力和张力为他的角色增添了深度，使艾迪的旅程变得惊险而又贴近现实。
-                        <br><br>
-
-                        尼尔·伯格的导演手法敏锐且充满活力，使观众始终处于紧张状态。影片的视觉风格，包括快节奏的镜头和创意的摄像手法，有效地传达了艾迪在服用 NZT-48
-                        后的高度心智状态。摄影师乔·威廉姆斯的摄影为影片增添了紧张的氛围，通过鲜艳的色彩和引人注目的视觉效果反映了艾迪增强的感知能力。
-                        <br><br>
-
-                        《永无止境》是一部令人惊叹且发人深省的电影，展示了布莱德利·库珀的才华和尼尔·伯格的导演才能。凭借其引人入胜的前提、动感十足的视觉效果和强大的表演，它是心理惊悚片迷和对人类心智潜能感兴趣的观众必看的影片。
-                    </h4>
-                </div>
-
-            </article>
-        </section>
-        <div id="social-links-container">
-            <h5>分享列表</h5>
-            <div id="social-links-child1" class="social-links-children">
-                <a id="line" class="social-links-tag"
-                    href="https://social-plugins.line.me/lineit/share?url=chineseflix.com" target="_blank"
-                    rel="noopener noreferrer"><img src="/line-app.png" alt="line-app-icon"></a>
-                <a id="whatsapp" class="social-links-tag"
-                    href="https://api.whatsapp.com/send?text=以下是本月上映的 12 部带中文字幕的最佳电影%20https://chineseflix.com"
-                    target="_blank" rel="noopener noreferrer"><img src="/whatsapp.jpg" alt="whatsapp-icon"></a>
-
-                <a id="facebook" class="social-links-tag" href="https://www.facebook.com/sharer.php?u=chineseflix.com"
-                    target="_blank" rel="noopener noreferrer"><img src="/facebook.jpg" alt="facebook-icon"></a>
-            </div>
-            <h5>仅限移动设备</h5>
-            <div id="social-links-child2" class="social-links-children">
-                <a id="wechat" class="social-links-tag" href="weixin://dl/moments?text=%E4%BB%A5%E4%B8%8B%E6%98%AF%E6%9C%AC%E6%9C%88%E4%B8%8A%E6%98%A0%E7%9A%84%2012%20%E9%83%A8%E5%B8%A6%E4%B8%AD%E6%96%87%E5%AD%97%E5%B9%95%E7%9A%84%E6%9C%80%E4%BD%B3%E7%94%B5%E5%BD%B1%20https%3A%2F%2Fchineseflix.com%2F
+                <h5>仅限移动设备</h5>
+                <div id="social-links-child2" class="social-links-children">
+                    <a id="wechat" class="social-links-tag" href="weixin://dl/moments?text=%E4%BB%A5%E4%B8%8B%E6%98%AF%E6%9C%AC%E6%9C%88%E4%B8%8A%E6%98%A0%E7%9A%84%2012%20%E9%83%A8%E5%B8%A6%E4%B8%AD%E6%96%87%E5%AD%97%E5%B9%95%E7%9A%84%E6%9C%80%E4%BD%B3%E7%94%B5%E5%BD%B1%20https%3A%2F%2Fchineseflix.com%2F
 " target="_blank" rel="noopener noreferrer"><img src="/wechat.png" alt="wechat-icon"></a>
+                </div>
             </div>
-        </div>
 
-        <article id="blog-parent">
-            <div id="blog-h1-parent">
-                <h1 id="blog-corner-h1">博客角</h1>
-            </div>
-            <img id="article-still-img1" class="blog-img" src="/FallenAngels_1704.jpg" alt="fallen-angels-movie-image">
-            <h2>都市孤寂：通过王家卫的《堕落天使》的旅程</h2>
-            <p>王家卫的《堕落天使》（1995）是一部视觉上令人惊叹且叙事复杂的电影，背景设在繁忙的香港街头。影片交织了一个杀手、他的经纪人、一个哑巴前罪犯和一个痴情女人的生活。每个角色都被自己的欲望和挣扎驱动，在意想不到且常常令人心酸的方式中，他们的路径相交。影片通过其独特的叙事方式和风格选择，捕捉到了都市生活的孤独与渴望。
+            <article id="blog-parent">
+                <div id="blog-h1-parent">
+                    <h1 id="blog-corner-h1">博客角</h1>
+                </div>
+                <img id="article-still-img1" class="blog-img" src="/FallenAngels_1704.jpg"
+                    alt="fallen-angels-movie-image">
+                <h2>都市孤寂：通过王家卫的《堕落天使》的旅程</h2>
+                <p>王家卫的《堕落天使》（1995）是一部视觉上令人惊叹且叙事复杂的电影，背景设在繁忙的香港街头。影片交织了一个杀手、他的经纪人、一个哑巴前罪犯和一个痴情女人的生活。每个角色都被自己的欲望和挣扎驱动，在意想不到且常常令人心酸的方式中，他们的路径相交。影片通过其独特的叙事方式和风格选择，捕捉到了都市生活的孤独与渴望。
 
-                <br>
-                《堕落天使》最初是王家卫前作《重庆森林》中的一个片段。当这个片段变得过于复杂时，它发展成了一部独立的作品。王家卫的灵感很大程度上来自他对香港夜间活力和居民故事的热爱。这部电影是对这座城市动感但孤立的氛围的致敬，反映了导演对都市疏离和短暂连接的迷恋。
-                在香港霓虹灯照耀的夜景背景下，《堕落天使》展现了一座永不停歇的城市，反映了20世纪90年代香港人所面对的快速变化和不确定性。影片捕捉了香港的本质，它在从英国移交给中国主权的边缘摇摆。通过角色和场景，这部电影探索了流离失所、身份认同和在快节奏、不断发展的都市中寻找意义的主题。
-            </p>
-            <img id="article-still-img2" class="blog-img" src="/FallenAngels_0547.jpg" alt="fallen-angels-movie-still">
-            <p>
-                风格选择和摄像镜头
-                王家卫与摄影师杜可风合作，采用广角镜头和非常规的摄像角度来创造一种迷失感和亲密感。广角镜头的使用扭曲了城市景观，使角色显得被困在广阔的城市中。这种技术增强了孤立和困惑的感觉，强调了角色的情感动荡。快速的剪辑和生动的色彩更加增强了电影梦幻和超现实的质量，使《堕落天使》成为一部视觉杰作。
-            </p>
+                    <br>
+                    《堕落天使》最初是王家卫前作《重庆森林》中的一个片段。当这个片段变得过于复杂时，它发展成了一部独立的作品。王家卫的灵感很大程度上来自他对香港夜间活力和居民故事的热爱。这部电影是对这座城市动感但孤立的氛围的致敬，反映了导演对都市疏离和短暂连接的迷恋。
+                    在香港霓虹灯照耀的夜景背景下，《堕落天使》展现了一座永不停歇的城市，反映了20世纪90年代香港人所面对的快速变化和不确定性。影片捕捉了香港的本质，它在从英国移交给中国主权的边缘摇摆。通过角色和场景，这部电影探索了流离失所、身份认同和在快节奏、不断发展的都市中寻找意义的主题。
+                </p>
+                <img id="article-still-img2" class="blog-img" src="/FallenAngels_0547.jpg"
+                    alt="fallen-angels-movie-still">
+                <p>
+                    风格选择和摄像镜头
+                    王家卫与摄影师杜可风合作，采用广角镜头和非常规的摄像角度来创造一种迷失感和亲密感。广角镜头的使用扭曲了城市景观，使角色显得被困在广阔的城市中。这种技术增强了孤立和困惑的感觉，强调了角色的情感动荡。快速的剪辑和生动的色彩更加增强了电影梦幻和超现实的质量，使《堕落天使》成为一部视觉杰作。
+                </p>
 
-            <img id="article-still-img3" class="blog-img" src="/FallenAngels_1691.jpg" alt="fallen-angels-movie-still">
-            <p>《堕落天使》因其创新的风格和情感深度而获得了评论界的好评。它因大胆的视觉美学和引人入胜的叙事结构而备受赞誉。多年来，这部电影积累了大量追随者，并常被誉为王家卫的最佳作品之一。它在各种国际电影节上展映，并因其摄影和导演获得了多项荣誉。影片获得了金马奖最佳摄影奖，并获得了其他多项提名，巩固了其在世界电影中的重要地位。
+                <img id="article-still-img3" class="blog-img" src="/FallenAngels_1691.jpg"
+                    alt="fallen-angels-movie-still">
+                <p>《堕落天使》因其创新的风格和情感深度而获得了评论界的好评。它因大胆的视觉美学和引人入胜的叙事结构而备受赞誉。多年来，这部电影积累了大量追随者，并常被誉为王家卫的最佳作品之一。它在各种国际电影节上展映，并因其摄影和导演获得了多项荣誉。影片获得了金马奖最佳摄影奖，并获得了其他多项提名，巩固了其在世界电影中的重要地位。
 
-            </p>
-            <img id="article-still-img3" class="blog-img" src="/FallenAngels_1431.jpg" alt="fallen-angels-movie-still">
-            <p>《堕落天使》仍然是王家卫独特视角的见证，他能够通过一座繁忙城市的镜头捕捉复杂的人类情感。它的关联性仍然引起共鸣，提供了对不断变化的都市景观和其中交织的生活的深刻反思。</p>
-            <div class="blog-streaming-link-parent link-parent"><a class="streaming-link"
-                    href="https://youtu.be/2xld-6-kxr0?si=iSOMiEgQcWixjdVA" target="_blank">可用于:
-                    YouTube</a><code>|</code>
-                <a class="streaming-link" href="https://chineseflix.com/subtitles" target="_self">字幕指南</a>
-            </div>
-        </article>
-        <footer>
-            <%- include('./partials/footer.ejs') %>
-        </footer>
+                </p>
+                <img id="article-still-img3" class="blog-img" src="/FallenAngels_1431.jpg"
+                    alt="fallen-angels-movie-still">
+                <p>《堕落天使》仍然是王家卫独特视角的见证，他能够通过一座繁忙城市的镜头捕捉复杂的人类情感。它的关联性仍然引起共鸣，提供了对不断变化的都市景观和其中交织的生活的深刻反思。</p>
+                <div class="blog-streaming-link-parent link-parent"><a class="streaming-link"
+                        href="https://youtu.be/2xld-6-kxr0?si=iSOMiEgQcWixjdVA" target="_blank">可用于:
+                        YouTube</a><code>|</code>
+                    <a class="streaming-link" href="https://chineseflix.com/subtitles" target="_self">字幕指南</a>
+                </div>
+            </article>
+            <footer>
+                <%- include('./partials/footer.ejs') %>
+            </footer>
     </main>
     <%- include('./partials/events.ejs') %>
 </body>
