@@ -10,6 +10,7 @@
         <header>
             <%- include('./partials/heading.ejs') %>
         </header>
+<<<<<<< HEAD
         <nav id="mobile-nav-links-parent" class="mobile_navigation_links">
             <div id="mobile-nav-links-wrapper" class="mobile_display_flex_column">
                 <a id="mobile-home-link" class="mobile-link" href="http://localhost:8080/"
@@ -50,6 +51,60 @@
         <footer>
             <%- include('./partials/footer.ejs') %>
         </footer>
+=======
+        <%- include('./partials/mobile-nav.ejs') %>
+            <section id="login-signup-section">
+                <div id="login-img-parent">
+                    <img src="zeng-edited.jpg">
+                </div>
+                <div class="login-signup-form-container">
+                    <h2 id="login-signup-h2">登录</h2>
+                    <form id="login-form" action="/user/login" method="post">
+                        <div id="login-input-container">
+                            <input name="email" type="email" id="login-email" placeholder="电子邮件" required
+                                autocomplete="email">
+                            <input name="password" type="password" id="login-password" placeholder="密码" required
+                                autocomplete="current-password">
+                        </div>
+                        <button id="login-button" type="submit">登录</button>
+                        <p>没有账户？ <span id="show-signup">注册</span></p>
+
+                        <!-- Display error message if there is one -->
+                        <% if (typeof error !=='undefined' ) { %>
+                            <div class="error-message" style="color: red;">
+                                <%= error %>
+                            </div>
+                            <% } %>
+                    </form>
+
+                    <form id="signup-form" method="post" action="/user/signup">
+                        <div id="signup-input-container">
+                            <input id="signup-displayname" name="name" type="text" placeholder="输入您希望显示的全名"
+                                autocomplete="name" required>
+                            <input name="email" type="email" id="signup-email" placeholder="电子邮件" autocomplete="email"
+                                required>
+                            <input name="password" type="password" id="signup-password" minlength="8" maxlength="20"
+                                placeholder="创建一个安全的密码" required>
+                            <input name="confirmPassword" type="password" id="signup-confirm-password"
+                                placeholder="确认密码" autocomplete="new-password" required>
+                        </div>
+                        <button id="signup-button" type="submit">注册</button>
+                        <p>已经有账户？ <span id="show-login">登录</span></p>
+
+                        <!-- Display error message if there is one -->
+                        <% if (typeof error !=='undefined' ) { %>
+                            <div class="error-message" style="color: red;">
+                                <%= error %>
+                            </div>
+                            <% } %>
+                    </form>
+                </div>
+            </section>
+            <footer>
+                <%- include('./partials/footer.ejs') %>
+            </footer>
+            <%- include('./partials/events.ejs') %>
+>>>>>>> 560bc68 (commit dev)
     </main>
     <%- include('./partials/events.ejs') %>
 </body>

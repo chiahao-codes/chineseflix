@@ -10,6 +10,7 @@
         <header>
             <%- include('./partials/heading.ejs') %>
         </header>
+<<<<<<< HEAD
         <nav id="mobile-nav-links-parent" class="mobile_navigation_links">
             <div id="mobile-nav-links-wrapper" class="mobile_display_flex_column">
                 <a id="mobile-home-link" class="mobile-link" href="http://localhost:8080/"
@@ -35,6 +36,19 @@
         <footer>
             <%- include('./partials/footer.ejs') %>
         </footer>
+=======
+        <%- include('./partials/mobile-nav.ejs') %>
+            <section id="confirmation-section">
+                <img id="welcome-img" src="zeng2.jpg">
+                <div id="welcome-message-h">
+                    <h2>成功！</h2>
+                    <h1>欢迎来到社区，<%= name %>!</h1>
+                </div>
+            </section>
+            <footer>
+                <%- include('./partials/footer.ejs') %>
+            </footer>
+>>>>>>> 560bc68 (commit dev)
     </main>
     <%- include('./partials/events.ejs') %>
 </body>
