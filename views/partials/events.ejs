@@ -2,6 +2,8 @@
     const hamburgerMenuWrapper = document.getElementById("menuIconWrapper");
     const mobileDropMenu = document.getElementById("mobile-nav-links-parent");
     const wechat = document.getElementById('wechat');
+    const signUpLink = document.getElementById('show-signup')
+    const loginLink = document.getElementById('show-login')
 
     function setHamburgerInLocalStorage(setting) {
         localStorage.setItem("hamburger", setting);
@@ -59,6 +61,11 @@
         });
     }
 
+    //login/signup form display none if clicked;
+    function loginSignUp() {
+
+    }
+
     //mobile hamburger menu
     hamburgerMenuWrapper.addEventListener(
         "click",
@@ -83,6 +90,25 @@
         },
         { passive: true }
     );
+
+    signUpLink.addEventListener("click", () => {
+        const loginDisplay = document.getElementById('login-form').style.display;
+        if (loginDisplay !== "none") {
+            console.log(document.getElementById('login-form'))
+            document.getElementById('login-form').style.display = "none";
+        }
+        document.getElementById('login-signup-h2').innerText = "注册";
+        document.getElementById('signup-form').style.display = "flex";
+    })
+
+    loginLink.addEventListener("click", () => {
+        const signUpDisplay = document.getElementById('signup-form').style.display;
+        if (signUpDisplay !== "none") {
+            document.getElementById('signup-form').style.display = "none";
+        }
+        document.getElementById('login-signup-h2').innerText = "登录";
+        document.getElementById('login-form').style.display = "flex";
+    })
 
     window.addEventListener("load", () => {
         localStorage.setItem("hamburger", "closed");
