@@ -57,11 +57,18 @@ router.post("/signup", async (req, res) => {
       .insertOne({ name, email, password: hashedPassword });
 
     const msg = {
-      to: email, // Change to your recipient
-      from: fromEmail, // Change to your verified sender
-      subject: "Sending with SendGrid is Fun",
-      text: "and easy to do anywhere, even with Node.js",
-      html: "<strong>and easy to do anywhere, even with Node.js</strong>",
+      to: email, // Recipient's email address
+      from: fromEmail, // Sender's verified email address
+      subject: `欢迎, ${name}！`, // Personalize the subject line in Chinese
+      text: `您好 ${name},\n\n感谢您的注册！我们很高兴您加入我们的平台。如果您有任何问题，请随时与我们联系。\n\n此致，\n团队`, // Plain text version in Chinese
+      html: `
+    <div style="font-family: Arial, sans-serif; line-height: 1.5;">
+      <h2 style="color: #333;">您好 ${name}, 欢迎！</h2>
+      <p>感谢您的注册。我们很高兴您加入我们的平台！</p>
+      <p>如果您有任何问题，请随时 <a href="mailto:support@chineseflix.com">联系我们</a>。</p>
+      <p style="color: #555;">此致，<br>团队</p>
+    </div>
+  `,
     };
 
     await sgMail
