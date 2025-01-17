@@ -1,9 +1,10 @@
 import { MongoClient, ServerApiVersion } from "mongodb";
 const mongodbUSER = process.env.MONGODBUS;
 const mongodbPW = process.env.MONGODBPW;
-//const mongoUser = encodeURIComponent(mongodbUSER);
-//const mongoPW = encodeURIComponent(mongodbPW);
+const mongoUser = encodeURIComponent(mongodbUSER);
+const mongoPW = encodeURIComponent(mongodbPW);
 const uri = process.env.MONGO_URI;
+`mongodb+srv://${mongoUser}:${mongoPW}@chineseflix.r2ugzun.mongodb.net/?retryWrites=true&w=majority&appName=CHINESEFLIX`;
 // Create a MongoClient with a MongoClientOptions object to set the Stable API version
 const mongoClient = new MongoClient(uri, {
   serverApi: {
