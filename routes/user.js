@@ -83,7 +83,14 @@ router.post("/signup", async (req, res) => {
     res.status(200).render("confirmed", { name });
   } catch (error) {
     console.log(error);
-    res.status(400).send({ error: "创建用户时出错。" });
+    // Send error details to the frontend in non-production environments
+    const errorMessage =
+      process.env.NODE_ENV === "production"
+        ? "创建用户时出错。"
+        : `Error: ${error.message}`;
+
+    res.status(400).send({ error: errorMessage });
+    //res.status(400).send({ error: "创建用户时出错。" });
   }
 });
 
