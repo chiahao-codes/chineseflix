@@ -87,9 +87,9 @@ router.post("/signup", async (req, res) => {
     const errorMessage =
       process.env.NODE_ENV === "production"
         ? "创建用户时出错。"
-        : `Error: ${error.message}`;
+        : `Error: ${error}`;
 
-    res.status(400).send({ error: error });
+    res.status(400).send({ error: errorMessage });
     //res.status(400).send({ error: "创建用户时出错。" });
   }
 });
