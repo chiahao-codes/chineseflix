@@ -19,9 +19,11 @@ router.get("/login", (req, res, next) => {
   res.render("login");
 });
 
-router.get("/confirmed", (req, res, next) => {
+/**
+ * router.get("/confirmed", (req, res, next) => {
   res.render("confirmed");
 });
+ */
 
 //Account Profile
 router.get("/account", (req, res, next) => {
