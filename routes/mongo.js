@@ -4,7 +4,6 @@ const mongodbPW = process.env.MONGODBPW;
 const mongoUser = encodeURIComponent(mongodbUSER);
 const mongoPW = encodeURIComponent(mongodbPW);
 const uri = `mongodb+srv://${mongoUser}:${mongoPW}@chineseflix.r2ugzun.mongodb.net/?retryWrites=true&w=majority&appName=CHINESEFLIX`;
-
 // Create a MongoClient with a MongoClientOptions object to set the Stable API version
 const mongoClient = new MongoClient(uri, {
   serverApi: {
