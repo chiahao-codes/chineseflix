@@ -9,6 +9,11 @@ import dotenv from "dotenv";
 const router = express.Router();
 const db = mongoClient.db("current_users");
 dotenv.config();
+console.log(
+  "SendGrid API Key:",
+  process.env.SENDGRID_API_KEY ? "Loaded" : "Not Loaded"
+);
+
 const fromEmail = process.env.DOMAIN_EMAIL;
 sgMail.setApiKey(process.env.SENDGRID_API_KEY);
 
