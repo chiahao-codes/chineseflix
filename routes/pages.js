@@ -32,9 +32,11 @@ router.get("/test-connection", async (req, res) => {
     res.status(200).send({ message: "Connection successful!", result });
   } catch (error) {
     console.error("Database connection test failed:", error);
-    res.status(500).send({ error: "Connection failed.", details: error });
+    res.render("login", { error });
+    //res.status(500).send({ error: "Connection failed.", details: error });
   }
 });
+
 //Account Profile
 router.get("/account", (req, res, next) => {
   res.render("account");
