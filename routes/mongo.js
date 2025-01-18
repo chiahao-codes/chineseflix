@@ -7,8 +7,8 @@ if (!mongodbUSER || !mongodbPW) {
   );
   process.exit(1); // Exit the app if credentials are missing
 }
-const mongoUser = encodeURIComponent(mongodbUSER);
-const mongoPW = encodeURIComponent(mongodbPW);
+//const mongoUser = encodeURIComponent(mongodbUSER);
+//const mongoPW = encodeURIComponent(mongodbPW);
 
 if (!mongodbUSER || !mongodbPW) {
   console.error("MongoDB credentials are not set!");

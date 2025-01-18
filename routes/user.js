@@ -94,7 +94,7 @@ router.post("/signup", async (req, res) => {
         ? "创建用户时出错。"
         : `Error: ${error}`;
 
-    res.status(400).send({ error: errorMessage });
+    res.status(400).render("login", { error });
     //res.status(400).send({ error: "创建用户时出错。" });
     //res.status(400).render("login", { error });
   }
