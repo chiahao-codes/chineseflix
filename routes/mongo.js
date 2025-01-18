@@ -15,7 +15,7 @@ if (!mongodbUSER || !mongodbPW) {
   process.exit(1);
 }
 
-const uri = `mongodb+srv://chiahao1:xZBiOUuUGJg2GT0I@chineseflix.r2ugzun.mongodb.net/?retryWrites=true&w=majority&appName=CHINESEFLIX`;
+const uri = process.env.MONGODB_URI || "fallback_local_uri_for_dev";
 
 //const uri = `mongodb+srv://${mongoUser}:${mongoPW}@chineseflix.r2ugzun.mongodb.net/?retryWrites=true&w=majority&appName=CHINESEFLIX`;
 // Create a MongoClient with a MongoClientOptions object to set the Stable API version
