@@ -34,6 +34,7 @@ console.log(
 );
 
 console.log("MongoDB URI:", process.env.MONGODB_URI ? "Loaded" : "Not Loaded");
+console.log("MongoDB URI:", process.env.MONGODB_URI); // Debug log
 
 // Singleton pattern for MongoDB connection
 let db = null;
