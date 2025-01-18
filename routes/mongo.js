@@ -68,8 +68,7 @@ async function closeDatabaseConnection() {
     console.log("MongoDB connection closed.");
   }
 }
- *
-
+ 
  */
 
 export { connectToDatabase, closeDatabaseConnection, mongoClient };
