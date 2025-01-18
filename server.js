@@ -33,7 +33,8 @@ const server = app.listen(PORT, () =>
 );
 
 // Graceful Shutdown
-const gracefulShutdown = async (signal) => {
+/**
+ * const gracefulShutdown = async (signal) => {
   console.log(`Received ${signal}. Closing server gracefully...`);
   server.close(async (err) => {
     if (err) {
@@ -46,3 +47,5 @@ const gracefulShutdown = async (signal) => {
 };
 process.on("SIGINT", () => gracefulShutdown("SIGINT"));
 process.on("SIGTERM", () => gracefulShutdown("SIGTERM"));
+ * 
+ */
