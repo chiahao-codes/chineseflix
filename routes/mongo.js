@@ -42,6 +42,7 @@ async function connectToDatabase() {
       console.log("Connected to MongoDB successfully!");
       db = mongoClient.db("current_users"); // Specify the database name here
     }
+    console.log("db name: ", db);
     return db; // Return the database instance
     // Connect the client to the server	(optional starting in v4.7)
     //await mongoClient.connect();

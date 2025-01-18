@@ -20,11 +20,6 @@ router.get("/login", (req, res, next) => {
   res.render("login");
 });
 
-/**
- * router.get("/confirmed", (req, res, next) => {
-  res.render("confirmed");
-});
- */
 router.get("/test-connection", async (req, res) => {
   try {
     const db = await connectToDatabase();
