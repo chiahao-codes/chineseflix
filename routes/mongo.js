@@ -33,6 +33,8 @@ console.log(
   process.env.MONGODBPW ? "Loaded" : "Not Loaded"
 );
 
+console.log("MongoDB URI:", process.env.MONGODB_URI ? "Loaded" : "Not Loaded");
+
 // Singleton pattern for MongoDB connection
 let db = null;
 async function connectToDatabase() {
