@@ -16,9 +16,11 @@ router.get("/contact", (req, res, next) => {
 });
 
 //login/signup page
-router.get("/login", (req, res, next) => {
+/**
+ * router.get("/login", (req, res, next) => {
   res.render("login");
 });
+ */
 
 router.get("/test-connection", async (req, res) => {
   try {
@@ -33,9 +35,11 @@ router.get("/test-connection", async (req, res) => {
 });
 
 //Account Profile
-router.get("/account", (req, res, next) => {
+/**
+ * router.get("/account", (req, res, next) => {
   res.render("account");
 });
+ */
 
 router.get("/privacy", (req, res, next) => {
   res.render("privacy");
