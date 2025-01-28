@@ -65,14 +65,4 @@ async function closeDatabaseConnection() {
   }
 }
 
-/**
- * async function closeDatabaseConnection() {
-  if (mongoClient) {
-    await mongoClient.close();
-    console.log("MongoDB connection closed.");
-  }
-}
- 
- */
-
 export { connectToDatabase, closeDatabaseConnection, mongoClient };

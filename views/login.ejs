@@ -45,6 +45,8 @@
                                 placeholder="创建一个安全的密码" required>
                             <input name="confirmPassword" type="password" id="signup-confirm-password"
                                 placeholder="确认密码" autocomplete="new-password" required>
+                            <!-- Google reCAPTCHA -->
+                            <div class="g-recaptcha" data-sitekey="<%= siteKey %>"></div>
                         </div>
                         <button id="signup-button" type="submit">注册</button>
                         <p>已经有账户？ <span id="show-login">登录</span></p>
@@ -63,6 +65,40 @@
             </footer>
             <%- include('./partials/events.ejs') %>
     </main>
+    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+    <script>
+        document.getElementById("signup-form").addEventListener("submit", async function (event) {
+            event.preventDefault();
+
+            // Get reCAPTCHA response token from the widget
+            const recaptchaToken = grecaptcha.getResponse();
+
+            if (!recaptchaToken) {
+                alert("Please complete the reCAPTCHA challenge.");
+                return;
+            }
+
+            // Collect form data
+            const formData = {
+                username: document.getElementById("username").value,
+                email: document.getElementById("email").value,
+                password: document.getElementById("password").value,
+                recaptchaToken: recaptchaToken // Include reCAPTCHA token
+            };
+
+            // Send signup request to backend
+            const response = await fetch("/signup", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json"
+                },
+                body: JSON.stringify(formData)
+            });
+
+            const result = await response.json();
+            alert(result.message);
+        });
+    </script>
 </body>
 
 </html>

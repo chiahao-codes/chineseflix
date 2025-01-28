@@ -20,7 +20,26 @@ sgMail.setApiKey(process.env.SENDGRID_API_KEY);
 // Signup Route
 router.post("/signup", async (req, res) => {
   try {
-    const { name, email, password, confirmPassword } = req.body;
+    const { name, email, password, confirmPassword, recaptchaToken } = req.body;
+
+    // Verify reCAPTCHA with Google
+    const verifyUrl = `https://www.google.com/recaptcha/api/siteverify?secret=${process.env.RECAPTCHA_SECRET_KEY}&response=${recaptchaToken}`;
+
+    const response = await fetch(verifyUrl, {
+      method: "POST",
+      headers: { "Content-Type": "application/x-www-form-urlencoded" },
+      body: new URLSearchParams({
+        secret: process.env.RECAPTCHA_SECRET_KEY, // Your reCAPTCHA secret key
+        response: recaptchaToken,
+      }),
+    });
+
+    const data = await response.json();
+    if (!data.success) {
+      return res
+        .status(400)
+        .send({ error: "reCAPTCHA verification failed. Try again." });
+    }
 
     // Validate required fields
     if (!name || !email || !password || !confirmPassword) {
@@ -94,9 +113,7 @@ router.post("/signup", async (req, res) => {
         ? "创建用户时出错。"
         : `Error: ${error}`;
 
-    res.status(400).render("login", { error });
-    //res.status(400).send({ error: "创建用户时出错。" });
-    //res.status(400).render("login", { error });
+    res.status(400).render("login", { errorMessage });
   }
 });
 

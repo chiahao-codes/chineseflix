@@ -1,6 +1,10 @@
 import express from "express";
 const router = express.Router();
 import { connectToDatabase } from "./mongo.js";
+import dotenv from "dotenv";
+dotenv.config();
+
+const siteKey = process.env.RECAPTCHA_SITE_KEY || "";
 
 router.get("/", (req, res, next) => {
   //res.render("updating");
@@ -16,11 +20,9 @@ router.get("/contact", (req, res, next) => {
 });
 
 //login/signup page
-/**
- * router.get("/login", (req, res, next) => {
-  res.render("login");
+router.get("/login", (req, res, next) => {
+  res.render("login", { siteKey });
 });
- */
 
 router.get("/test-connection", async (req, res) => {
   try {
