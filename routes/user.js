@@ -9,13 +9,37 @@ import dotenv from "dotenv";
 const router = express.Router();
 const db = mongoClient.db("current_users");
 dotenv.config();
+console.log(
+  "SendGrid API Key:",
+  process.env.SENDGRID_API_KEY ? "Loaded" : "Not Loaded"
+);
+
 const fromEmail = process.env.DOMAIN_EMAIL;
 sgMail.setApiKey(process.env.SENDGRID_API_KEY);
 
 // Signup Route
 router.post("/signup", async (req, res) => {
   try {
-    const { name, email, password, confirmPassword } = req.body;
+    const { name, email, password, confirmPassword, recaptchaToken } = req.body;
+
+    // Verify reCAPTCHA with Google
+    const verifyUrl = `https://www.google.com/recaptcha/api/siteverify?secret=${process.env.RECAPTCHA_SECRET_KEY}&response=${recaptchaToken}`;
+
+    const response = await fetch(verifyUrl, {
+      method: "POST",
+      headers: { "Content-Type": "application/x-www-form-urlencoded" },
+      body: new URLSearchParams({
+        secret: process.env.RECAPTCHA_SECRET_KEY,
+        response: recaptchaToken,
+      }),
+    });
+
+    const data = await response.json();
+    if (!data.success) {
+      return res
+        .status(400)
+        .send({ error: "reCAPTCHA verification failed. Try again." });
+    }
 
     // Validate required fields
     if (!name || !email || !password || !confirmPassword) {
@@ -87,10 +111,9 @@ router.post("/signup", async (req, res) => {
     const errorMessage =
       process.env.NODE_ENV === "production"
         ? "创建用户时出错。"
-        : `Error: ${error.message}`;
+        : `Error: ${error}`;
 
-    res.status(400).send({ error: error });
-    //res.status(400).send({ error: "创建用户时出错。" });
+    res.status(400).render("login", { errorMessage });
   }
 });
 
