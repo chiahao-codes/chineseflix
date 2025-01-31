@@ -68,9 +68,9 @@
     <script src="https://www.google.com/recaptcha/api.js" async defer></script>
     <script>
         document.getElementById("signup-form").addEventListener("submit", async function (event) {
-            event.preventDefault();
+            event.preventDefault(); // Stop normal form submission
 
-            // Get reCAPTCHA response token from the widget
+            // Get reCAPTCHA response token
             const recaptchaToken = grecaptcha.getResponse();
 
             if (!recaptchaToken) {
@@ -78,25 +78,31 @@
                 return;
             }
 
-            // Collect form data
-            const formData = {
-                username: document.getElementById("username").value,
-                email: document.getElementById("email").value,
-                password: document.getElementById("password").value,
-                recaptchaToken: recaptchaToken // Include reCAPTCHA token
-            };
+            // Create FormData object and include reCAPTCHA token
+            const form = document.getElementById("signup-form");
+            const formData = new FormData(form); // Auto-collects input values
+            formData.append("recaptchaToken", recaptchaToken); // Add reCAPTCHA manually
 
-            // Send signup request to backend
-            const response = await fetch("/signup", {
-                method: "POST",
-                headers: {
-                    "Content-Type": "application/json"
-                },
-                body: JSON.stringify(formData)
-            });
+            try {
+                // Send signup request to backend
+                const response = await fetch("/user/signup", {
+                    method: "POST",
+                    body: formData // Automatically encodes as form-data
+                });
 
-            const result = await response.json();
-            alert(result.message);
+                const result = await response.json();
+                console.log("signup result: ", result);
+
+                if (result.success) {
+                    document.getElementById("signup-form").submit();
+                } else {
+                    alert(result.message || "Signup failed. Please try again.");
+                }
+            } catch (error) {
+                console.log(error)
+                console.error("Signup error:", error);
+                alert("An error occurred. Please try again later.");
+            }
         });
     </script>
 </body>

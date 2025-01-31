@@ -29,7 +29,7 @@ router.post("/signup", async (req, res) => {
       method: "POST",
       headers: { "Content-Type": "application/x-www-form-urlencoded" },
       body: new URLSearchParams({
-        secret: process.env.RECAPTCHA_SECRET_KEY, // Your reCAPTCHA secret key
+        secret: process.env.RECAPTCHA_SECRET_KEY,
         response: recaptchaToken,
       }),
     });
