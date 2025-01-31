@@ -966,8 +966,28 @@ body {
   }
   .check-back-text {
     letter-spacing: 2px;
+    font-size: x-large;
+    font-weight: 300;
+    width: 88%;
+    max-width: 550px;
   }
 
+  #happy-new-year-parent {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    row-gap: 8px;
+  }
+  #happy-new-year-message-update {
+    color: red;
+  }
+
+  #orange-icon {
+    width: 45px;
+    background-color: white;
+  }
   /*Confirmation page*/
   #confirmation-section {
     position: relative;
