@@ -1,6 +1,5 @@
 import express from "express";
 const router = express.Router();
-import { connectToDatabase } from "./mongo.js";
 import dotenv from "dotenv";
 dotenv.config();
 
@@ -22,18 +21,6 @@ router.get("/contact", (req, res, next) => {
 //login/signup page
 router.get("/login", (req, res, next) => {
   res.render("login", { siteKey });
-});
-
-router.get("/test-connection", async (req, res) => {
-  try {
-    const db = await connectToDatabase();
-    const result = await db.collection("user_info").findOne({});
-    res.status(200).send({ message: "Connection successful!", result });
-  } catch (error) {
-    console.error("Database connection test failed:", error);
-    res.render("login", { error });
-    //res.status(500).send({ error: "Connection failed.", details: error });
-  }
 });
 
 //Account Profile

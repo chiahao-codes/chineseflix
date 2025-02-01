@@ -24,7 +24,7 @@ app.use(express.urlencoded({ extended: true }));
 connectToDatabase().catch(console.dir);
 
 app.use("/", pageRoutes);
-//app.use("/user", router);
+app.use("/user", router);
 app.use("/password-token", sendPasswordResetToken);
 app.use("/reset", resetPassword);
 
