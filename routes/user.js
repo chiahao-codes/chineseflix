@@ -20,26 +20,62 @@ sgMail.setApiKey(process.env.SENDGRID_API_KEY);
 // Signup Route
 router.post("/signup", async (req, res) => {
   try {
-    const { name, email, password, confirmPassword, recaptchaToken } = req.body;
+    const { name, email, password, confirmPassword } = req.body;
+    // Grab the reCAPTCHA response token
+    const recaptchaToken = req.body["g-recaptcha-response"];
+
+    // Check that reCAPTCHA token is present
+    //error: Please complete reCAPTCHA challenge.
+    if (!recaptchaToken) {
+      return res.render("login", {
+        error: "请完成 reCAPTCHA 挑战。",
+        siteKey: process.env.RECAPTCHA_SITE_KEY,
+      });
+    }
 
     // Verify reCAPTCHA with Google
-    const verifyUrl = `https://www.google.com/recaptcha/api/siteverify?secret=${process.env.RECAPTCHA_SECRET_KEY}&response=${recaptchaToken}`;
+    const verifyUrl = `https://www.google.com/recaptcha/api/siteverify`;
 
     const response = await fetch(verifyUrl, {
       method: "POST",
-      headers: { "Content-Type": "application/x-www-form-urlencoded" },
+      headers: {
+        "Content-Type": "application/x-www-form-urlencoded",
+        Accept: "application/json",
+      },
       body: new URLSearchParams({
         secret: process.env.RECAPTCHA_SECRET_KEY,
         response: recaptchaToken,
       }),
     });
 
-    const data = await response.json();
-    if (!data.success) {
-      return res
-        .status(400)
-        .send({ error: "reCAPTCHA verification failed. Try again." });
+    console.log(response);
+    // Check if the HTTP response is OK before attempting to parse
+    if (!response.ok) {
+      const errorText = await response.text();
+      console.error("Non-200 response from reCAPTCHA:", errorText);
+      return res.render("login", {
+        error: "reCAPTCHA verification error. Please try again later.",
+        siteKey: process.env.RECAPTCHA_SITE_KEY,
+      });
     }
+
+    let data;
+    try {
+      data = await response.json();
+    } catch (jsonError) {
+      // Log the raw response if JSON parsing fails
+      const rawResponse = await response.text();
+      console.error(
+        "Failed to parse JSON from reCAPTCHA response:",
+        rawResponse
+      );
+      return res.render("login", {
+        error: "reCAPTCHA verification error. Please try again.",
+        siteKey: process.env.RECAPTCHA_SITE_KEY,
+      });
+    }
+
+    console.log("reCAPTCHA verification response:", data);
 
     // Validate required fields
     if (!name || !email || !password || !confirmPassword) {
@@ -90,7 +126,7 @@ router.post("/signup", async (req, res) => {
       <h2 style="color: #333;">您好 ${name}, 欢迎！</h2>
       <p>感谢您的注册。我们很高兴您加入我们的平台！</p>
       <p>如果您有任何问题，请随时 <a href="mailto:support@chineseflix.com">联系我们</a>。</p>
-      <p style="color: #555;">此致，<br>团队</p>
+      <p style="color: #555;">此致，<br> CHINESEFLIX 团队</p>
     </div>
   `,
     };
