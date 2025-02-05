@@ -48,7 +48,7 @@ router.post("/signup", async (req, res) => {
       }),
     });
 
-    console.log(response);
+    console.log("response: ", response);
     // Check if the HTTP response is OK before attempting to parse
     if (!response.ok) {
       const errorText = await response.text();
@@ -62,8 +62,9 @@ router.post("/signup", async (req, res) => {
     let data;
     try {
       data = await response.json();
-    } catch (jsonError) {
+    } catch (e) {
       // Log the raw response if JSON parsing fails
+      console.log("signup error: ", e);
       const rawResponse = await response.text();
       console.error(
         "Failed to parse JSON from reCAPTCHA response:",
@@ -72,6 +73,7 @@ router.post("/signup", async (req, res) => {
       return res.render("login", {
         error: "reCAPTCHA verification error. Please try again.",
         siteKey: process.env.RECAPTCHA_SITE_KEY,
+        e,
       });
     }
 
