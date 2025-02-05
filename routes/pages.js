@@ -6,8 +6,8 @@ dotenv.config();
 const siteKey = process.env.RECAPTCHA_SITE_KEY || "";
 
 router.get("/", (req, res, next) => {
-  res.render("updating");
-  //res.render("home");
+  //res.render("updating");
+  res.render("home");
 });
 
 router.get("/about", (req, res, next) => {
