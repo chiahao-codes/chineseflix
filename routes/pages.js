@@ -3,8 +3,8 @@ const router = express.Router();
 import dotenv from "dotenv";
 dotenv.config();
 
-const siteKey = process.env.RECAPTCHA_SITE_KEY || "";
-
+const siteKey = process.env.RECAPTCHA_SITE_KEY;
+console.log("Loaded site key:", process.env.RECAPTCHA_SITE_KEY); // Check if this logs your site key
 router.get("/", (req, res, next) => {
   //res.render("updating");
   res.render("home");
