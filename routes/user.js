@@ -2,21 +2,15 @@ import express from "express";
 import bcrypt from "bcryptjs";
 import sgMail from "@sendgrid/mail";
 import jwt from "jsonwebtoken";
-import { mongoClient } from "./mongo.js";
+import { mongoClient, connectToDatabase } from "./mongo.js";
 import dotenv from "dotenv";
 import { rateLimit } from "express-rate-limit";
 
 //routes for signup/login;
 const router = express.Router();
-const db = mongoClient.db("current_users");
-if (!mongoClient.topology || !mongoClient.topology.isConnected()) {
-  await mongoClient.connect();
-}
-/**
- *
- */
 
 dotenv.config();
+
 console.log(
   "SendGrid API Key:",
   process.env.SENDGRID_API_KEY ? "Loaded" : "Not Loaded"
@@ -28,16 +22,23 @@ const limiter = rateLimit({
   message: "登录尝试次数过多。请稍后重试。",
   standardHeaders: true, // Returns rate limit info in headers
   legacyHeaders: false, // Disable old headers from prior attempts
+  keyGenerator: (req) => req.body.email, // Rate-limit by email, not just IP
 });
 
 const fromEmail = process.env.DOMAIN_EMAIL;
 sgMail.setApiKey(process.env.SENDGRID_API_KEY);
-let signupDisplay;
+
 // Signup Route
 router.post("/signup", async (req, res) => {
   req.app.locals.signupDisplay = true; // Update global value
   try {
-    const { name, email, password, confirmPassword } = req.body;
+    const db = req.app.locals.db; // Use shared DB connection
+    const collection = db.collection("user_info");
+    const name = req.body.name.trim();
+    const email = req.body.email.trim().toLowerCase(); // Convert to lowercase
+    const password = req.body.password.trim();
+    const confirmPassword = req.body.confirmPassword.trim();
+
     // Grab the reCAPTCHA response token
     const recaptchaToken = req.body["g-recaptcha-response"];
 
@@ -66,7 +67,18 @@ router.post("/signup", async (req, res) => {
       }),
     });
 
-    console.log("response: ", response);
+    const recaptchaResponse = await response.json();
+    console.log("reCAPTCHA verification:", recaptchaResponse);
+
+    // Check if reCAPTCHA was successful
+    if (!recaptchaResponse.success) {
+      return res.render("login", {
+        error: "reCAPTCHA 验证失败，请重试。",
+        siteKey: process.env.RECAPTCHA_SITE_KEY,
+        signupDisplay: req.app.locals.signupDisplay,
+      });
+    }
+
     // Check if the HTTP response is OK before attempting to parse
     if (!response.ok) {
       const errorText = await response.text();
@@ -77,27 +89,6 @@ router.post("/signup", async (req, res) => {
         signupDisplay: req.app.locals.signupDisplay,
       });
     }
-    /**
-     * Not sure why this is needed:
- *  let data;
-    try {
-      data = await response.json();
-    } catch (e) {
-      // Log the raw response if JSON parsing fails
-      console.log("signup error: ", e);
-      const rawResponse = await response.text();
-      console.error(
-        "Failed to parse JSON from reCAPTCHA response:",
-        rawResponse
-      );
-      return res.render("login", {
-        error: "验证错误。请稍后重试.",
-        siteKey: process.env.RECAPTCHA_SITE_KEY,
-        e,
-        signupDisplay: req.app.locals.signupDisplay,
-      });
-    }
- */
 
     // Validate required fields
     if (!name || !email || !password || !confirmPassword) {
@@ -140,9 +131,9 @@ router.post("/signup", async (req, res) => {
     }
 
     // Check if user already exists
-    const existingUser = await db.collection("user_info").findOne({ email });
+    const existingUser = await collection.findOne({ email });
     console.log("existing user: ", existingUser);
-    if (existingUser !== null) {
+    if (existingUser) {
       //add user error page, message property for ejs template;
       return res.status(400).render("login", {
         error: "用户已存在。请登录。",
@@ -153,9 +144,7 @@ router.post("/signup", async (req, res) => {
 
     //inserts a document obj to mongodb;
     const hashedPassword = await bcrypt.hash(password, 8);
-    await db
-      .collection("user_info")
-      .insertOne({ name, email, password: hashedPassword });
+    await collection.insertOne({ name, email, password: hashedPassword });
 
     const msg = {
       to: email, // Recipient's email address
@@ -172,6 +161,16 @@ router.post("/signup", async (req, res) => {
   `,
     };
 
+    const token = jwt.sign({ email }, process.env.JWT_SECRET, {
+      expiresIn: "1d",
+    });
+
+    res.cookie("token", token, {
+      httpOnly: true, // Prevents JavaScript access
+      secure: process.env.NODE_ENV === "production", // Only for HTTPS in production
+      maxAge: 24 * 60 * 60 * 1000, // 1-day expiration
+    });
+
     await sgMail
       .send(msg)
       .then(() => {
@@ -185,8 +184,8 @@ router.post("/signup", async (req, res) => {
   } catch (error) {
     console.log(error);
 
-    res.status(400).render("login", {
-      error: error.message,
+    res.status(500).render("login", {
+      error: "服务器错误，请稍后重试。",
       siteKey: process.env.RECAPTCHA_SITE_KEY,
       signupDisplay: req.app.locals.signupDisplay,
     });
@@ -196,36 +195,38 @@ router.post("/signup", async (req, res) => {
 // Login Route
 router.post("/login", limiter, async (req, res) => {
   req.app.locals.signupDisplay = false;
-  const { email, password } = req.body;
-  //validate email and password
-
-  // Validate required fields
-  if (!email || !password) {
-    return res.render("login", {
-      error: "所有字段都是必填的。",
-      siteKey: process.env.RECAPTCHA_SITE_KEY,
-      signupDisplay: req.app.locals.signupDisplay,
-    });
-  }
-
-  // Validate email format
-  const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-  if (!emailRegex.test(email)) {
-    return res.render("login", {
-      error: "电子邮件格式无效。",
-      siteKey: process.env.RECAPTCHA_SITE_KEY,
-      signupDisplay: req.app.locals.signupDisplay,
-    });
-  }
-
-  const db = mongoClient.db("current_users");
 
   try {
-    const user = await db.collection("user_info").findOne({ email });
+    const db = req.app.locals.db; // Use shared DB connection
+    const usersCollection = db.collection("user_info");
+
+    const email = req.body.email.trim().toLowerCase();
+    const password = req.body.password.trim();
+
+    // Validate required fields
+    if (!email || !password) {
+      return res.render("login", {
+        error: "所有字段都是必填的。",
+        siteKey: process.env.RECAPTCHA_SITE_KEY,
+        signupDisplay: req.app.locals.signupDisplay,
+      });
+    }
+
+    // Validate email format
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!emailRegex.test(email)) {
+      return res.render("login", {
+        error: "电子邮件或密码无效。",
+        siteKey: process.env.RECAPTCHA_SITE_KEY,
+        signupDisplay: req.app.locals.signupDisplay,
+      });
+    }
+
+    const user = await usersCollection("user_info").findOne({ email });
 
     if (!user) {
       return res.status(400).render("login", {
-        error: "无效的电子邮件。",
+        error: "电子邮件或密码无效。",
         email,
         signupDisplay: req.app.locals.signupDisplay,
       });
@@ -235,14 +236,17 @@ router.post("/login", limiter, async (req, res) => {
     const isMatch = await bcrypt.compare(password, user.password);
     if (!isMatch) {
       return res.status(400).render("login", {
-        error: "无效的密码。",
+        error: "电子邮件或密码无效。",
         signupDisplay: req.app.locals.signupDisplay,
       });
     }
 
     //generate token for existing user session;
     //token is stored on frontend while user is logged in.
-    const token = jwt.sign({ _id: user._id }, process.env.JWT_SECRET);
+    const token = jwt.sign(
+      { _id: user._id, email: user.email },
+      process.env.JWT_SECRET
+    );
 
     // Successful response with token and user info
     //cookie sent back to browser via header body inside response;
@@ -253,14 +257,14 @@ router.post("/login", limiter, async (req, res) => {
       maxAge: 24 * 60 * 60 * 1000, // 1 day expiry
     });
 
-    res.status(200).render("home", {
+    res.status(200).redirect("home", {
       user: {
         username: user.username,
         email: user.email,
       },
     });
   } catch (error) {
-    console.error(error);
+    console.error("Login error: ", error);
     res.status(500).render("login", {
       error: "登录时发生错误。",
       signupDisplay: req.app.locals.signupDisplay,
@@ -268,4 +272,4 @@ router.post("/login", limiter, async (req, res) => {
   }
 });
 
-export { router };
+export default router;
