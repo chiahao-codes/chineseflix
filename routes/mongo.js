@@ -20,8 +20,6 @@ const mongoClient = new MongoClient(uri, {
     strict: true,
     deprecationErrors: true,
   },
-  useNewUrlParser: true,
-  useUnifiedTopology: true,
   serverSelectionTimeoutMS: 30000, // ✅ Wait 30 seconds for DB connection
 });
 
