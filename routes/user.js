@@ -10,9 +10,11 @@ import { rateLimit } from "express-rate-limit";
 const router = express.Router();
 const db = mongoClient.db("current_users");
 
-if (!mongoClient.topology || !mongoClient.topology.isConnected()) {
+/**
+ * if (!mongoClient.topology || !mongoClient.topology.isConnected()) {
   await mongoClient.connect();
 }
+ */
 
 dotenv.config();
 console.log(
