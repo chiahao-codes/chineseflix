@@ -21,6 +21,7 @@ const mongoClient = new MongoClient(uri, {
     deprecationErrors: true,
   },
   tls: true,
+  tlsAllowInvalidCertificates: false, // ✅ Prevents insecure connections
   serverSelectionTimeoutMS: 30000, // ✅ Wait 30 seconds for DB connection
 });
 
