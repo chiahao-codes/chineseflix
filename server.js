@@ -15,7 +15,8 @@ const allowedOrigins = [
   "http://localhost:8080", // Local development
   "https://chineseflix.com", // Your production domain
 ];
-app.use(
+/**
+ * app.use(
   cors({
     origin: function (origin, callback) {
       if (!origin || allowedOrigins.includes(origin)) {
@@ -28,6 +29,8 @@ app.use(
     methods: ["GET", "POST", "PUT", "DELETE"], // Allowed methods
   })
 );
+ */
+app.use(cors());
 app.use(express.static("public"));
 app.use(express.static("assets"));
 app.use(express.json());
