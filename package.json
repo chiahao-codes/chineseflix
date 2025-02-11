@@ -25,5 +25,8 @@
     "jwt": "node ./jwt_secret.js"
   },
   "author": "Chiahao Chou",
-  "license": "ISC"
+  "license": "ISC",
+  "devDependencies": {
+    "typescript": "^5.7.3"
+  }
 }

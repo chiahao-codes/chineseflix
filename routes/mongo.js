@@ -20,6 +20,7 @@ const mongoClient = new MongoClient(uri, {
     strict: true,
     deprecationErrors: true,
   },
+  tls: true,
   serverSelectionTimeoutMS: 30000, // ✅ Wait 30 seconds for DB connection
 });
 
@@ -33,15 +34,13 @@ console.log(
 let db = null;
 async function connectToDatabase() {
   try {
-    if (!db) {
-      await mongoClient.connect(); // Connect the client to MongoDB
-      console.log("Connected to MongoDB successfully!");
-      db = mongoClient.db("current_users"); // Specify the database name here
+    if (!mongoClient.topology || !mongoClient.topology.isConnected()) {
+      await mongoClient.connect();
+      console.log("✅ Connected to MongoDB successfully!");
     }
-
-    return db; // Return the database instance
-  } catch (e) {
-    console.error("Failed to connect to MongoDB", e);
+    return mongoClient.db("current_users"); // Replace with your actual DB name
+  } catch (error) {
+    console.error("❌ MongoDB connection failed:", error);
     throw error;
   }
 }
