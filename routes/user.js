@@ -2,7 +2,6 @@ import express from "express";
 import bcrypt from "bcryptjs";
 import sgMail from "@sendgrid/mail";
 import jwt from "jsonwebtoken";
-import { mongoClient, connectToDatabase } from "./mongo.js";
 import dotenv from "dotenv";
 import { rateLimit } from "express-rate-limit";
 
@@ -30,6 +29,14 @@ sgMail.setApiKey(process.env.SENDGRID_API_KEY);
 
 // Signup Route
 router.post("/signup", async (req, res) => {
+  console.log("Received signup request body:", req.body); // Debugging
+
+  if (!req.body || typeof req.body !== "object") {
+    return res.status(400).json({
+      error: "Invalid request format. Make sure the Content-Type is correct.",
+    });
+  }
+
   req.app.locals.signupDisplay = true; // Update global value
   try {
     const db = req.app.locals.db; // Use shared DB connection

@@ -85,24 +85,24 @@
             }
 
             // Create FormData object and include reCAPTCHA token
-            const form = document.getElementById("signup-form");
-            const formData = new FormData(form); // Auto-collects input values
+            // const form = document.getElementById("signup-form");
+            const formData = new FormData(event.target); // Auto-collects input values
             // Append the token with the key that the backend expects:
             formData.append("g-recaptcha-response", recaptchaToken);
+
             try {
                 // Send signup request to backend
                 const response = await fetch("/user/signup", {
                     method: "POST",
-                    body: formData // Automatically encodes as form-data
+                    body: new URLSearchParams(formData), // ✅ Converts FormData to URL-encoded format
+                    headers: { "Content-Type": "application/x-www-form-urlencoded" },
                 });
-
-                console.log("response: ", response)
 
                 if (response.status === 200) {
                     console.log(response.statusText)
                     document.getElementById("signup-form").submit();
                 } else {
-                    alert(result.message || "Signup failed. Please try again.");
+                    alert(response.statusText || "Signup failed. Please try again.");
                 }
             } catch (error) {
                 console.log(error)
