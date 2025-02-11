@@ -67,6 +67,12 @@
     </main>
     <script src="https://www.google.com/recaptcha/api.js" async defer></script>
     <script>
+        const signupFormDisplay = "<%= signupDisplay %>";
+
+        if (signupFormDisplay === "false") {
+            document.getElementById("signup-form").style.display = "none";
+        }
+
         document.getElementById("signup-form").addEventListener("submit", async function (event) {
             event.preventDefault(); // Stop normal form submission
 

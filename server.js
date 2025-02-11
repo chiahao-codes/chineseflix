@@ -20,6 +20,8 @@ app.set("view engine", "ejs");
 
 // Middleware to parse URL-encoded data (for form submissions)
 app.use(express.urlencoded({ extended: true }));
+// Set global variable for signupDisplay (default: false)
+app.locals.signupDisplay = false;
 
 connectToDatabase().catch(console.dir);
 

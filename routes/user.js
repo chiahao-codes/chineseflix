@@ -4,21 +4,36 @@ import sgMail from "@sendgrid/mail";
 import jwt from "jsonwebtoken";
 import { mongoClient } from "./mongo.js";
 import dotenv from "dotenv";
+import { rateLimit } from "express-rate-limit";
 
 //routes for signup/login;
 const router = express.Router();
 const db = mongoClient.db("current_users");
+
+if (!mongoClient.topology || !mongoClient.topology.isConnected()) {
+  await mongoClient.connect();
+}
+
 dotenv.config();
 console.log(
   "SendGrid API Key:",
   process.env.SENDGRID_API_KEY ? "Loaded" : "Not Loaded"
 );
 
+const limiter = rateLimit({
+  windowMs: 15 * 60 * 1000, // 15 minutes
+  max: 5, // Limit each IP to 5 login attempts per windowMs
+  message: "登录尝试次数过多。请稍后重试。",
+  standardHeaders: true, // Returns rate limit info in headers
+  legacyHeaders: false, // Disable old headers from prior attempts
+});
+
 const fromEmail = process.env.DOMAIN_EMAIL;
 sgMail.setApiKey(process.env.SENDGRID_API_KEY);
-
+let signupDisplay;
 // Signup Route
 router.post("/signup", async (req, res) => {
+  req.app.locals.signupDisplay = true; // Update global value
   try {
     const { name, email, password, confirmPassword } = req.body;
     // Grab the reCAPTCHA response token
@@ -30,6 +45,7 @@ router.post("/signup", async (req, res) => {
       return res.render("login", {
         error: "请完成 reCAPTCHA 挑战。",
         siteKey: process.env.RECAPTCHA_SITE_KEY,
+        signupDisplay: req.app.locals.signupDisplay,
       });
     }
 
@@ -54,12 +70,14 @@ router.post("/signup", async (req, res) => {
       const errorText = await response.text();
       console.error("Non-200 response from reCAPTCHA:", errorText);
       return res.render("login", {
-        error: "reCAPTCHA verification error. Please try again later.",
+        error: "验证错误。请稍后重试.",
         siteKey: process.env.RECAPTCHA_SITE_KEY,
+        signupDisplay: req.app.locals.signupDisplay,
       });
     }
-
-    let data;
+    /**
+     * Not sure why this is needed:
+ *  let data;
     try {
       data = await response.json();
     } catch (e) {
@@ -71,45 +89,64 @@ router.post("/signup", async (req, res) => {
         rawResponse
       );
       return res.render("login", {
-        error: "reCAPTCHA verification error. Please try again.",
+        error: "验证错误。请稍后重试.",
         siteKey: process.env.RECAPTCHA_SITE_KEY,
         e,
+        signupDisplay: req.app.locals.signupDisplay,
       });
     }
-
-    console.log("reCAPTCHA verification response:", data);
+ */
 
     // Validate required fields
     if (!name || !email || !password || !confirmPassword) {
-      return res.render("login", { error: "所有字段都是必填的。" });
+      return res.render("login", {
+        error: "所有字段都是必填的。",
+        siteKey: process.env.RECAPTCHA_SITE_KEY,
+        signupDisplay: req.app.locals.signupDisplay,
+      });
     }
 
     // Validate email format
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     if (!emailRegex.test(email)) {
-      return res.render("login", { error: "电子邮件格式无效。" });
+      return res.render("login", {
+        error: "电子邮件格式无效。",
+        siteKey: process.env.RECAPTCHA_SITE_KEY,
+        signupDisplay: req.app.locals.signupDisplay,
+      });
     }
 
     // Validate password match
     if (password !== confirmPassword) {
-      return res.render("login", { error: "密码不匹配。" });
+      return res.render("login", {
+        error: "密码不匹配。",
+        siteKey: process.env.RECAPTCHA_SITE_KEY,
+        signupDisplay: req.app.locals.signupDisplay,
+      });
     }
 
     // Validate password strength
     const passwordRegex = /^(?=.*[A-Z])(?=.*\d).{8,}$/;
     if (!passwordRegex.test(password)) {
+      console.log("password not strong enough");
       return res.render("login", {
         error:
           "密码必须至少包含 8 个字符，并且至少包含一个大写字母和一个数字。",
+        siteKey: process.env.RECAPTCHA_SITE_KEY,
+        signupDisplay: req.app.locals.signupDisplay,
       });
     }
 
     // Check if user already exists
     const existingUser = await db.collection("user_info").findOne({ email });
-
+    console.log("existing user: ", existingUser);
     if (existingUser !== null) {
       //add user error page, message property for ejs template;
-      return res.status(400).send({ error: "用户已存在。" });
+      return res.status(400).render("login", {
+        error: "用户已存在。请登录。",
+        siteKey: process.env.RECAPTCHA_SITE_KEY,
+        signupDisplay: req.app.locals.signupDisplay,
+      });
     }
 
     //inserts a document obj to mongodb;
@@ -145,30 +182,38 @@ router.post("/signup", async (req, res) => {
     res.status(200).render("confirmed", { name });
   } catch (error) {
     console.log(error);
-    // Send error details to the frontend in non-production environments
-    const errorMessage =
-      process.env.NODE_ENV === "production"
-        ? "创建用户时出错。"
-        : `Error: ${error}`;
 
-    res.status(400).render("login", { errorMessage });
+    res.status(400).render("login", {
+      error: error.message,
+      siteKey: process.env.RECAPTCHA_SITE_KEY,
+      signupDisplay: req.app.locals.signupDisplay,
+    });
   }
 });
 
 // Login Route
-router.post("/login", async (req, res) => {
+router.post("/login", limiter, async (req, res) => {
+  req.app.locals.signupDisplay = false;
   const { email, password } = req.body;
   //validate email and password
 
   // Validate required fields
   if (!email || !password) {
-    return res.render("login", { error: "所有字段都是必填的。" });
+    return res.render("login", {
+      error: "所有字段都是必填的。",
+      siteKey: process.env.RECAPTCHA_SITE_KEY,
+      signupDisplay: req.app.locals.signupDisplay,
+    });
   }
 
   // Validate email format
   const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
   if (!emailRegex.test(email)) {
-    return res.render("login", { error: "电子邮件格式无效。" });
+    return res.render("login", {
+      error: "电子邮件格式无效。",
+      siteKey: process.env.RECAPTCHA_SITE_KEY,
+      signupDisplay: req.app.locals.signupDisplay,
+    });
   }
 
   const db = mongoClient.db("current_users");
@@ -177,13 +222,20 @@ router.post("/login", async (req, res) => {
     const user = await db.collection("user_info").findOne({ email });
 
     if (!user) {
-      return res.status(400).send({ error: "无效的电子邮件。", email });
+      return res.status(400).render("login", {
+        error: "无效的电子邮件。",
+        email,
+        signupDisplay: req.app.locals.signupDisplay,
+      });
     }
 
     // Compare the provided password with the stored hash
     const isMatch = await bcrypt.compare(password, user.password);
     if (!isMatch) {
-      return res.status(400).send({ error: "无效的密码。" });
+      return res.status(400).render("login", {
+        error: "无效的密码。",
+        signupDisplay: req.app.locals.signupDisplay,
+      });
     }
 
     //generate token for existing user session;
@@ -191,16 +243,26 @@ router.post("/login", async (req, res) => {
     const token = jwt.sign({ _id: user._id }, process.env.JWT_SECRET);
 
     // Successful response with token and user info
+    //cookie sent back to browser via header body inside response;
+    //can be accessed with each request afterwards;
+    res.cookie("token", token, {
+      httpOnly: true, // Prevents JavaScript access
+      secure: process.env.NODE_ENV === "production", // Secure flag in production
+      maxAge: 24 * 60 * 60 * 1000, // 1 day expiry
+    });
+
     res.status(200).render("home", {
       user: {
         username: user.username,
         email: user.email,
       },
-      token,
     });
   } catch (error) {
     console.error(error);
-    res.status(500).send({ error: "登录时发生错误。" });
+    res.status(500).render("login", {
+      error: "登录时发生错误。",
+      signupDisplay: req.app.locals.signupDisplay,
+    });
   }
 });
 
