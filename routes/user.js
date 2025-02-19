@@ -201,10 +201,10 @@ router.post("/signup", async (req, res) => {
 
 // Login Route
 router.post("/login", limiter, async (req, res) => {
-  req.app.locals.signupDisplay = false;
+  req.app.locals.signupDisplay = false; //signupDisplay - variable to show or not show the sign up display ui.
 
   try {
-    const db = req.app.locals.db; // Use shared DB connection
+    const db = req.app.locals.db; // app.locals.db - variable on the req object to reUse shared DB connection; no need to connect to mongodb each time;
     const usersCollection = db.collection("user_info");
 
     const email = req.body.email.trim().toLowerCase();
@@ -213,7 +213,7 @@ router.post("/login", limiter, async (req, res) => {
     // Validate required fields
     if (!email || !password) {
       return res.render("login", {
-        error: "所有字段都是必填的。",
+        error: "所有字段都是必填的。", //All fields are required.
         siteKey: process.env.RECAPTCHA_SITE_KEY,
         signupDisplay: req.app.locals.signupDisplay,
       });
@@ -223,18 +223,19 @@ router.post("/login", limiter, async (req, res) => {
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     if (!emailRegex.test(email)) {
       return res.render("login", {
-        error: "电子邮件或密码无效。",
+        error: "电子邮件或密码无效。", //Invalid email or password.
         siteKey: process.env.RECAPTCHA_SITE_KEY,
         signupDisplay: req.app.locals.signupDisplay,
       });
     }
 
-    const user = await usersCollection("user_info").findOne({ email });
+    const user = await usersCollection.findOne({ email });
 
     if (!user) {
       return res.status(400).render("login", {
-        error: "电子邮件或密码无效。",
+        error: "电子邮件或密码无效。", //Invalid email or password.
         email,
+        siteKey: process.env.RECAPTCHA_SITE_KEY,
         signupDisplay: req.app.locals.signupDisplay,
       });
     }
@@ -243,40 +244,52 @@ router.post("/login", limiter, async (req, res) => {
     const isMatch = await bcrypt.compare(password, user.password);
     if (!isMatch) {
       return res.status(400).render("login", {
-        error: "电子邮件或密码无效。",
+        error: "电子邮件或密码无效。", //Invalid email or password.
         signupDisplay: req.app.locals.signupDisplay,
+        siteKey: process.env.RECAPTCHA_SITE_KEY,
       });
     }
 
     //generate token for existing user session;
-    //token is stored on frontend while user is logged in.
+    //token is stored on frontend (with browser header) while user is logged in.
     const token = jwt.sign(
       { _id: user._id, email: user.email },
       process.env.JWT_SECRET
     );
 
-    // Successful response with token and user info
     //cookie sent back to browser via header body inside response;
     //can be accessed with each request afterwards;
+    //i.e. certain privileged pages -- account page, dashboard, etc.
     res.cookie("token", token, {
       httpOnly: true, // Prevents JavaScript access
       secure: process.env.NODE_ENV === "production", // Secure flag in production
       maxAge: 24 * 60 * 60 * 1000, // 1 day expiry
     });
 
-    res.status(200).redirect("home", {
-      user: {
-        username: user.username,
-        email: user.email,
-      },
-    });
+    res.redirect(302, "/");
   } catch (error) {
     console.error("Login error: ", error);
     res.status(500).render("login", {
       error: "登录时发生错误。",
       signupDisplay: req.app.locals.signupDisplay,
+      siteKey: process.env.RECAPTCHA_SITE_KEY,
     });
   }
+});
+
+//Log out
+router.get("/logout", (req, res) => {
+  // Clear the JWT token cookie
+  res.clearCookie("token", {
+    httpOnly: true,
+    secure: process.env.NODE_ENV === "production", // Ensure the secure flag is set in production
+  });
+
+  // Optionally, if you're using sessions, you can destroy the session here:
+  // req.session.destroy();
+
+  // Redirect the user to the login page
+  res.redirect("/login");
 });
 
 export default router;
